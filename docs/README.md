@@ -1,5 +1,7 @@
 ![](./images/overview/main.png)
 
+Welcome to the hands-on documentation for IBM i Merlin. This hands-on documentation is not meant to replease the official [IBM Documentation for Merlin](https://www.ibm.com/docs/en/merlin/1.0?topic=overview).
+
 IBM i Modernization Engine for Lifecycle Integration (Merlin) is a set of tools run in OpenShift containers which guide and assist software developers in the modernization of IBM i applications, allowing them to realize the value of a hybrid cloud, multi-platform DevOps implementation.  
 
 #### Getting started videos
