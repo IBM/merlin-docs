@@ -1,0 +1,22 @@
+- [Overview](./README.md)
+   - [Merlin](./guides/overview/main.md)
+   - [Platform](./guides/overview/platform.md)
+   - [FAQs](./guides/overview/faq.md)
+   - [Basic Flows](./guides/flows.md)
+- Source control
+   - [Moving into git](./guides/git/moving-source.md)
+- Installation (admin)
+   - [Requirements](./guides/openshift/merlin-reqs.md)
+   - [Entitlement](./guides/openshift/entitlement.md)
+   - [Installing Merlin](./guides/openshift/merlininstall.md)
+   - [Browser Certificates](./guides/openshift/merlin-certs.md)
+- Configuration (admin)
+   - [App Installation](./guides/appinstall.md)
+   - [Configuration](./guides/configuration.md)
+- Merlin IDE
+   - [Usage](./guides/crw/main.md)
+   - [ARCAD](./guides/crw/arcad.md)
+- Merlin CICD
+   - [Usage & Jenkins](./guides/cicd/main.md)
+   - [ARCAD Builder](./guides/cicd/arcad.md)
+   <!-- - [ibmi-bob](./guides/cicd/bob.md) -->
