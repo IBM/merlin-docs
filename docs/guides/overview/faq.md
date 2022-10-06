@@ -25,7 +25,7 @@
 
 > The IDE is leveraging RedHat Code Ready Workspaces, incorporating  VS-Code compatible Eclipse Theia & Che for the core of the web based IDE.
 
-#### What kind of containers are supported?  multi-architecture? 
+#### What kind of containers are supported?  Multi-architecture? 
 
 > Merlin is targeted for RedHat OpenShift containers running on Power or x86.
 
@@ -38,19 +38,19 @@
 
 #### Does this replace RDi?
 
-> No, this is an alternative to using RDi for code development and modernization. Developers now have a choice of workstation based development activities, RDi, or to use a browser, container-based option, Merlin.  Both are equally important to the IBM i development community and will continue to be enhanced and supported.
+> No, this is an alternative to using RDi for code development and modernization. Developers now have a choice of workstation-based development activities, RDi, or to use a browser, container-based option, Merlin.  Both are equally important to the IBM i development community and will continue to be enhanced and supported.
 >
-> However, Merlin while it does have an IDE, it also provides the holistic CI/CD development ecosystem  based on Jenkins to help our IBM i development community move to an automated build and deployment  process.  
+> However, while Merlin does have an IDE, it also provides the holistic CI/CD development ecosystem  based on Jenkins to help our IBM i development community move to an automated build and deployment  process.  
 
 #### What is the difference between Merlin and RDi?
 
-> Rational Developer for i (RDi) is an IDE for creating new application or updating existing native ILE applications on IBM i. Users can add plugin and additional tools to RDi to move toward a modern development ecosystem. RDi also has full support for legacy IBM i applications that are based on OPM. 
+> Rational Developer for i (RDi) is an IDE for creating new application or updating existing native ILE applications on IBM i. Users can add plugins and additional tools to RDi to move toward a modern development ecosystem. RDi also has full support for legacy IBM i applications that are based on OPM. 
 >
-> Merlin is a fully integrated and supported set of tools from IBM that include an IDE, and the additional plugins and tools to enable the IBM i developer to work in a modern manner. This includes Integration into a CI/CD pipeline, and code modernization features like fixed to free conversion, native integration for Git based source control and application impact analysis at the fingertips of every developer. Additionally, allowing integration to the automated build and deployment pipeline process.
+> Merlin is a fully integrated and supported set of tools from IBM that include an IDE and the additional plugins and tools to enable the IBM i developer to work in a modern manner. This includes Integration into a CI/CD pipeline and code modernization features like Fixed to Free conversion, native integration for Git-based source control and application impact analysis at the fingertips of every developer. Additionally, allowing integration to the automated build and deployment pipeline process.
 
 #### Can code being updated by Merlin still be updated by RDi or SEU?
 
-> Yes, Code updated/modified/created using the Merlin capabilities can be modified by RDi. While it is possible to also use SEU to further modify the code, as Merlin supports the latest versions of RPG and SEU does not, it is the hope that developers will have moved to a more modern coding paradigm.
+> Yes, Code updated/modified/created using Merlin's capabilities can be modified by RDi. While it is possible to also use SEU to further modify the code, as Merlin supports the latest versions of RPG and SEU does not, it is the hope that developers will have moved to a more modern coding paradigm.
 
 #### Do customers pay extra to acquire the ARCAD functions? 
 
@@ -58,4 +58,4 @@
 
 #### Why did IBM partner with ARCAD Software?
  
-> IBM and ARCAD Software have had a long-standing partnership. ARCAD had previously created plug-ins to the architecture being designed.  To deliver the best value to the market as fast as possible, IBM chose to work with ARCAD to deliver a product with an integrated RPG modernization and impact analysis.
+> IBM and ARCAD Software have had a long-standing partnership. ARCAD had previously created plugins to the architecture being designed.  To deliver the best value to the market as fast as possible, IBM chose to work with ARCAD to deliver a product with an integrated RPG modernization and impact analysis.
