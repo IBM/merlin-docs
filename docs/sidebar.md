@@ -2,6 +2,7 @@
    - [Merlin](./guides/overview/main.md)
    - [Platform](./guides/overview/platform.md)
    - [FAQs](./guides/overview/faq.md)
+   - [Test Drive](./guides/overview/sandbox.md)
    - [Basic Flows](./guides/flows.md)
 - Source control
    - [Moving into git](./guides/git/moving-source.md)
