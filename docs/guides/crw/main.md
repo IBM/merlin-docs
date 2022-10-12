@@ -62,7 +62,7 @@ First, open the command palette (F1 or Control / Command + Shift + F1) and searc
 
 > The HTTPS clone URL can also be used if the repository being cloned is public on GitHub.
 
-The cloning process is going to ask you were to clone the repository. By default it should use a `projects` folder. You can optionally set it somewhere else, though it is recommend to use the default. When you've made your selection, hit 'Select Repository Location' to continue the clone.
+The cloning process is going to ask you where to clone the repository. By default it should use a `projects` folder. You can optionally set it somewhere else, though it is recommended to use the default. When you've made your selection, hit 'Select Repository Location' to continue the clone.
 
 ![](../../images/ide/ide-9.png)
 
