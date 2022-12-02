@@ -11,6 +11,7 @@
    - [Entitlement](./guides/openshift/entitlement.md)
    - [Installing Merlin](./guides/openshift/merlininstall.md)
    - [Browser Certificates](./guides/openshift/merlin-certs.md)
+   - [Upgrade Strategy](./guides/openshift/merlin-updates.md)
 - Configuration (admin)
    - [App Installation](./guides/appinstall.md)
    - [Configuration](./guides/configuration.md)

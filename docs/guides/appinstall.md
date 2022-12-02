@@ -56,7 +56,7 @@ Next, select which channel (version) of the application you want. The default sh
 
 ![](../images/appinst/appinst-6.png)
 
-The next page asks you about your update strategy preferences. You can either select Automatic or Manual. It is recomended that Automatic is used to insure the latest updates and security patches for the Merlin tools are being used as they become available.
+The next page asks you about your update strategy preferences. You can either select Automatic or Manual. It is recommended that Automatic is used to insure the latest updates and security patches for the Merlin tools are being used as they become available.
 
 The Application Settings page may or may not offer you custom configuration. Earlier versions of the the IDE application did not have any configurable settings, so you can continue onto the next page.
 
