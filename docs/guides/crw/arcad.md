@@ -11,7 +11,7 @@ Those steps can be found above. Following that, this section covers:
 
 ## Cloning the Repository
 
-To be able to work with the ARCAD tools, the workspace requires a git repository. For this example, [company_system repository is on GitHub](git@github.com:worksofliam/company_system.git) and can be forked/cloned from GitHub.
+To be able to work with the ARCAD tools, the workspace requires a git repository. For this example, [company_system repository is on GitHub](https://github.com/IBM/ibmi-company_system) and can be forked/cloned from GitHub.
 
 To clone from any repository server, an SSH keypair will likely need setting up. See '[connecting to git repositories](#connecting-to-git-repositories)' above.
 
