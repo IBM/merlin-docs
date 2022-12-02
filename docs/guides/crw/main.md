@@ -8,6 +8,8 @@ Merlin IDE / IBM i Developer is a cloud-hosted version of VS Code with Merlin & 
 
 When you launch into IBM i Developer for the first time, you may not have any Workspaces. For this, we're going to start from a sample. On the Create Workspace menu, you will be able to select from samples. You should select 'IBM i Developer'.  Other sample tools stacks might useful for developing with other programming languages and frameworks.  The 'Custom Workspace' tab can be explored for those who want to understand the yaml source behind these tool stacks and even customize them.  It is also possible load a customize workspace directly from a URL that your provide.  This can help on-board new developers very quickly.
 
+When using Merlin IDE / IBM i Developer, **each user can only have one workspace running at a time**.
+
 ![](../../images/ide/ide-1.png)
 
 Selecting it starts to spin up a Workspace for you.  Under the covers a Linux container is being spun up with all of the client tooling required to do develop classic IBM i applications.  This can take a moment, and  automatically launchs into the IDE when it's done.
