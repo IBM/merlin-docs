@@ -1,6 +1,8 @@
 ## Creating a profile using ARCAD Builder
 
-Before ARCAD Builder can be used from IBM i CI/CD, the ARCAD integration must be set up. Head to the ARCAD Integration page and select 'Enable ARCAD Integration'. When that has finished, confirm the set up with the 'Test connection' button.
+Before ARCAD Builder can be used from IBM i CI/CD, the ARCAD integration must be set up. Head to the ARCAD Integration page and select 'Enable ARCAD Integration'. When entering the URL to ARCAD Builder, ensure that it is a valid URL to an ARCAD Builder instance. It usually is the IP address or hostname, followed by the valid port number. For example, `https://123.456.7.8:5252`
+
+When that has finished, confirm the set up with the 'Test connection' button.
 
 ![](../../images/cicd/cicd-9.png)
 

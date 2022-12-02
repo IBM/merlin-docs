@@ -14,7 +14,7 @@ In this step, we're going to head over to the Inventory tab and select 'Add':
 
 ![](../images/home/home-1.png)
 
-Next, you should fill in all the required fields. The Name is unique and does not have to match the host name. The type chosen in this example is IBM i, because that is where development and builds happen.
+Next, you should fill in all the required fields. The Name is unique and does not have to match the host name. The type chosen in this example is IBM i, because that is where development and builds happen. Note that for the Hostname field, you can use either a valid IP address or hostname to the target system.
 
 ![](../images/home/home-2.png)
 
