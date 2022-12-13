@@ -28,6 +28,8 @@ To do that, use the DECLARE3 macro-command.
 
 ![image](https://user-images.githubusercontent.com/32166038/207347201-29c66464-64d5-4f86-b8eb-db9ceea55bcd.png)
 
+Warning: if there are many source members, submit this macro-command.
+
 ## Create development environment
 A development environment in mandatory to create a version in ARCAD.
 To do that, use the ADCLENV command.
@@ -48,8 +50,7 @@ The next step of setup is to create a Git Repository.
 ![image](https://user-images.githubusercontent.com/32166038/207349997-1e69e0af-a7e7-4e9a-a55a-7ebfa0d759a1.png)
  
 ## Update application operational attributes
-To do that, use the AEDTAPPATR, then
-Set the Source member header update to *NONE.
+To do that, use the AEDTAPPATR, then set the Source member header update to *NONE.
 
 ![image](https://user-images.githubusercontent.com/32166038/207350243-5ba52c0d-8315-4be0-81f6-75fa44380721.png)
 
@@ -70,13 +71,17 @@ Set the MERLIN Project parameter to *YES. Set a Generation IFS directory and pre
 To send all the source members to the Git repository use the ARCAD macro-command LODSCMREP.
 
 ![image](https://user-images.githubusercontent.com/32166038/207352838-a4403c41-86ad-4354-a356-dcc0735e33f3.png)
+
+Warning: if there are many source members, submit this macro-command.
  
 When the macro-command is finished, all the source members are visible in Git.
 
 ![image](https://user-images.githubusercontent.com/32166038/207353189-c766296d-cfbb-4823-8919-48bf1c7cbf34.png)
  
 ## Clone the Git repository in your workspace
-Go to your IBM i Developer workspace to clone the Git repository
+Go to your IBM i Developer workspace to clone the Git repository.
 
 ## Configure ARCAD builder
 The last thing to do before using the IBM i Developer workspace is to configure ARCAD Builder for your application and add builder webhooks to your Git repository.
+
+You are now ready to work.
