@@ -6,6 +6,7 @@
    - [Basic Flows](./guides/flows.md)
 - Source control
    - [Moving into git](./guides/git/moving-source.md)
+   - [ARCAD initialisation](./guides/git/moving-source-arcad.md)
 - Installation (admin)
    - [Requirements](./guides/openshift/merlin-reqs.md)
    - [Entitlement](./guides/openshift/entitlement.md)
