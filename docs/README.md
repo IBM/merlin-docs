@@ -15,6 +15,7 @@ IBM i Modernization Engine for Lifecycle Integration (Merlin) is a set of tools 
 * Submit product requests using the [IBM Power Systems Ideas Portal](https://ibm-power-systems.ideas.ibm.com/?category=7112512098562980476).
 * Discuss the product with other users on the [IBM Community](https://community.ibm.com/community/user/power/communities/community-home?communitykey=f0246bc4-08f3-43c5-a7f8-b6a64d387894).
 * For support, open a case on the [Support portal](https://www.ibm.com/mysupport/).  Also, subscribe to [product notifications](https://www.ibm.com/systems/support/myview/subscription/css.wss).
+* **[Check out our forum](https://community.ibm.com/community/user/power/communities/community-home/digestviewer?CommunityKey=8fde9d59-7ef0-4474-941f-0184ed3d51b8) to talk to fellow users**
 
 #### Additional resources
 
