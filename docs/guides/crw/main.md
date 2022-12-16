@@ -6,7 +6,7 @@ Merlin IDE / IBM i Developer is a cloud-hosted version of VS Code with Merlin & 
 
 ## Creating Your First Workspace
 
-When you launch into IBM i Developer for the first time, you may not have any Workspaces. For this, we're going to start from a sample. On the Create Workspace menu, you will be able to select from samples. You should select 'IBM i Developer'.  Other sample tools stacks might useful for developing with other programming languages and frameworks.  The 'Custom Workspace' tab can be explored for those who want to understand the yaml source behind these tool stacks and even customize them.  It is also possible load a customize workspace directly from a URL that your provide.  This can help on-board new developers very quickly.
+When you launch into IBM i Developer for the first time, you may not have any Workspaces. For this, we're going to start from a sample. On the Create Workspace menu, you will be able to select from samples. You should select 'IBM i Developer' or 'IBM i Developer and demo application'.  Other sample tools stacks might useful for developing with other programming languages and frameworks.  The 'Custom Workspace' tab can be explored for those who want to understand the yaml source behind these tool stacks and even customize them.  It is also possible load a customize workspace directly from a URL that your provide.  This can help on-board new developers very quickly.
 
 When using Merlin IDE / IBM i Developer, **each user can only have one workspace running at a time**.
 
@@ -173,3 +173,25 @@ To compile (a single source and items it depends on)
 4. The output window appears with the output from your build tool
 
 ![](../../images/ide/ide-20.png)
+
+## Debugging
+
+You can debug RPG/COBOL/C/C++/CL batch programs.  
+
+### Prerequisites
+
+Host PTFs are required.  Run the **Validate the dependent PTFs** from **Connections>Templates** for the IBM i to check if all PTFs are applied.  The **Enable IBM i debug service** action must be run to start the host debug service.
+
+![](../../images/ide/idedebugaction.png)
+
+### Debugging from IBM i Project Explorer
+
+With a project in IBM i Project Explorer, connect to the IBM i.  Under the IBM i connection, using Library List or a QSYS query under My Queries, show a program object.  Two debug actions will be available as inline actions or from the popup menu:  **Debug As Batch** and **Debug as Batch (Prompt)**.  Select an action to start debug.
+
+When debug starts, the debug panel will open on the left and the source will open in the editor.  From the debug panel, the following actions are available: **Continue**, **Step Over**, **Step into**, **Step out**, **Restart**, and **Stop**.  In the editor, breakpoints can be set on lines in the left margin.  While debugging, the **Variables** view will show the variable values.  In the editor, hovering over a variable will show its value.
+
+![](../../images/ide/idedebughover.png)
+
+For a demonstration, see the Merlin IDE Debugging video in the [Merlin Getting Started for Users](https://www.youtube.com/playlist?list=PLPELYviDwCnY6L5r5ZnmCneqhakLcB7ko) playlist.
+
+[![Debugging video](https://img.youtube.com/vi/CjH3xOv8p3A/0.jpg)](https://www.youtube.com/watch?v=CjH3xOv8p3A&list=PLPELYviDwCnY6L5r5ZnmCneqhakLcB7ko&index=13).
