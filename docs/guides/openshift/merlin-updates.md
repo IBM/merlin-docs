@@ -7,6 +7,14 @@ When installing Merlin, you have the choice of Automatic or Manual updates.
 
 When you select Automatic and the CatalogSource sees that there is an update available to Merlin, it will be installed automatically. When Manual is selected, an administrator must go into the OpenShift Web Console and should see a notification about an available upgrade to Merlin. If the upgrade is accepted, Merlin will start the upgrade.
 
+![](../../images/osc/manual_upgrade_1.png)
+
+![](../../images/osc/manual_upgrade_2.png)
+
+![](../../images/osc/manual_upgrade_3.png)
+
+![](../../images/osc/manual_upgrade_4.png)
+
 If there is a Merlin update available but the OpenShift Web Console does not see it, then the CatalogSource should be restarted. When the CatalogSource starts up, it will go and fetch the latest information about versions of Merlin available.
 
 ![](../../images/osc/catalog-view.png)
