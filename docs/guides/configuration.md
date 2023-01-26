@@ -54,6 +54,18 @@ Run each one of the Actions that are shown, which will install the required tool
 
 ![](../images/home/home-7.png)
 
+### Viewing logs of actions
+
+After running all the actions of the template, click View Tasks button, a new window will show up and display the history of tasks.
+
+![](../images/home/home-8.png)
+
+![](../images/home/home-9.png)
+
+Select one of the taks, then click View Task Details button to display the log.
+
+![](../images/home/home-10.png)
+
 # Setup Complete
 
 Now, when you use Merlin IDE (IBM i Developer) and Merlin CI/CD you have access to your templates to make connecting to systems a breeze.
