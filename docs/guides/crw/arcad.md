@@ -76,7 +76,7 @@ This file should be committed into your git repository.
 
 ## Developing with an ARCAD Project
 
-The first step to writing and building code is to checkout to a different branch. From IBM i Developer, the branch is showm on the status bar in the bottom left. Clicking on it shows a list of other branches, as well as an option to checkout to a new branch.
+The first step to writing and building code is to checkout to a different branch. From IBM i Developer, the branch is shown on the status bar in the bottom left. Clicking on it shows a list of other branches, as well as an option to checkout to a new branch.
 
 ![](../../images/ide/arcad-10.png)
 
