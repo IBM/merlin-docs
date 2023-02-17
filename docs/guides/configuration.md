@@ -50,7 +50,9 @@ Select the IBM i Template that was create and use the Run button:
 
 ![](../images/home/home-6.png)
 
-Run each one of the Actions that are shown, which will install the required tools onto the chosen system if they are not present.
+Run each one of the Actions that are shown, which will install the required tools onto the chosen system if they are not present.  
+
+> Note: Make sure your IBM i user profile has *ALLOBJ, *SECADM and *SERVICE special authorities before running these actions. 
 
 ![](../images/home/home-7.png)
 
