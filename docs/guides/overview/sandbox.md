@@ -26,6 +26,6 @@ With access to the Merlin Test Drive environment, this hands-on documentation ca
 
 # How to participate?
 
-1. Contact us at [SysGarage@us.ibm.com](mailto:ysGarage@us.ibm.com).
+1. Contact us at [ce4s@ibm.com](mailto:ce4s@ibm.com).
 2. Use our [Request Form](https://ibm.biz/client-eng-systems-power)
    * Please include an associated ISC Systems Opp#, and a comment in the form that you’re requesting "IBM i Merlin" access.
