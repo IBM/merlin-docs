@@ -1,0 +1,42 @@
+{
+  "panels": {
+    "scope": "md, markdown",
+    "prefix": "panels",
+    "body": [
+      "<!-- panels:start -->",
+      "",
+      "<!-- div:left-panel -->",
+      "",
+      "<!-- div:right-panel -->",
+      "",
+      "<!-- panels:end -->",
+      "",
+      "---"
+    ]
+  },
+  "warning": {
+    "scope": "md, markdown",
+    "prefix": "warning",
+    "body": [
+      "> [!${1:NOTE|TIP|WARNING|ATTENTION}]",
+      "> ${2:message}",
+    ]
+  },
+  "tabs": {
+    "scope": "md, markdown",
+    "prefix": "tabs",
+    "body": [
+      "<!-- tabs:start -->",
+      "",
+      "#### ${1:English}",
+      "",
+      "$0",
+      "",
+      "#### ${2:French}",
+      "",
+      "Content here",
+      "",
+      "<!-- tabs:end -->",
+    ]
+  }
+}
