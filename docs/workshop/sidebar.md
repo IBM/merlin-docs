@@ -1,4 +1,4 @@
-- [Intro](workshop/)
+- [Intro](workshop/readme)
 - [Admin](workshop/01_admin)
 - [Start](workshop/02_start)
 - IDE
