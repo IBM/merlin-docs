@@ -1,7 +1,8 @@
-## Start docs locally
+# Merlin Docs
 
-* clone repo
-* install docsify `npm i docsify-cli -g`
-* run local with `docsify serve docs/`
-* by default, runs on http://localhost:3000
-* Read more about Docsify
+Hands-On Documentation for IBM i Merlin repository.
+
+## What is this for?
+
+* This hands-on documentation is not meant to replace the official [IBM Documentation for Merlin](https://www.ibm.com/docs/en/merlin/1.0?topic=overview).
+* These guides are for users getting started with Merlin step-by-step.
