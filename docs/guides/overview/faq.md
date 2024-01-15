@@ -9,7 +9,7 @@
 
 #### How is Merlin priced?
 
-> Merlin is priced per 'VPC' (Virtual Processor Core).  Because Merlin runs inside the Redhat OpenShift Container Platform (OCP), Merlin uses the built-in license monitoring tool, based on VPC.  Each developer requires 1 VPC. Effectively making the cost of Merlin 'per developer'. Merlin is not packaged with Openshift, as there are many options available for licensing. Merlin is sold via subscription with the 12 month cost aprox 1800 per VPC (developer) per year. This includes the software and support for Merlin. 
+> Merlin is priced per 'VPC' (Virtual Processor Core).  Because Merlin runs inside the Redhat OpenShift Container Platform (OCP), Merlin uses the built-in license monitoring tool, based on VPC.  Each developer requires 1 VPC. Effectively making the cost of Merlin 'per developer'. Merlin is not packaged with Openshift, as there are many options available for licensing. Merlin is sold via subscription with the 12 month cost approximately $1800US per VPC (developer) per year. Check with IBM for current pricing.  This includes the software and support for Merlin. 
 
 #### Do I need to have OpenShift?
 
@@ -19,7 +19,8 @@
 
 #### Are there prerequisites needed for the IBM i environment? 
 
-> IBM i needs to be at IBM i 7.3 or more current with the latest HTTP PTF Group applied. Additionally, Rational Development Studio (5770-WDS) is required for the compilers so that source code can be compiled into object code.  Merlin will install ARCAD software on the IBM i and will use the ADMIN5 Apache server to host ARCAD's builder server.
+> IBM i needs to be at IBM i 7.3 or more current with the latest HTTP PTF Group applied. Additionally, Rational Development Studio (5770-WDS) is required for the compilers so that source code can be compiled into object code. 
+> Merlin will install additional software on the IBM i including ARCAD software that is provided via Merlin.
 
 #### What's the Merlin IDE based on?
 
@@ -30,7 +31,7 @@
 > Merlin is targeted for RedHat OpenShift containers running on Power or x86.
 
 #### What about debugging capabilities?
-> The debugger is a key part of a development environment and is available as of Merlin v1.4.0.  The debug server is shipped with the IBM i OS and is available at no additional cost.
+> The debugger is a key part of a development environment and is available as of Merlin v1.4.0.  The debug service is shipped with the IBM i via PTF and is available at no additional cost.
 
 #### Does this product allow IBM i applications to run inside a container?
 
