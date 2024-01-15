@@ -4,5 +4,7 @@
 - IDE
    - [Overview](workshop/ide_overview)
    - [Usage](workshop/03_ide)
-- [Observer](workshop/04_observer)
-- [Build](workshop/05_build)
+   - [Observer](workshop/04_observer)
+   - [Build](workshop/05_build)
+- CI/CD
+   - [Usage](workshop/06_cicd)
