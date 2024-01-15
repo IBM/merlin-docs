@@ -1,4 +1,4 @@
-## CI/CD.
+## CI/CD
 
 
 
@@ -6,7 +6,7 @@
 
 <!-- div:left-panel -->
 
-From the Merlin dashboard, launch the CI/CD application using the popup menu on the application
+From `Home>Overview` on the Merlin dashboard, launch the `IBM i CI/CD` application using the popup menu on the application
 
 <!-- div:right-panel -->
 
