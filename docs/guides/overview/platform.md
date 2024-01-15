@@ -1,7 +1,7 @@
 Merlin Platform is the base with functions to support centralized management for Merlin. The core capabilities of the platform include the following major functions:
 
 * Tool Lifecycle Management - Deploys, upgrades and deletes Merlin Tools.
-* Authentication - Single signed on capability for Merlin users.
+* Authentication - Single sign-on capability for Merlin users.
 * Certification Management - Creates and manages certifications for TLS based connections among containers and other systems.
 * User Management - Creates, modifies and deletes Merlin users and their authorities.
 * Monitoring - Monitors resources of Merlin.

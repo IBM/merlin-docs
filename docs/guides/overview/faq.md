@@ -9,7 +9,7 @@
 
 #### How is Merlin priced?
 
-> Merlin is priced per “developer”.  Because Merlin runs inside the Redhat OpenShift Container Platform (OCP), Merlin uses the built-in license monitoring tool, based on VPC (Virtual Processor Core).  Customers wishing to acquire entitlement to Merlin will order 1 VPC unit per developer, generating 1 codeready workspace for each developer. The price is $4500.00 per VPC.
+> Merlin is priced per 'VPC' (Virtual Processor Core).  Because Merlin runs inside the Redhat OpenShift Container Platform (OCP), Merlin uses the built-in license monitoring tool, based on VPC.  Each developer requires 1 VPC. Effectively making the cost of Merlin 'per developer'. Merlin is not packaged with Openshift, as there are many options available for licensing. Merlin is sold via subscription with the 12 month cost approximately $1800US per VPC (developer) per year. Check with IBM for current pricing.  This includes the software and support for Merlin. 
 
 #### Do I need to have OpenShift?
 
@@ -19,7 +19,8 @@
 
 #### Are there prerequisites needed for the IBM i environment? 
 
-> IBM i needs to be at IBM i 7.3 or more current with the latest HTTP PTF Group applied. Additionally, Rational Development Studio (5770-WDS) is required for the compilers so that source code can be compiled into object code.
+> IBM i needs to be at IBM i 7.3 or more current with the latest HTTP PTF Group applied. Additionally, Rational Development Studio (5770-WDS) is required for the compilers so that source code can be compiled into object code. 
+> Merlin will install additional software on the IBM i including ARCAD software that is provided via Merlin.
 
 #### What's the Merlin IDE based on?
 
@@ -30,7 +31,7 @@
 > Merlin is targeted for RedHat OpenShift containers running on Power or x86.
 
 #### What about debugging capabilities?
-> The debugger is a key part of a development environment and will be added to Merlin in the near term.
+> The debugger is a key part of a development environment and is available as of Merlin v1.4.0.  The debug service is shipped with the IBM i via PTF and is available at no additional cost.
 
 #### Does this product allow IBM i applications to run inside a container?
 
@@ -46,7 +47,7 @@
 
 > Rational Developer for i (RDi) is an IDE for creating new application or updating existing native ILE applications on IBM i. Users can add plugins and additional tools to RDi to move toward a modern development ecosystem. RDi also has full support for legacy IBM i applications that are based on OPM. 
 >
-> Merlin is a fully integrated and supported set of tools from IBM that include an IDE and the additional plugins and tools to enable the IBM i developer to work in a modern manner. This includes Integration into a CI/CD pipeline and code modernization features like Fixed to Free conversion, native integration for Git-based source control and application impact analysis at the fingertips of every developer. Additionally, allowing integration to the automated build and deployment pipeline process.
+> Merlin is a fully integrated and supported set of tools from IBM that include an IDE and the additional plugins and tools to enable the IBM i developer to work in a modern manner. This includes Integration into a CI/CD pipeline and code modernization features like Fixed to Free conversion of RPG, native integration for Git-based source control and application impact analysis at the fingertips of every developer. Additionally, integration to an automated build and deployment pipeline process is provided.
 
 #### Can code being updated by Merlin still be updated by RDi or SEU?
 
@@ -54,7 +55,7 @@
 
 #### Do customers pay extra to acquire the ARCAD functions? 
 
-> No, those functions are integrated into the Merlin product. This means that within the IDE, developers  have full access to Fixed to Free format conversion, an integrated impact analysis  tool, and the ability to leverage intelligent  build support. These features are provided by ARCAD, but are all integrated and fully included as part of the Merlin solution.
+> No, those functions are integrated into the Merlin product. This means that within the IDE, developers have full access to Fixed to Free format conversion, an integrated impact analysis tool, and the ability to leverage intelligent build support. These features are provided by ARCAD, but are all integrated and fully included as part of the Merlin solution.
 
 #### Why did IBM partner with ARCAD Software?
  
