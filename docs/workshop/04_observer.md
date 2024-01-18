@@ -1,16 +1,16 @@
-## Arcad Observer in Merlin
 
 <!-- panels:start -->
 
 <!-- div:left-panel -->
 
-### Explore the Xrefs
+## Explore the Xrefs
 
-Click on the Explorer view icon, then do a right-click on a source member and select the Open in ARCAD-Observer option to open a new Xref panel: each tab of the panel shows different kinds of Xref information:
+Click on the Explorer view icon, then do a right-click on a source member and select the `Open in ARCAD-Observer` option to open a new Xref panel. Each tab of the panel shows different kinds of Xref information:
 
 <!-- div:right-panel -->
 
 ![](04/observer_a.png)
+![](04/observer_b.png)
 
 <!-- panels:end -->
 
