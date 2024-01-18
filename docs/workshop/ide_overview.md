@@ -1,4 +1,6 @@
 
+## IDE Workspace
+
 ![](ide_overview/overview.png)
 
 * Green panel: Explorer Panel, file explorer containing  git repository files (source) + other IBM i specific explorers like IBM i Project Explorer, Arcad view, Job Logs…
@@ -6,7 +8,7 @@
 * Red panel:  outline view displays all defined variables, structs and files in active editor
 * Blue panel: Problems & Output view, compilation output, warnings, etc.
 
-### ILE RPG has most support
+## ILE RPG has extensive support
 
 * Outline
 * Model created
@@ -19,9 +21,8 @@
    * And lets you go to those calls
 * Collapsible blocks of code
 
-## Features
 
-### Tokenisation
+### Tokenization
 
 ![](ide_overview/tokens.png)
 
@@ -72,7 +73,7 @@
 
 <!-- div:left-panel -->
 
-### SQL
+## SQL
 
 * Tokenization
 * Formatting
@@ -87,6 +88,7 @@
 
 ---
 
+## IBM i Workspace actions
 <!-- panels:start -->
 
 <!-- div:left-panel -->
@@ -112,7 +114,7 @@ Press F1, then type “IBM” to see the IBM i functions available:
 
 <!-- div:left-panel -->
 
-### Fast open
+## Fast open
 
 Using Control/Command + P to filter workspace files.
 

@@ -1,20 +1,20 @@
 
-## Preparation: Developer Authentication (SSH)
+<!--## Preparation: Developer Authentication (SSH)
 
 Result: Source files migrated to git
 
 ![](02/repo_a.png)
 
 ![](02/repo_b.png)
-
+-->
 ## Connection to Merlin & Platform overview 
 
 <!-- panels:start -->
 
 <!-- div:left-panel -->
 
-* URL will be provided to you.
-* `teamX` / `Passw0rd!` (X from 1 to 12)
+* URL to Merlin landing page will be provided to you.
+* Merlin userid and password will be provided to you.
 
 <!-- div:right-panel -->
 
@@ -30,9 +30,7 @@ Result: Source files migrated to git
 
 ### Landing page
 
-Accessible services granted by Merlin administrators.
-
-Here, teamX users (group "techxchange") have access to projects "cicd" and "merlin-tools". "cicd" and "merlin-tools" have provisioned services: IBM i CI/CD and and IBM i Developer, respectively.
+Here, users have access to projects "cicd" and "ide" which have provisioned services: IBM i CI/CD and IBM i Developer (as configured by Merlin admin).
 
 Isolation can be done by projects, with different authorizations & roles on resources.
 
@@ -75,7 +73,7 @@ Merlin can provision IBM i VM for a project (dev environment etc). PowerVC / Pow
 
 <!-- div:left-panel -->
 
-**Starting Point**: Merlin admin already created an Inventory entry with your IBM i and authorized you to use it. System name with arcad-example application: MONZA, IP Address is *will be provided to you*.
+**Starting Point**: Under **Connections**, Merlin admin already created an Inventory entry with your IBM i hostname and authorized you to use it. 
 
 <!-- div:right-panel -->
 
@@ -89,11 +87,7 @@ Merlin can provision IBM i VM for a project (dev environment etc). PowerVC / Pow
 
 <!-- div:left-panel -->
 
-Go to Credentials > Add new credential > fill in with your IBM i (MONZA) user profile
-
-* Name: `teamX-profile-monza`
-*	Username:  `teamX` (X from 1 to 12)
-* Password:  `abc123`
+Merlin admin already created a Credential entry with your IBM i userid and password.
 
 <!-- div:right-panel -->
 
@@ -107,13 +101,7 @@ Go to Credentials > Add new credential > fill in with your IBM i (MONZA) user pr
 
 <!-- div:left-panel -->
 
-### Creation of your template 
-
-Go to Templates > add new template
-
-* Name: `teamX-template-monza`
-* Inventory: ibmi
-* Credential: your credential created before
+Merlin admin already created a template which associates the defined inventory and credential together.  This Merlin template will be used by IBM i Developer so you can interact with your IBM i and services (compiler, debugger, arcad tools, etc.).
 
 <!-- div:right-panel -->
 
@@ -121,15 +109,13 @@ Go to Templates > add new template
 
 <!-- panels:end -->
 
-> [!TIP]
-> This Merlin template will be used by IBM i Developer so you can interact with your IBM i and services (compiler, debugger, arcad tools, etc.)
-
 ---
 
 <!-- panels:start -->
 
 <!-- div:left-panel -->
 
+<!--
 ### Launch IDE
 
 Go to Tools > Deployed Tools
@@ -137,9 +123,11 @@ Go to Tools > Deployed Tools
 * Project: merlin-tools
 
 Right click on IBM i Developer, Launch the Application (you may have to Open the workspace if it doesn’t automatically)
+-->
 
 <!-- div:right-panel -->
 
+<!--
 ![](02/launch.png)
-
+-->
 <!-- panels:end -->
