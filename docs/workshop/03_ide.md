@@ -1,12 +1,11 @@
-## IBM i Developer
 
-### Launch IDE
+## Launch IBM i Developer IDE
 
 <!-- panels:start -->
 
 <!-- div:left-panel -->
 
-From `Home>Overview` on the Merlin dashboard, launch the `IBM i Developer` application using the popup menu on the application
+From `Home>Overview` on the Merlin dashboard, launch the `IBM i Developer` application
 
 <!-- div:right-panel -->
 
@@ -30,7 +29,7 @@ From `Create Workspace`, create a workspace by selecting `IBM i Developer`
 
 ---
 
-### Clone git repository into workspace
+## Clone git repository into workspace
 
 <!-- panels:start -->
 
@@ -110,7 +109,7 @@ The workspace is now populated with the `arcad-example` project from the git rep
 
 ---
 
-### Connect project to IBM i
+## Connect project to IBM i
 
 <!-- panels:start -->
 
@@ -443,7 +442,7 @@ You can also push to the git repository by clicking the git status button at the
 
 <!-- div:left-panel -->
 
-### Change source code
+## Change source code
 
 - Save modification can be done automatically or manually (`File>Save` or key combination, e.g Ctrl+S (depends on preferences)).
 - After the save, a badge appears on the Git icon and a `M` to the right of the source member to indicate the file has been modified.
