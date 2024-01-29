@@ -13,10 +13,14 @@ Result: Source files migrated to git
 
 <!-- div:left-panel -->
 
-* URL to Merlin landing page will be provided to you.
-* Merlin userid and password will be provided to you.
+Verify the following information has been provided to you:
+* VPN User information
+* URL to Merlin landing page
+* Merlin userid and password
 
 <!-- div:right-panel -->
+
+First download the VPN client, configure it, and establish a VPN connection.  Then proceed to the Merlin landing page URL.
 
 ![](02/connect.png)
 
