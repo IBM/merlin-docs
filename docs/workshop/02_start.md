@@ -16,6 +16,7 @@ Result: Source files migrated to git
 Verify the following information has been provided to you:
 * VPN User information
 * URL to Merlin landing page
+* URL to Git repository
 * Merlin userid and password
 
 <!-- div:right-panel -->
