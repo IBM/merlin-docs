@@ -51,7 +51,7 @@ From `IBM i Developer Workspaces`, select `Git Clone...`
 
 <!-- div:left-panel -->
 
-Specify the git repository URL `ssh://git@p337n57.pbm.ihost.com:29418/merlin/arcad-example.git`
+Specify the git repository URL provided.
 
 <!-- div:right-panel -->
 
@@ -221,13 +221,15 @@ In `IBM I Project Explorer`, right-click on `arcad-example` and select `Configur
 
 ---
 
-
+### Initialize project for ARCAD
 
 <!-- panels:start -->
 
 <!-- div:left-panel -->
 
-Enter an application code that does NOT already exist, e.g. `SAMCO`.  Press `Enter`
+Enter an application code that does NOT already exist, e.g. `SAMCO`.  Press `Enter`.
+
+**Note:** The project is initialized only once.  If already initialized, no further prompts appear and  `arcad-example` will now have an `ARCAD` node in `IBM I Project Explorer`.
 
 <!-- div:right-panel -->
 
