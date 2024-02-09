@@ -34,8 +34,6 @@
 <!-- div:left-panel -->
 
 * When completed, the component is automatically recompiled and the editor is refreshed with free-form D/C/P specs.
-<!-- * The editor contents are updated with free form D/C/P specs
-* Right-click in the editor and select the `IBM i Developer: Convert to Fully-free RPG with ARCAD` option.--> 
 
 <!-- div:right-panel -->
 
