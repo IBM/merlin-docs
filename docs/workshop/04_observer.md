@@ -3,9 +3,10 @@
 
 <!-- div:left-panel -->
 
-## Explore the Xrefs
+## Explore the Cross reference information (Xrefs)
 
-Click on the Explorer view icon, then do a right-click on a source member and select the `Open in ARCAD-Observer` option to open a new Xref panel. Each tab of the panel shows different kinds of Xref information:
+* Click on the Explorer view icon
+* Right-click on `arcad-example/QDDSSRC/ARTICLE.PF` and select the `Open in ARCAD-Observer` option to open a new Xref panel. Each tab of the panel shows different kinds of Xref information:
 
 <!-- div:right-panel -->
 
@@ -13,7 +14,19 @@ Click on the Explorer view icon, then do a right-click on a source member and se
 ![](04/observer_b.png)
 
 <!-- panels:end -->
+---
+<!-- panels:start -->
 
+<!-- div:left-panel -->
+
+
+* Right-click on `arcad-example/QRPGLESRC/ORD700.PGM.RPGLE` and select the `Open in ARCAD-Observer`
+
+<!-- div:right-panel -->
+
+![](04/observer_c.png)
+
+<!-- panels:end -->
 ---
 
 <!-- panels:start -->
@@ -23,7 +36,7 @@ Click on the Explorer view icon, then do a right-click on a source member and se
 **Code Lens**: in-line links directly available while editing (RPGLE) source
 
 * F-Spec level code lens shows same file-level Xref as “Open in Arcad Observer”
-* “Procedure peek” allows you to see/browse source of implementing procedure
+* P-Spec “Peek references” allows you to see/browse source of implementing procedure
 
 <!-- div:right-panel -->
 
