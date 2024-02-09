@@ -7,6 +7,6 @@
    - [Impact Analysis](workshop/04_observer)
    - [Build](workshop/05_build)
    - [Convert to Modern RPG](workshop/07_transformer)   
-   - [Debug](workshop/07_debug)   
+   - [Debug](workshop/08_debug)   
 - CI/CD
    - [Usage](workshop/06_cicd)

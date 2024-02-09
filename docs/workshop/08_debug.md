@@ -6,7 +6,7 @@
 ## Debug
 
 * Edit `arcad-example/QRPGLESRC/ORD901.PGM.SQLRPGLE` file. 
-* Add pre-compile attribute `* %attr DBGVIEW(*SOURCE)` after metadata block at top of the source to make the program debuggable 
+* Add pre-compile attribute `* %attr DBGVIEW(*SOURCE)` comment after metadata block at top of the source to make the program debuggable (for free-form use `//` comment)
 
 <!-- div:right-panel -->
 
