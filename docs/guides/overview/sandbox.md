@@ -1,6 +1,6 @@
 # Merlin Test Drive
 
-It is now possible to try Merlin (and all components) for a limited timeframe,  leveraging the new Merlin Test Drive environment.
+It is now possible to try Merlin (and all components) for a limited timeframe.  Please reach out to your Seller to be nominated for participation.
 
 The Merlin Test Drive environment provides access to:
 
@@ -26,6 +26,7 @@ With access to the Merlin Test Drive environment, this hands-on documentation ca
 
 # How to participate?
 
-1. Contact us at [ce4s@ibm.com](mailto:ce4s@ibm.com).
-2. Use our [Request Form](https://ibm.biz/client-eng-systems-power)
-   * Please include an associated ISC Systems Opp#, and a comment in the form that you’re requesting "IBM i Merlin" access.
+* BP or IBM Sellers can engage with the submission of a Deal Support Request against a pre-sales opportunity.
+* Clients should reach out to your Seller to be nominated for participation.  Your Seller will submit a Deal Support Request for `Power IBM i Merlin TestDrive` via the Client Engineering engagement process.
+ 
+For general inqueries, contact us at ce4s@ibm.com.
