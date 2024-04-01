@@ -44,7 +44,7 @@ Expand ARCAD view on the left: Compilation result for an Arcad Project creates a
 
 <!-- div:left-panel -->
 
-View logs (bottom view) with compilator warnings
+View `Problems` view with compilation messages
 
 <!-- div:right-panel -->
 
