@@ -4,6 +4,8 @@ Welcome to the hands-on documentation for IBM i Merlin. This hands-on documentat
 
 IBM i Modernization Engine for Lifecycle Integration (Merlin) is a set of tools run in OpenShift containers which guide and assist software developers in the modernization of IBM i applications, allowing them to realize the value of a hybrid cloud, multi-platform DevOps implementation.  
 
+**News**: Version 2.0 has been [announced](https://www.ibm.com/docs/en/announcements/i-modernization-engine-lifecycle-integration-merlin-20) and will be available June 14, 2024!  
+
 #### Getting started videos
 
 * **for users**: [YouTube video playlist](https://www.youtube.com/playlist?list=PLPELYviDwCnY6L5r5ZnmCneqhakLcB7ko). Starts with set of videos for configuring the web browser, just watch the video corresponding to your system then continue with the rest.
