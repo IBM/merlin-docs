@@ -13,7 +13,7 @@ With access to the Merlin Test Drive environment, this hands-on documentation ca
 #### Value proposition
 
 * Gain hands-on experience with the technology
-* A self-guided tour and sample code are provided
+* A [self-guided tour](./workshop/readme.md) and sample code are provided
 * Leverage, test, and / or demonstrate IBM i Merlin.
 * The user is provided an OpenShift Merlin Workspace and a dedicated IBM i partition
 * IBM Client Engineering for Systems team provides the infrastructure, IBM i Development provides the Merlin expertise, and you test-drive Merlin
@@ -30,3 +30,4 @@ With access to the Merlin Test Drive environment, this hands-on documentation ca
 * Clients should reach out to your Seller to be nominated for participation.  Your Seller will submit a Deal Support Request for `Power IBM i Merlin TestDrive` via the Client Engineering engagement process.
  
 For general inqueries, contact us at ce4s@ibm.com.
+

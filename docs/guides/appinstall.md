@@ -68,4 +68,4 @@ Clicking Finish takes you back to the 'Deployed Tools' page where you can see th
 
 ![](../images/appinst/appinst-8.png)
 
-When it is finished installing, you can right-click and select 'Launch Application'. This takes you into CodeReady Workspaces.
+When it is finished installing, you can right-click and select 'Launch Application'. This takes you into developer workspaces.

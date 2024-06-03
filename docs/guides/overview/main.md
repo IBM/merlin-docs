@@ -1,6 +1,6 @@
 Merlin consists of Merlin Platform and Merlin Tools, which all run on OpenShift Container Platform as container applications.
 
-Merlin Platform provides centralized place to manage different components, including Merlin Tools' lifecycle, IBM i virtual machine provisioning, REST APIs management, Merlin users and authorities management, credential management and so on.
+Merlin Platform provides centralized place to manage different components, including Merlin Tools' lifecycle, IBM i virtual machine provisioning, Merlin users and authorities management, credential management and so on.
 
 Merlin Tools provide IDE and CI/CD applications to enable modernized DevOps experience for IBM i customers. They also interacts with Merlin Platform as integrated solution.
 

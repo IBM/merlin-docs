@@ -9,6 +9,5 @@ Merlin Platform is the base with functions to support centralized management for
 * Credential Management - Securely stores and manages the credentials of systems that Merlin interacts and connects.
 * IBM i VM Management - Provisions, manages, and deletes IBM i virtual machines through PowerVC or IBM Cloud.
 * IBM i Software Installer - Installs necessary software packages onto IBM i systems to enable Merlin.
-* Rest API management - Creates and manages RESTful APIs against IBM i programs and data stored in Db2 for i.
 
 ![](../../images/overview/platform.png)
