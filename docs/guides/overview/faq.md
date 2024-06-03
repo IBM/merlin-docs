@@ -15,11 +15,11 @@
 
 > Yes, Merlin, the IBM Certified Container, runs in an OpenShift environment.
 >
-> The OpenShift environment can be located on a Power server or anywhere OpenShift runs today.  OpenShift could also reside in a Cloud instance, for example in IBM Cloud (IBM Power Virtual Servers) or in any cloud that supports OpenShift environments. For those clients with workload running in the Cloud already, it is a natural extension to add Merlin into an OpenShift environment  also in the cloud.
+> The OpenShift environment can be located on a Power server or anywhere OpenShift runs today.  OpenShift could also reside in a Cloud instance, for example in IBM Cloud (IBM Power Virtual Servers) or in any cloud that supports OpenShift environments. For those clients with workload running in the Cloud already, it is a natural extension to add Merlin into an OpenShift environment also in the cloud.
 
 #### Are there prerequisites needed for the IBM i environment? 
 
-> IBM i needs to be at IBM i 7.3 or more current with the latest HTTP PTF Group applied. Additionally, Rational Development Studio (5770-WDS) is required for the compilers so that source code can be compiled into object code. 
+> IBM i needs to be at IBM i 7.4 or more current with the latest HTTP PTF Group applied. Additionally, Rational Development Studio (5770-WDS) is required for the compilers so that source code can be compiled into object code. 
 > Merlin will install additional software on the IBM i including ARCAD software that is provided via Merlin.
 
 #### What's the Merlin IDE based on?

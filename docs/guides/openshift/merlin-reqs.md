@@ -4,12 +4,7 @@ IBM i Modernization Engine for Lifecycle Integration can be [installed from eith
 
 ## Supported product versions
 
-* OpenShift Container Platform 
-   * 4.12
-* IBM i 
-   * 7.3
-   * 7.4
-   * 7.5
+See [Supported product versions](./guides/platform/Install_IBM_i_Modernization_Engine_for_Lifecycle_Integration.md).
 
 ## Required OpenShift resources
 
