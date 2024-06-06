@@ -25,14 +25,6 @@ IBM i: 7.4, 7.5
 Note: Japanese CCSIDs 5026 and 290 are not supported
 
 
-## The resource needed for the setup
-| ComponentName              | CPU Request        | CPULimit | Memory Request | Memory Limit | Note|
-|----------------------------|--------------------|----------|-----------------|--------------|-----|
-|Merlin 	                 |2.5                 |5	     |7Gi             |15Gi         |     |
-|IBM i Developer Tool        |0.5                 |2.7       |1.5             |3Gi	       | The resource is per each instance |
-|IBM i CI/CD                 |	500m              | 1        | 1Gi            | 2Gi              | The resource is per each instance|
-
-
 
 ## Deploying IBM i Modernization Engine For Lifecycle Integration
 
