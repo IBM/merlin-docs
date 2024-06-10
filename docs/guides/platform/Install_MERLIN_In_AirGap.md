@@ -226,23 +226,23 @@ Complete these steps on the bastion host.
 
 Create the following environment variables with the installer CASE name and the image inventory.
 ```
-export CASE_ARCHIVE=ibm-merlin-1.0.0.tgz
+export CASE_ARCHIVE=ibm-merlin-2.0.0.tgz
 export CASE_INVENTORY_SETUP=merlinOperatorSetup
 ```
 #### Download the IBM i Modernization Engine for Lifecycle Integration installer and image inventory to the bastion host.
 ```
 cloudctl case save \
-  --case https://github.com/IBM/cloud-pak/raw/master/repo/case/ibm-merlin-1.0.0.tgz \
+  --case https://github.com/IBM/cloud-pak/raw/master/repo/case/ibm-merlin-2.0.0.tgz \
   --outputdir $HOME/offline/
 ```
 ```
 cloudctl case save \
-  --case https://github.com/IBM/cloud-pak/raw/master/repo/case/ibm-merlin-cicd-1.0.0.tgz \
+  --case https://github.com/IBM/cloud-pak/raw/master/repo/case/ibm-merlin-cicd-2.0.0.tgz \
   --outputdir $HOME/offline/
 ```
 ```
 cloudctl case save \
-  --case https://github.com/IBM/cloud-pak/raw/master/repo/case/ibm-merlin-development-environment-1.0.0.tgz \
+  --case https://github.com/IBM/cloud-pak/raw/master/repo/case/ibm-merlin-development-environment-2.0.0.tgz \
   --outputdir $HOME/offline/
 ```
 #### Log in to the OpenShift Container Platform cluster as a cluster administrator
@@ -338,7 +338,7 @@ After the imageContentsourcePolicy and global image pull secret are applied, wai
 ```
 ```
     cloudctl case launch \
-      --case $HOME/offline/ibm-merlin-cicd-1.0.0.tgz \
+      --case $HOME/offline/ibm-merlin-cicd-2.0.0.tgz \
       --inventory merlinCicdOperatorSetup \
       --action mirror-images \
       --namespace ${NAMESPACE} \
@@ -347,8 +347,17 @@ After the imageContentsourcePolicy and global image pull secret are applied, wai
 ```
 ```
     cloudctl case launch \
-      --case $HOME/offline/ibm-merlin-development-environment-1.0.0.tgz \
+      --case $HOME/offline/ibm-merlin-development-environment-2.0.0.tgz \
       --inventory merlinDevelopmentEnvironmentOperatorSetup \
+      --action mirror-images \
+      --namespace ${NAMESPACE} \
+      --args "--registry ${LOCAL_DOCKER_REGISTRY} --inputDir $HOME/offline" \
+      --tolerance 1
+```
+```
+    cloudctl case launch \
+      --case $HOME/offline/ibm-merlin-devworkspace-2.0.0.tgz \
+      --inventory merlinDevworkspaceOperatorSetup \
       --action mirror-images \
       --namespace ${NAMESPACE} \
       --args "--registry ${LOCAL_DOCKER_REGISTRY} --inputDir $HOME/offline" \
@@ -370,7 +379,7 @@ After the imageContentsourcePolicy and global image pull secret are applied, wai
 ```
 ```
     cloudctl case launch \
-      --case $HOME/offline/ibm-merlin-cicd-1.0.0.tgz \
+      --case $HOME/offline/ibm-merlin-cicd-2.0.0.tgz \
       --inventory merlinCicdOperatorSetup \
       --action install-catalog \
       --namespace ${NAMESPACE} \
@@ -379,8 +388,17 @@ After the imageContentsourcePolicy and global image pull secret are applied, wai
 ```
 ```
     cloudctl case launch \
-      --case $HOME/offline/ibm-merlin-development-environment-1.0.0.tgz \
+      --case $HOME/offline/ibm-merlin-development-environment-2.0.0.tgz \
       --inventory merlinDevelopmentEnvironmentOperatorSetup \
+      --action install-catalog \
+      --namespace ${NAMESPACE} \
+      --args "--registry ${LOCAL_DOCKER_REGISTRY} --inputDir $HOME/offline --recursive" \
+      --tolerance 1
+```
+```
+    cloudctl case launch \
+      --case $HOME/offline/ibm-merlin-devworkspace-2.0.0.tgz \
+      --inventory merlinDevworkspaceOperatorSetup \
       --action install-catalog \
       --namespace ${NAMESPACE} \
       --args "--registry ${LOCAL_DOCKER_REGISTRY} --inputDir $HOME/offline --recursive" \
