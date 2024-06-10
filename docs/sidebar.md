@@ -57,7 +57,7 @@
          - [Install Merlin in airgap environment](./guides/platform/Install_MERLIN_In_AirGap.md)
       - [Update Merlin CA and certificates](./guides/platform/Update_CA_and_Certificate.md)
       - [Manage browser certificates](./guides/platform/Manage_browser_certs.md)
-      - [Upgrade Merlin platform and tools](./guides/platform/Upgrade_IBM_i_Modernization_Engine_for_Lifecycle_Integration.md)
+      - [Upgrade to v2](./guides/platform/Upgrade_IBM_i_Modernization_Engine_for_Lifecycle_Integration.md)
       - [Manage the lifecycle of Merlin tools](./guides/platform/Manage_the_lifecycle_of_MERLIN_Tools.md)
       - [How to manually upgrade IBM i Developer IDE and IBM i CI/CD Tools](./guides/platform/upgrade_tools.md) 
       - [Backup and restore](./guides/platform/Backup_and_Restore_for_MERLIN.md) 
