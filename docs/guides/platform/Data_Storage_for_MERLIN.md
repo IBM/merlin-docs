@@ -2,7 +2,7 @@
 
 IBM i Modernization Engine For Lifecycle Integration requires storage, which must be provisioned before IBM i Modernization Engine For Lifecycle Integration is installed.
 
-Red Hat® OpenShift® Container Platform uses the Kubernetes persistent volume (PV) framework. PVs are storage resources in the cluster, and persistent volume claims (PVCs) are storage requests that are made on those PVs by AI Manager. For more information about persistent storage in OpenShift clusters, see Understanding persistent storage Opens in a new tab in the Red Hat OpenShift documentation.
+Red Hat® OpenShift® Container Platform uses the Kubernetes persistent volume (PV) framework. PVs are storage resources in the cluster, and persistent volume claims (PVCs) are storage requests that are made on those PVs by Merlin. For more information about persistent storage in OpenShift clusters, see Understanding persistent storage Opens in a new tab in the Red Hat OpenShift documentation.
 
 ## Recommended storage providers
 
