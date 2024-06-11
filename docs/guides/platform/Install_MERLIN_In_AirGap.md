@@ -274,6 +274,14 @@ cloudctl case launch \
     --namespace ${NAMESPACE} \
     --args "--registry cp.icr.io --user cp --pass <the-entitlement-key>" \
     --tolerance 1
+
+cloudctl case launch \
+    --case $HOME/offline/${CASE_ARCHIVE} \
+    --inventory ${CASE_INVENTORY_SETUP} \
+    --action configure-creds-airgap \
+    --namespace ${NAMESPACE} \
+    --args "--registry registry.redhat.io --user <redhat-user> --pass <redhat-token>" \
+    --tolerance 1
 ```
 The command stores and caches the registry credentials in a file on the file system in the $HOME/.airgap/secrets location.
 
