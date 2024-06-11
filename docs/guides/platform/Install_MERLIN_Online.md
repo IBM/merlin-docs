@@ -161,12 +161,17 @@ Install Merlin operator with either of the following installation methods:
 - Enter the following values:
 ```
         * Set the Namespace to be the project (namespace) in which to install the Operator, such as **merlin**.
-        * Set Update Channel to v1.0.
+        * Set Update Channel to v2.0.
         * Set Approval Strategy to Automatic.
 ```
 - Click Install and wait for the Merlin operator to install.
 - Verify that the Merlin operator is successfully installed.
 - Navigate to Operators > Installed Operators, and select the project from the Projects dropdown. IBM i Modernization Engine for Lifecycle Integration and its dependant operator in the project are listed with a status of Succeeded.
+- Navigate to Workloads > Pods, and select project `ibm-common-services` from the Projects dropdown. make sure the pods listed below are listed with a status of `Running`.
+  - ibm-common-service-webhook
+  - ibm-namespace-scope-operator
+  - operand-deployment-lifecycle-manager
+  - secretshare
 
 ### Option 2: Install the operator with the OpenShift CLI
 
@@ -182,9 +187,6 @@ Create an Operator group in the custom project (namespace), or the Merlin operat
     metadata:
       name: merlin-operator-group
       namespace: <namespace>
-    spec:
-      targetNamespaces:
-        - <namespace>
     EOF
 ```
 Where <namespace> is the project (namespace created earlier in Create a custom project (namespace).
@@ -198,7 +200,7 @@ metadata:
   name: ibmi-merlin-operator
   namespace: <namespace>
 spec:
-  channel: v1.0
+  channel: v2.0
   installPlanApproval: Automatic
   name: ibmi-merlin-operator
   source: ibm-operator-catalog
