@@ -19,7 +19,7 @@ Here is an example that shows several operators. It can be seen that in this cas
 If you have the Merlin operator installed in single namespace mode as in case 2, you will need to first patch the operator group before changing the subscription channel.
 
 ## Patching the operator group to use All Namespaces Mode (Only if you were in case 2)
-1. Login to your openshift cluster using the openshift cli. `oc login -u kubeadmin -p <kubeadmin-password> <openshift-server-url>`
+1. Login to your openshift cluster using the openshift cli. `oc login -u <username> -p <password> <openshift-server-url>`
 2. Change to use the project that your Merlin instance is installed in. `oc project <Merlin-project>`
 3. Get the operator group name. `oc get operatorgroup`
 4. Patch the operator group using the name you found in the previous step. `oc patch operatorgroup <operatorgroup-name> --type='json' -p='[{"op": "remove", "path": "/spec/targetNamespaces"}]'`
@@ -31,6 +31,7 @@ If you have the Merlin operator installed in single namespace mode as in case 2,
 Wait until ibm-cloudpak operator shows an error about intersecting operator groups. This is how you will know the operator group patch completed successfully. Then delete the ibm-cloudpak operator instance and operator in current project.
 3. Change the subscription channel to v2, and wait for the install to complete.
 ![Patch operator subscription](../../images/upgrade/patchOperatorSubscription.png)
+4. If you installed the Merlin operator using the manual upgrade strategy, [follow these steps to manually upgrade the operator](./guides/platform/upgrade_merlin_operator).
 
 ## Upgrading the installed applications
 There are two possible cases you can be in when you are upgrading the applications.
