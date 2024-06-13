@@ -1,120 +1,80 @@
 # IBM i Projects
 
-IBM i projects are designed to self-describe how they will build themselves as much as possible. These projects leverage the use of a project level JSON file (`iproj.json`) to store project metadata information such as a description, Git repository, version, license, and several IBM i related attributes (target object library, library list, initial CL commands, and include directories). Optional directory level JSON files (`.ibmi.json`) can be used to override the target library and CCSID for that directory. For more information on the project metadata definition of IBM i projects, see [Project Metadata](https://ibm.github.io/ibmi-bob/#/prepare-the-project/project-metadata).
+IBM i projects are designed to self-describe how they will build themselves as much as possible. These projects leverage the use of a project level JSON file (`iproj.json`) to store project metadata information such as a description, Git repository, version, license, and several IBM i related attributes (target object library, library list, initial CL commands, and include directories). Optional directory level JSON files (`.ibmi.json`) can be used to override the target library and CCSID for that directory. For more information on the project metadata definition of IBM i projects, see the [Overview](https://ibm.github.io/vscode-ibmi-projectexplorer/#/pages/ibm-i-projects/overview) page about IBM i projects.
 
-The **IBM i Project Explorer** view is what you will use to define IBM i connections for your projects. In doing this, you will be able to work with your desired libraries, objects, members, and IFS files.
+The **IBM i Project Explorer** view is what you will use to manage a project's library list, variables, object libraries, include paths, and much more. The **Job Log** view will also be used to easily visualize the contents of your job logs after having run a build or compile.
 
 ## Getting Started
 
-To get started with working on an existing IBM i project that lives in Git, use *Git Clone* to load the source from a Git repository. For more information, see [Git Integration](gitintegration.md). 
+### New Project
 
-If you are working on a new IBM i project, follow these steps:
+To get started on a new IBM i project, create a folder and open it in the workspace. For a workspace folder to be treated as an IBM i project, it must contain an `iproj.json` file. This can be done from the **Project Explorer** view using the **Create iproj.json** action. This will prompt you to enter a description for the project and then create the file. Upon creating this file, you can now get started with development. To get started with working on source code locally in your project from source physical files in QSYS, check out the documentation on how to [migrate source](https://ibm.github.io/vscode-ibmi-projectexplorer/#/pages/projectExplorer/migrate-source).
 
-1. Navigate to the command palette and run the command **Create IBM i Project**.
-2. Select the workspace in which you want to create the project in.
-3. Modify the selected workspace path to include the name of your project.
-4. (Optional) Enter a description for your project.
-5. Select from the list of connections that were defined in the Merlin **Connections**.
-6. Modify or confirm the suggested build directory you would like to proceed with for the project.
+![Create iproj.json](../../images/guides/projectExplorerNew.png ':size=500')
+
+In the scenario you ever find that your project's iproj.json file is corrupt, hover on the project in the Project Explorer view to see if there are any errors present. If there are errors, use the Open iproj.json action and refer to the Problems view to see how you can resolve them.
+
+![Resolve iproj.json errors](../../images/guides/projectExplorerErrors.png ':size=500')
+
+### Existing Project in Git
+
+To get started with working on an existing IBM i project that lives in Git, use the **Git Clone** command in the command palette to load the source from a Git repository. For more information, see [Git Integration](./guides/ide/gitintegration.md). 
+
+![Git Clone](../../images/guides/ideGitClone.png ':size=800')
 
 ## IBM i Connections
 
-To specify an IBM i connection on your project, follow these steps:
+To connect to a remote IBM i, expand any project and select the **Open Connection Browser** inline action. You can also manually navigate to the **Connections** view which is in the **Explorer** view container by default. From here you can connect to a connection which you have defined as a template in Merlin. For more information on how to define a template in Merlin, see the [Manage Templates](./guides/platform/ManageTemplates.md) page.
 
-1. Open the **IBM i Project Explorer** view.
-   * Note: By default, the **IBM i Project Explorer** view should be visible under the **Explorer** view container. If not visible, navigate to **View** > **Open View...** and select the **IBM i Project Explorer** option.
-2. Expand your project.
-3. Right click on the IBM i and select the **Specify IBM i Connection** action.
-4. Select from the list of connections that were defined in the Merlin **Connections**.
-   * Note: The **Add Templates from Connections in Merlin** option can be selected if you wish to be navigated to define a new Template.
-5. Modify or confirm the suggested build directory you would like to proceed with for the project.
+![Open Connection Browser](../../images/guides/projectExplorerConnect.png ':size=500')
 
-Once an IBM i connection is defined on a project, it will be visible in the **IBM i** description. The following connection related actions are available upon right clicking the **IBM i** connection:
+Once you have connected, you can see the active connection in the status bar. You can also hover over the template name in order to access common features such as **Settings**, **Actions**, and **Terminal**. To disconnect, click the **Disconnect from system** button located next to the template name in the status bar.
 
-* **Edit Connection**: Change to another IBM i connection defined in the Merlin **Connections**.
-* **Restart Connection**: Restart the current IBM i connection.
-* **Logout Connection**: Logout from the current IBM i connection.
-
-![IBM i Connection Actions](../../images/guides/IBMiConnectionActions.png)
+![Disconnect](../../images/guides/projectExplorerDisconnect.png ':size=850')
 
 ## Source
 
-The **Source** is what will be used to work with source files that exist locally in your workspaces and remotely on IFS/Git. With source filters and queries, you will be able to work with the desired source files while also being able to compare the changes between your local and remote source.
+The **Source** heading is what will be used to work with the source files that exist locally in your workspaces. From here you will be able to visualize, compare, and deploy your local source files to your deploy location in the IFS which is where you will be running your builds and compiles out of.
 
-### Build Directory
+### Set Deploy Location
 
-The **Source** description will render the current build directory for the project which will be used when performing developer builds. This build directory will be initially set upon specifying an IBM i connection where the user will be suggested to proceed with using the default build directory (`{userHomeDirectory}/{projectName}`). If the user's home directory cannot be retrieved, a temporary build directory will be suggested instead.
+To set the project's deploy location, use the **Set Deploy Location** action on the **Source** heading. You can modify this location later on as well using the **Edit Deploy Location** action. The suggested deploy location is `/home/<user>/builds/<project_name>`.
 
-To modify the build directory, the following actions are available upon right clicking **Source**:
+![Set Deploy Location](../../images/guides/projectSetDeployLocation.png ':size=850')
 
-* **Edit Build Directory**: Change to another build directory.
-* **Reset Build Directory**: Reset to the default build directory.
+If you need to browse to the exact deploy location which you would like to set, this can be done from the **IFS Browser** by creating an IFS shortcut and using the right-click **Set Deploy Workspace Location** action from any directory.
 
-![Build Directory Actions](../../images/guides/BuildDirectoryActions.png)
+![Set Deploy Workspace Location](../../images/guides/projectSetDeployWorkspaceLocation.png ':size=550')
 
-### Developer Build
+### Set the Deployment Method
 
-By right clicking the **Source**, you can access the following related actions to perform developer builds on a project:
+Once the deploy location is set, you can use the **Set Deployment Method** action to set the deployment method to be used when deploying the project.
 
-* **Upload to Build Directory on IBM i**: Upload the source to the build directory.
-* **Build Project**: Build the source into the target library.
+![Set Deployment Method](../../images/guides/projectExplorerSetDeploymentMethod.png ':size=900')
 
-For more information on the behaviour of these actions, see [Developer build](developerbuild.md).
+There are five options for deployment:
 
-![Developer Build Actions](../../images/guides/DeveloperBuildActions.png)
+1. `Compare`: This method will perform a MD5 hash comparison and upload those file which are different. Any files that are in the deploy location that are not in the local workspace will be deleted.  Consequently, this is the only method that guarantees the deploy location and project will have identical contents after deployment.
+2. `Changes`: This method will upload all files which have been changed since the last upload.  Note that if the workspace is closed and reopened, this method will lose track of files changed in the previous session.
+3. `Working Changes`: This method only works if the project is associated with a Git repository as it will upload files that have been been changed since the last commit and are not yet staged.
+4. `Staged Changes`: The same as the `Working Changes` method, but only uploads staged and indexed files.
+5. `All`: This method will upload all files in the local project.
 
-### Source Filters
+Note that in all methods files that are listed in the `.gitignore` file will not be deployed.
 
-Source filters can be used to filter the source files that are visible under the **Source**. By right clicking on the **Source** and selecting the **Filter Source Files** action, you can choose from a selection of filters:
+In addition to affecting the deployment process, the deployment method for the project will also impact the content rendered under the **Source** heading. The source files and directories visualized here are a direct reflection of what will be deployed based on the chosen deployment method.
 
-* **All**: All local and remote source files.
-   * Note: Upon defining an IBM i connection on a project, the **Source** will default to the **All** filter.
-* **Changed**: Source files that are out of synch with the remote build directory.
-* **Remote IFS**: Remote source files on IFS.
-* **Local Project**: Local project source files.
-* **Branch Changes**: Changes in local source files compared to the latest tagged commit on Git.
-   * Note: This filter uses local tag information and so will not be visible if no tag can be found. Perform a `git pull` to retrieve any tags that exist in the remote repository before trying to use the Branch Changes filter.
+![Source Files and Directories](../../images/guides/projectExplorerSourceFilesAndDirectories.png ':size=600')
 
-For certain source filters, you will be able to observe that the source files have icons that distinguish the state in which they are in. For more information on these different states, refer to [Source Files and Directories](#source-files-and-directories).
+For files that have been deployed, you have the ability to compare the local copy versus the remote using the **Compare with Remote** action. 
 
-![Source Filter Actions](../../images/guides/SourceFilterActions.png)
+![Compare with Remote](../../images/guides/projectExplorerCompareWithRemote.png ':size=600')
 
-### Source Queries
+### Deploy the Project
 
-To further simplify the set of source files visible under the **Source**, queries can be added on top of any filter by right clicking the **Source** and selecting the **Add Source Query** action. Upon doing this, you can create a new source query or select from any previously added ones. The currently selected source query will be displayed in the Source description. By right clicking the **Source**, the following related actions are also available:
+To start the deployment process, you can use the **Deploy Project** action on the **Source** heading. This will upload the project's local files to the deploy location using the current deployment method. To view the output of this deployment process, navigate to the **Output** view and select the **IBM i Deployment** channel.  Note that when invoking the [build or compile](./guides/ide/developerbuild.md), the source is automatically deployed before running the compile commands so no explicit deploy action is required.
 
-* **Clear Source Query**: Clear the current source query.
-* **Delete Source Query**: Delete from a set of previously added source queries.
-
-![Source Query Actions](../../images/guides/SourceQueryActions.png)
-
-### Source Files and Directories
-
-For source files and directories under the Source, various icons are used to distinguish the state in which local files or directories are in compared to the remote build directory. When files and directories are in-synch, no icon is used. When out of synch, the following icons are used:
-
-* Local-only: Right arrow
-* Remote-only: Left arrow
-* Changed: Bidirectional arrow
-
-By right clicking on any source directory, you can access the following related actions:
-
-* **New File**: Create a new local file with a specified name.
-  * Note: When used on a source directory under the **Remote IFS** filter, create a remote file.
-* **New Directory**: Create a new local directory with a specified name.
-  * Note: When used on a source directory under the **Remote IFS** filter, create a remote directory.
-* **Paste**: Paste remote content to local directory.
-  * Note: To use this action, the **Copy** action must first be used on any remote IFS directory/file or QSYS object/member.
-* **Assign To Variable**: Assign the remote path of the source directory to an existing variable.
-* **Set As Build Directory**: Set the build directory to the remote path of the source directory.
-* **Append To Include Path**: Append the remote path of the source directory to the project's include path.
-* **Set Object Library**: Set the object library for the `.ibmi.json` of the source directory.
-* **Set Target CCSID**: Set the target CCSID for the `.ibmi.json` of the source directory.
-* **Compile**: Compile the local path of the source directory.
-  * Note: This action can also be performed on source files.
-
-Note: A subset of the actions can be found upon right clicking the **Source** itself to perform such actions at the project level.
-
-![Source Directory Actions](../../images/guides/SourceDirectoryActions.png)
+![Deploy Project](../../images/guides/projectExplorerDeployProject.png ':size=650')
 
 ## IBM i
 
@@ -122,93 +82,81 @@ The **IBM i** heading is where you will be leveraging the IBM i connection defin
 
 ### Variables
 
-The project metadata for IBM i projects support the use of variables in the following fields: `objlib`, `curlib`, `preUsrlibl`, `postUsrlibl`, `setIBMiEnvCmd`, `buildCommand`, `compileCommand`, and `includePath`. Variables are always prefaced with an `&`. By levering the use of variables, the same project definition can be used to target a different build library from one developer to another. 
+The project metadata for IBM i projects support the use of variables in the following fields: `objlib`, `curlib`, `preUsrlibl`, `postUsrlibl`, `setIBMiEnvCmd`, `buildCommand`, `compileCommand`, and `includePath`. These variables are always prefaced with an `&`. By levering the use of variables, the same project definition can be used to target a different build library from one developer to another. The **Variables** heading is where you will be able to visualize these variables.
 
-The **Variables** heading is where you will be able to visualize the set of variables defined in the `iproj.json`. Upon right clicking a variable, the **Edit Variable** action can be used to define a value for that variable.
+#### Create Environment File
 
-![Variable Actions](../../images/guides/VariableActions.png)
+To get started with viewing and defining project variables, there must exists a root level `.env` file which will be used for storing the value of these variables. This can be done by using the **Create .env** action. To avoid accidentally pushing your `.env` file to your Git repository, make sure that you add it as an entry into your `.gitignore` file.
+
+![Create .env](../../images/guides/projectExplorerCreateEnv.png ':size=650')
+
+#### Edit Variable
+
+Listed under the **Variables** heading are all variables used in the root level `iproj.json` or in any `.ibmi.json` within the project. When there are variables which do not have a value assigned, the heading itself will have a red decoration to indicate the number of unresolved variables. To assign a value to a variable, use the **Edit Variable** action. This will be stored in the project's `.env` file.
+
+![Edit Variable](../../images/guides/projectExplorerEditVariable.png ':size=900')
+
+Instead of manually inputting the value of a variable, you also have the ability to assign a library names or directory to a variable using the **Assign to Variable** action. This can be done from a library in the **Project Explorer** view or the **Object Browser** as well as directories in the **IFS Browser**. For libraries or include paths which are hardcoded in the project's `iproj.json` file, they can be converted to variables using the **Configure as Variable** action. This will substitute the hardcoded value for a variable which you will provide and set the value of this variable to be the hardcoded value. For more information on variables, see the [Work with Variables](https://ibm.github.io/vscode-ibmi-projectexplorer/#/pages/projectExplorer/work-with-variables) page.
 
 ### Library List
 
-The **Library List** heading is where you will be able to view your system libraries, user libraries and current library. The library list is initially set according to your user profile but can be modified based on the fields set in the project's `iproj.json`. Refer to the following guide to distinguish the types of libraries in the library list based on color:
+The **Library List** heading is where you will be able to view your project's library list. The library list is initially set according to your user profile, but can be modified based on the fields set in the project's `iproj.json` file.
 
-* System libraries: Blue
-* Current library: Green
-* Pre and post user libraries from project's `iproj.json`: Yellow
-* User libraries from user profile: White
+Refer to the following guide to distinguish the types of libraries in the library list based on color:
 
-To modify the library list, the following actions can be used upon right clicking the **Library List**:
+- System libraries: Blue
+- Current library: Green
+- User libraries: Yellow
 
-* **Add Library List Entry**: Add a specified library to the pre or post user portion of the library list.
-* **Set Current Library**: Set the current library to a specified library.
-* **Remove USERLIBL entries specified by USRPRF**: Remove all user libraries that are specified from the user profile.
-  * Note: Once this action is invoked, it will be replaced by an action called **Add USERLIBL entries specified by USRPRF** to undo the change.
+#### Set the Current Library
 
-![Library List Actions](../../images/guides/LibraryListActions.png)
+To set the project's current library, use the **Set Current Library** action. If the `curlib` field in the project's `iproj.json` file is either a hardcoded library or not specified, this action will set it to be the `&CURLIB` variable with the value set in the `.env` file as the library's name. However, if the `curlib` field is already set to a variable, the variable will be kept and the value will be simply updated.
 
-Additional actions can be found upon right clicking any library. However, certain actions are only visible on specific types of libraries. Refer to the following set of all possible actions:
+![Set Current Library](../../images/guides/projectExplorerSetCurrentLibrary.png ':size=550')
 
-* **Refresh**: Refresh the library.
-* **Assign To Variable**: Assign the library to an existing variable.
-* **Rename Library**: Rename the library to a specified name.
-* **Clear Library**: Delete all objects in the library that you have the authority to delete.
-* **Delete Library**: Delete the library from the system after all objects in the library have been deleted.
-* **Set as Object Library**: Set the library to be the project's object library.
-* **Set as Current Library**: Set the library to be the project's current library.
-* **Move Up In Library List**: Move the library up one position in the library list.
-* **Move Down In Library List**: Move the library down one position in the library list.
-* **Add to Beginning of Library List**: Add the library to the beginning of the user portion of the library list.
-* **Add to End of Library List**: Add the library to the end of the user portion of the library list.
-* **Remove From Library List**: Remove the library from the library list.
+In the case you would first like to browse for the library to set as the current library, you can leverage the **Object Browser** view. Here you can query for the library and use the **Set as Current Library** action.
 
-![Library Actions](../../images/guides/LibraryActions.png)
+#### Add to the Library List
 
-Note: To create a new library, right click on the **IBM i** and select **Create Library**. To also delete or name any objects under a library, right click on the object and select **Delete Object** or **Rename Object** respectively.
+Similar to setting the current library, you can add to the set of user libraries by using the **Add Library List Entry** action. After inputting the library name, you will also be prompted to select where to position the library. Adding to the beginning of the library list will add to the `preUsrlibl` field in the `iproj.json` whereas adding to the end of the library list will add to the `postUsrlibl` field.
+
+![Add Library List Entry](../../images/guides/projectExplorerAddLibraryListEntry.png ':size=850')
+
+You also have the freedom to query for libraries in the **Object Browser** view and then use the **Add to Library List** action for when you would like to first browse for libraries before adding them.
+
+Libraries defined in the `preUsrlibl` or `postUsrlibl` field in the project's `iproj.json` file can be reordered directly in the **Project Explorer** view. Note that you will only be able to reorder the libraries within each group itself. This can be done using **Move Up** or **Move Down** actions accordingly. In addition, libraries defined in the project's `iproj.json` are the only libraries which can be removed from the library list. This can be done using the **Remove from Library List** action. Note that removing any library which corresponds to a variable will only remove the value from the `.env` file and not the variable itself from the `iproj.json` file. For more information on the library list, see the [Manage the Library List](https://ibm.github.io/vscode-ibmi-projectexplorer/#/pages/projectExplorer/manage-the-library-list) page.
 
 ### Object Libraries
 
-The **Object Libraries** heading is where you will be able to view library variables defined in the `curlib`, `objlib`, `preUsrlibl`, and `postUsrlibl` of the project's `iproj.json`
+The **Object Libraries** heading is the location to browse for libraries defined in the `curlib`, `objlib`, `preUsrlibl`, and `postUsrlibl` of the project's `iproj.json`.
+Typically these are the libaries of interest while doing application development as it includes any libraries that the target objects are built into. For more information on object libraries, see the [Browse Object Libraries](https://ibm.github.io/vscode-ibmi-projectexplorer/#/pages/projectExplorer/browse-object-libraries) page.
 
-Note: When the `objlib` is defined (or `curlib` if the `objlib` is not defined) strictly with a library name instead of a variable, it will also be listed here.
+![Object Libraries](../../images/guides/projectExplorerObjectLibraries.png ':size=900')
 
-![Object Libraries](../../images/guides/ObjectLibraries.png)
+### Include Paths
 
-### My Queries
+The `includePath` field in the project's `iproj.json` file specifies directories to be searched for includes or copy files. These set of directories can be managed using the **Include Paths** heading. Include paths which can be resolved locally are not expandable, but can be clicked on to be taken to the directory in the **File Explorer**. However, include paths which are resolved to remote locations in the IFS can be expanded.
 
-The **My Queries** heading is where you will be able to create QSYS and IFS queries. After selecting the **Add Query** action, enter a query of the following format:
+#### Add Include Paths
 
-* Library query: `{libraryName}`
-* Object query: `{libraryName}/{objectName} {objectType}:{objectAttribute}`
-   * Note: If the query is entered as `{libraryName}/{objectName}`, you will be prompted to proceed or modify the default object type and object attribute.
-* Member query: `{libraryName}/{objectName}({memberName}.{memberType})`
-* IFS query: `{ifsPath}`
+Adding to the set of include paths is as simple as using the **Add to Include Paths** action to be prompted for the path to add. Note that any absolute path will be resolved based on the local path to the workspace or the project's deploy location.
 
-Note: Queries support the use of variables. Generic names can also be used in the above parameters excluding the `{libraryName}` for object queries and member queries.
+![Add to Include Paths](../../images/guides/projectExplorerAddToIncludePaths.png ':size=850')
 
-By right clicking on any created query, you can access the following related actions:
+To add an include path to a directory in the local project, leverage the **Add to Include Paths** action on any directory in VS Code **File Explorer**.
 
-* **Refresh Query**: Refresh the specified query.
-* **Delete Query**: Delete the specified query.
+![Add to Include Paths from the File Explorer](../../images/guides/projectExplorerIncludePathsLocal.png ':size=400')
 
-![Query Actions](../../images/guides/QueryActions.png)
+Similarly, to add an include path to a directory in the IFS, leverage the same action in the **IFS Browser**.
 
-When working with IFS directories under an IFS query, the following actions can be found upon right clicking the IFS directory:
+![Add to Include Paths from the IFS Browser](../../images/guides/projectExplorerIncludePathsIFS.png ':size=450')
 
-* **New File**: Create a new remote file with a specified name.
-* **New Directory**: Create a new remote directory with a specified name.
-* **Assign To Variable**: Assign the remote path of the IFS directory to an existing variable.
-* **Set As Build Directory**: Set the build directory to the remote path of the IFS directory.
-* **Append To Include Path**: Append the remote path of the IFS directory to the project's include path.
+To reorder include paths, you can use the **Move Up** and **Move Down** actions in the **Project Explorer**. To remove an include path, you can use the **Remove from Include Paths** action. Note that removing any include path which corresponds to a variable will only remove the value from the `.env` file and not the variable itself from the `iproj.json` file. For more information on include paths, see the [Update Include Paths](https://ibm.github.io/vscode-ibmi-projectexplorer/#/pages/projectExplorer/update-include-paths) page.
 
-![IFS Actions](../../images/guides/IFSActions.png)
+## PASE and 5250 Terminals
 
-### SSH Terminals
+You can launch a `PASE` or `5250` terminal right from your workspace. To do this, use the **IBM i: Launch Terminal Picker** command or hover over the template name in the status bar and click on **Terminals**.
 
-To a launch a terminal for a project, the following actions can be used upon right clicking on the **IBM i**:
-
-* **Open Terminal in Container**: This will open a terminal and navigate to the project in the workspace.
-* **Open SSH Terminal**. This will open a terminal, SSH to the IBM i machine, and navigate to the build directory.
-
-![Terminal Actions](../../images/guides/TerminalActions.png)
+![Terminal Actions](../../images/guides/projectExplorer5250.png ':size=850')
 
 For information on using ARCAD tools, see [How to use ARCAD integration with IBM i Modernization Engine for Lifecycle Integration](https://supportcontent.ibm.com/support/pages/how-use-arcad-integration-ibm-i-modernization-engine-lifecycle-integration-merlin) 
