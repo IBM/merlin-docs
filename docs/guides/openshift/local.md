@@ -19,7 +19,7 @@ Red Hat OpenShift Local at present is only supported on AMD64 and Intel 64 proce
 And the following operating system requirements:
 
 - Microsoft Windows 10 Fall Creators Update (version 1709) or later
-- macOS 11 Big Sur or later
+- MacOS 11 Big Sur or later
 - The latest two Red Hat Enterprise Linux/CentOS 7, 8 and 9 minor releases and on the latest two stable Fedora releases.
 
 **Note:**
@@ -247,7 +247,7 @@ From OpenShift web console, locate the Merlin namespace, open the postgres pod t
 * In the psql session, run the following command to create an empty merlindb database:
     * `DROP DATABASE IF EXISTS merlindb WITH (FORCE);`
     * `CREATE DATABASE merlindb;`
-* Run `\q` to quit the psql sesison.
+* Run `\q` to quit the psql session.
 * In the Terminal, run `psql -f /tmp/merlindb_dumpfile -d merlindb` to restore the merlindb database.
    
 Now, you can use admin user and password to access Merlin GUI and use the vault secret and token to unseal vault which you had already written down. 
