@@ -10,25 +10,8 @@ This guide exists for users who potentially have hardware available for OpenShif
 
 ## System requirements
 
-Red Hat OpenShift Local at present is only supported on AMD64 and Intel 64 processor architectures. It has the following minimum hardware requirements:
+Please see the official Red Hat documentation regarding system requirements: [Openshift Local System Requirements](https://access.redhat.com/documentation/en-us/red_hat_openshift_local/2.5/html/release_notes_and_known_issues/minimum-system-requirements_rn-ki)
 
-- 4 physical CPU cores
-- 9 GB of free memory
-- 35 GB of storage space
-
-And the following operating system requirements:
-
-- Microsoft Windows 10 Fall Creators Update (version 1709) or later
-- MacOS 11 Big Sur or later
-- The latest two Red Hat Enterprise Linux/CentOS 7, 8 and 9 minor releases and on the latest two stable Fedora releases.
-
-**Note:**
-
-The OpenShift Local requires these (above) minimum hardware resources to run the smallest OpenShift Container Platform. Some workloads may require more resources. We recommend the following resources for running OpenShift Local:
-
-- 8 physical CPU cores
-- 64 GB of free memory
-- 256 GB of storage space
 
 ## Install Red Hat OpenShift Local
 
