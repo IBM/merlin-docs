@@ -4,7 +4,7 @@
 
 Steps for the Merlin administrator:
 * The adminstrator creates a project and installs the **IBM i Developer** tool into the project.  
-* The administrator runs the [actions](../platform/ManageIBMiServer.md#running-actions-on-the-ibm-i-server) on the IBM i from **Templates** 
+* The administrator runs the [actions](./guides/platform/ManageIBMiServer.md#running-actions-on-the-ibm-i-server) on the IBM i from **Templates** 
 * Merlin user is created by the adminstrator and the user is given access to the Merlin project with the **IBM i Developer** tool
 
 Steps for the user:
