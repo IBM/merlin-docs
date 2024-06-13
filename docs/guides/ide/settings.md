@@ -33,7 +33,7 @@ Settings can be used to manage extension settings, keyboard shortcuts, themes (c
 
 ### IBM i Debug
 
-* See [Settings](./guides/ide/debug.md) section of debug documentation
+* See [Settings](./guides/ide/debug.md) section of the debug documentation
 
 ### IBM i Project Explorer
 

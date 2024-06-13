@@ -20,11 +20,11 @@ Apart from those common language features mentioned in [Edit](edit.md), CL sourc
 
   After right clicking on a specific variable, users can select either **Go to References** or **Peek > Peek References** to show all references embedded inline. You can navigate between different references in the peeked editor and make quick edits right there.
 
-  ![CL Go to References](../../images/guides/ideclreferences.png ':size=750')  
+  ![CL Go to References](../../images/guides/ideclreferences.png ':size=800')  
   
   Users can also select **Find All References** to reveal the references in the **References** view.  
 
-  ![CL Find all References](../../images/guides/ideclfindallreferences.png)
+  ![CL Find all References](../../images/guides/ideclfindallreferences.png ':size=800') 
 
 - Definition - Show source of particular code element.
   
