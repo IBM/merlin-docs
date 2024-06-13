@@ -36,10 +36,4 @@ Apart from those common language features mentioned in [Edit](edit.md), CL sourc
 
   ![CL Content Assist](../../images/guides/idclcontentassist.png ':size=750')  
 
-- Source Error Reporting - Errors are shown beside the text in the editor and in the **Problems** view.
-  
-  In the editor, if the cursor hovers over the problem, it will show the details of the error. In the **Problems** view, clicking a specific problem will position the editor to the location of the error. Use **View > Problems** to open the **Problems** view.  
-
-  ![CL Source Error Reporting](../../images/guides/ideclproblems.png ':size=750')  
-
 For information on using ARCAD tools, see [How to use ARCAD integration with IBM i Modernization Engine for Lifecycle Integration](https://supportcontent.ibm.com/support/pages/how-use-arcad-integration-ibm-i-modernization-engine-lifecycle-integration-merlin)
