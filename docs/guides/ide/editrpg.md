@@ -44,7 +44,7 @@ Apart from the common language features mentioned in [Edit](edit.md), ILE RPG so
 
   ![RPG Formatting](../../images/guides/iderpgformatting.png ':size=650')
 
-  Formatting options can be found at [Preferences](settings.md). 
+  Formatting options can be found on the [Preferences](./guides/ide/settings.md) page.
 
   ![RPG Formatting Options](../../images/guides/iderpgformattingoptions.png ':size=750')
 

@@ -8,7 +8,7 @@ Apart from the common language features mentioned in [Edit](edit.md), SQL source
   
   ![SQL Formatting](../../images/guides/idesqlformatting.png ':size=700')   
   
-  Formatting options can be found at [Preferences](settings.md).   
+  Formatting options can be found on the [Preferences](./guides/ide/settings.md) page.  
   
   ![SQL Formatting Options](../../images/guides/idesqlformattingoptions.png ':size=700')  
 
