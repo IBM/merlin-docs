@@ -1,6 +1,6 @@
 # Merlin Test Drive
 
-It is now possible to try Merlin (and all components) for a limited timeframe.  Please reach out to your Seller to be nominated for participation.
+It is now possible to try Merlin (and all components) for a limited timeframe.  Please reach out to your seller to be nominated for participation.
 
 The Merlin Test Drive environment provides access to:
 
@@ -16,7 +16,7 @@ With access to the Merlin Test Drive environment, this hands-on documentation ca
 * A [self-guided tour](./workshop/readme.md) and sample code are provided
 * Leverage, test, and / or demonstrate IBM i Merlin.
 * The user is provided an OpenShift Merlin Workspace and a dedicated IBM i partition
-* IBM Client Engineering for Systems team provides the infrastructure, IBM i Development provides the Merlin expertise, and you test-drive Merlin
+* IBM Client Engineering for Systems team provides the infrastructure. IBM i Development provides the Merlin expertise. And you test-drive Merlin
 
 #### Limitations
 
@@ -29,5 +29,5 @@ With access to the Merlin Test Drive environment, this hands-on documentation ca
 * BP or IBM Sellers can engage with the submission of a Deal Support Request against a pre-sales opportunity.
 * Clients should reach out to your Seller to be nominated for participation.  Your Seller will submit a Deal Support Request for `Power IBM i Merlin TestDrive` via the Client Engineering engagement process.
  
-For general inqueries, contact us at ce4s@ibm.com.
+For general inquiries, contact us at ce4s@ibm.com.
 
