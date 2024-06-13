@@ -1,6 +1,6 @@
 # Editing
   
-The (Integrated Development Environment)IDE is based on Eclipse Che/Theia and it has a similar user experiences as Visual Studio (VS) Code.
+The (Integrated Development Environment) IDE is Visual Studio Code running in Devspaces and it comes equiped with several IBM i related extensions that provide editing support.
 
 Here are the features for general source code editing.
 
