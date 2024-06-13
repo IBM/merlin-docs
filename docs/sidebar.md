@@ -42,6 +42,7 @@
          - [CL](./guides/ide/editcl.md)                        
       - [Developer build](./guides/ide/developerbuild.md)
       - [Debugging](./guides/ide/debug.md)
+      - [Extensions](./guides/ide/extensions.md)
       - [Settings](./guides/ide/settings.md)
    - [CI/CD Tool](./guides/cicd/cicd.md)
       - [Deploy and initialize IBM i CICD](./guides/cicd/Deploy_and_initialize_IBM_i_CICD.md)
