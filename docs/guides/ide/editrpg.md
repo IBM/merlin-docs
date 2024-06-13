@@ -17,11 +17,13 @@ Apart from the common language features mentioned in [Edit](edit.md), ILE RPG so
   ![RPG outline view Filter](../../images/guides/iderpgoutlineview-3.png ':size=850')  
 
 - Hover - Show information for item under cursor.
+
   Put the mouse over the variable and the hover will appear and show the definition of the variable.  
 
   ![RPG hover](../../images/guides/iderpghover.png ':size=800')  
 
 - References - Show where a particular code element is referenced throughout the codebase.
+
   After right clicking on a specific variable, users can select either **Go to References** or **Peek > Peek References** to show all references embedded inline. You can navigate between different references in the peeked editor and make quick edits right there.
 
   ![RPG Go to References](../../images/guides/iderpggotoreferences.png ':size=800')
@@ -31,40 +33,46 @@ Apart from the common language features mentioned in [Edit](edit.md), ILE RPG so
   ![RPG Find all References](../../images/guides/iderpgfindallreferences.png ':size=800')
 
 - Definitions - Show source of particular code element.
+
   After right clicking on a specific variable, users can select **Go to Definition** to go to the definition of the variable or **Peek > Peek Definition** to show the definition embedded inline.  
 
-  ![RPG Definition](../../images/guides/iderpgdefinition.png ':size=800')
+  ![RPG Definition](../../images/guides/iderpgdefinition.png ':size=650')
 
-- Formatting - Users can select **Format Document** to format the whole document or **Format Selection** to format the selected region after right clicking in the source file.  
+- Formatting - Format the whole document or a selected region.
 
-  ![RPG Formatting](../../images/guides/iderpgformatting.png ':size=800')
+  Users can select **Format Document** to format the whole document or **Format Selection** to format the selected region after right clicking in the source file.  
 
-  Formatting options can be found at [Preferences](settings.md ':size=800'). 
+  ![RPG Formatting](../../images/guides/iderpgformatting.png ':size=650')
 
-  ![RPG Formatting Options](../../images/guides/iderpgformattingoptions.png ':size=800')
+  Formatting options can be found at [Preferences](settings.md). 
 
-- Content Assist - Code and variable completion. Content assist can be triggered in active editor by typing **Ctrl+Space**.  
+  ![RPG Formatting Options](../../images/guides/iderpgformattingoptions.png ':size=750')
 
-  ![RPG Content Assist](../../images/guides/iderpgcontentassist.png ':size=800')
+- Content Assist - Code and variable completion.
+
+  Content assist can be triggered in active editor by typing **Ctrl+Space**.  
+
+  ![RPG Content Assist](../../images/guides/iderpgcontentassist.png ':size=700')
 
 - Rename - Intelligently rename all references to variables.
 
   Select **Rename Symbol** and then type the new desired name and press Enter. All usages of the symbol will be renamed, across files.  
   
-  ![RPG Rename](../../images/guides/iderpgrename.png ':size=800')
+  ![RPG Rename](../../images/guides/iderpgrename.png ':size=650')
 
 - Extract Constant - Extract a literal value into a constant.
+  
   Click on a literal value, and then click the light bulb icon that appears to the left. Two options will be available: 
   **Extract constant to enclosing scope** and **Extract constant to global scope**. Clicking one of these options will create
   a new constant in the selected scope, with the extracted literal value. The literal value will be replaced
   in your code with the new constant.
 
-  ![RPG Extract Constant](../../images/guides/iderpgextractconstant.png ':size=800')
+  ![RPG Extract Constant](../../images/guides/iderpgextractconstant.png ':size=750')
 
-- Source Error Reporting - Errors are shown beside the text in the editor and **Problems** view.
-  Use **View > Problems** to open problems view.  
-  The errors display in both editor and problems view. In the editor, if the cursor hovers over the problem, it will show the details of the error. In the problems view, clicking a specific problem will position the editor to the location of the error.  
+- Source Error Reporting - Errors are shown beside the text in the editor and in the **Problems** view.
   
-  ![RPG Problems](../../images/guides/iderpgproblems.png ':size=800')
+  In the editor, if the cursor hovers over the problem, it will show the details of the error. In the **Problems** view, clicking a specific problem will position the editor to the location of the error. Use **View > Problems** to open the **Problems** view.   
+  
+  ![RPG Problems](../../images/guides/iderpgproblems.png ':size=750')
 
 For information on using ARCAD tools, see [How to use ARCAD integration with IBM i Modernization Engine for Lifecycle Integration](https://supportcontent.ibm.com/support/pages/how-use-arcad-integration-ibm-i-modernization-engine-lifecycle-integration-merlin)

@@ -2,7 +2,9 @@
 
 Apart from the common language features mentioned in [Edit](edit.md), SQL source editing also has the following capabilities:
 
-* Formatting - Users can select **Format Document** to format the whole document or **Format Selection** to format the selected region after right clicking in the source file. Formatting supports both **Embedded SQL formatting** and **Pure SQL formatting**.
+* Formatting - Format the whole document or a selected region.
+
+  Users can select **Format Document** to format the whole document or **Format Selection** to format the selected region after right clicking in the source file. Formatting supports both **Embedded SQL formatting** and **Pure SQL formatting**.
   
   ![SQL Formatting](../../images/guides/idesqlformatting.png ':size=700')   
   
@@ -16,7 +18,8 @@ Apart from the common language features mentioned in [Edit](edit.md), SQL source
 
   ![SQL Content Assist for Keywords](../../images/guides/idesqlcontentassist-1.png ':size=700')
 
-  * Content assist for database element  
+  * Content assist for database element
+    
   Note: Before using content assist for database element, please refer to the [documentation](https://ibm.github.io/ibmi-bob/#/prepare-the-project/iproj-json?id=sql) on how to set the SQL properties in `iproj.json` of the project.  
 
   ![SQL Content Assist for Database Element](../../images/guides/idesqlcontentassist-2.png ':size=700')

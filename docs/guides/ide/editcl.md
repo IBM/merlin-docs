@@ -17,6 +17,7 @@ Apart from those common language features mentioned in [Edit](edit.md), CL sourc
   ![CL Outline view Filter](../../images/guides/idecloutlineview-3.png ':size=800')  
 
 - References - Show where a particular code element is referenced throughout the codebase.
+
   After right clicking on a specific variable, users can select either **Go to References** or **Peek > Peek References** to show all references embedded inline. You can navigate between different references in the peeked editor and make quick edits right there.
 
   ![CL Go to References](../../images/guides/ideclreferences.png ':size=750')  
@@ -26,6 +27,7 @@ Apart from those common language features mentioned in [Edit](edit.md), CL sourc
   ![CL Find all References](../../images/guides/ideclfindallreferences.png)
 
 - Definition - Show source of particular code element.
+  
   After right clicking on a specific variable, users can select **Go to Definition** to go to the definition of the variable or **Peek > Peek Definition** to show the definition embedded inline.  
 
   ![CL Definition](../../images/guides/idecldefinition.png ':size=750')  
@@ -34,9 +36,9 @@ Apart from those common language features mentioned in [Edit](edit.md), CL sourc
 
   ![CL Content Assist](../../images/guides/idclcontentassist.png ':size=750')  
 
-- Source Error Reporting - Errors are shown beside the text in the editor and **Problems** view.
-  Use **View > Problems** to open problems view.  
-  The errors display in both editor and problems view. In the editor, if the cursor hovers over the problem, it will show the details of the error. In the problems view, clicking a specific problem will position the editor to the location of the error.  
+- Source Error Reporting - Errors are shown beside the text in the editor and in the **Problems** view.
+  
+  In the editor, if the cursor hovers over the problem, it will show the details of the error. In the **Problems** view, clicking a specific problem will position the editor to the location of the error. Use **View > Problems** to open the **Problems** view.  
 
   ![CL Source Error Reporting](../../images/guides/ideclproblems.png ':size=750')  
 
