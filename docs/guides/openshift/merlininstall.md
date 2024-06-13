@@ -102,7 +102,7 @@ The admin user can be used to log in to the Merlin instance for first time setup
 
 ## Initializing the Vault
 
-After Merlin has been installed, an admin will need to initialise the vault. The vault is used to securely store credentials and important information securely. When you initialise the vault, **be sure to store** the secrets and token that are provided by the UI. **These are required** during Merlin upgrades and any time the vault needs to be unsealed.
+After Merlin has been installed, an admin will need to initialize the vault. The vault is used to securely store credentials and important information securely. When you initialize the vault, **be sure to store** the secrets and token that are provided by the UI. **These are required** during Merlin upgrades and any time the vault needs to be unsealed.
 
 ![](../../images/osc/osc-20.png)
 
