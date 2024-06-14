@@ -16,51 +16,40 @@ Prepare a bastion host that can access the OpenShift Container Platform cluster,
 
 Complete these steps on the bastion node:
 
-* Install Docker or Podman
-  To install Docker, run these commands:
-
+* Install Docker or Podman  
+To install Docker, run these commands:
 ```bash
 yum check-update
 yum install docker
 ```
-
 Start the Docker service
-
 ```bash
 systemctl enable docker
 systemctl start docker
 ```
 
 * Install httpd-tools
-
 ```bash
 yum install httpd-tools
 ```
 
-* Install the IBM Cloud Pak® CLI. Install the latest version of the binary file for the platform. For more information, see cloud-pak-cli Opens in a new tab.
+* Install the IBM Cloud Pak® CLI.  
+Install the latest version of the binary file for the platform. For more information, see [cloud-pak-cli](https://github.com/IBM/cloud-pak-cli).  
 Download the binary file.
-
 ```bash
 wget https://github.com/IBM/cloud-pak-cli/releases/download/v<version-number>/<binary-file-name>
 ```
-
-For example, `wget https://github.com/IBM/cloud-pak-cli/releases/latest/download/cloudctl-linux-amd64.tar.gz`.
-
+For example, `wget https://github.com/IBM/cloud-pak-cli/releases/latest/download/cloudctl-linux-amd64.tar.gz`.  
 Extract the binary file.
-
 ```bash
 tar -xf <binary-file-name>
 ```
-
 Run the following commands to modify and move the file.
-
 ```bash
 chmod 755 <file-name>
 mv <file-name> /usr/local/bin/cloudctl
 ```
-
-Confirm that cloudctl is installed:
-
+Confirm that cloudctl is installed.
 ```bash
 cloudctl --help
 ```
@@ -70,7 +59,6 @@ cloudctl --help
 * Create a directory that serves as the offline store.
 
 Following is an example directory. This example is used in the subsequent steps.
-
 ```bash
 mkdir $HOME/offline
 ```
@@ -81,7 +69,7 @@ mkdir $HOME/offline
 
 A local Docker registry must be created to mirror all images in the local environment. The registry must meet the following requirements:
 
-* Support Docker Manifest V2, Schema 2 Opens in a new tab.
+* Support Docker Manifest V2, Schema 2.
 * Support multi-architecture images. Note: Do not use OpenShift image registry as the local registry. The OpenShift registry does not support multi-architecture images.
 * Is accessible from both the bastion server and the OpenShift Container Platform cluster nodes.
 * Has the username and password of a user who can write to the target registry from the bastion host.
@@ -233,8 +221,8 @@ After creates the registry, configure the Docker registry:
 
 * Create registry namespaces.
 * Create a separate registry namespace for each public registry source.
-  * cpopen - Namespace to store all Operator images from the icr.io/cpopen namespace.
-  * cp/ibmi-merlin - Namespace to store the IBM images from the cp.icr.io/cp/ibmi-merlin repository. The cp/ibmi-merlin namespace is for the images in the IBM Entitled Registry that require a product entitlement key and credentials to pull.
+  * `cpopen` - Namespace to store all Operator images from the `icr.io/cpopen` namespace.
+  * `cp/ibmi-merlin` - Namespace to store the IBM images from the `cp.icr.io/cp/ibmi-merlin` repository. The `cp/ibmi-merlin` namespace is for the images in the IBM Entitled Registry that require a product entitlement key and credentials to pull.
 * Verify that each namespace meets the following requirements:
   * Supports auto-repository creation.
   * Has credentials of a user who can write and create repositories. The bastion host uses these credentials.

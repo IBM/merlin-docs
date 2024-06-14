@@ -62,9 +62,9 @@ Run oc create namespace <namespace> where <namespace> is the name of the project
 
 Complete the following steps to create a docker-registry secret to enable the deployment to pull the IBM i Modernization Engine For Lifecycle Integration images from the IBM® Entitled Registry.
 
-### Create the entitlement key secret with either of the following methods:
+### Create the entitlement key secret with either of the following methods
 
-Obtain the entitlement key that is assigned to the IBMid. Log in to MyIBM Container Software Library Opens in a new tab with the IBMid and password details that are associated with the entitled software. Then configure the global image pull secret on the Openshift environment.
+Obtain the entitlement key that is assigned to the IBMid. Log in to [MyIBM Container Software Library](https://myibm.ibm.com/products-services/) with the IBMid and password details that are associated with the entitled software. Then configure the global image pull secret on the Openshift environment.
 
 - Extract the current global image pull secret from the cluster into a file in the current directory named .dockerconfigjson:
 ```
