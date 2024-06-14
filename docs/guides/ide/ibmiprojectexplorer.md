@@ -6,7 +6,7 @@ The **IBM i Project Explorer** view is what you will use to define IBM i connect
 
 ## Getting Started
 
-To get started with working on an existing IBM i project that lives in Git, use *Git Clone* to load the source from a Git repository. For more information, see [Git Integration](gitintegration.md). 
+To get started with working on an existing IBM i project that lives in Git, use *Git Clone* to load the source from a Git repository. For more information, see [Git Integration](./guides/ide/gitintegration.md). 
 
 If you are working on a new IBM i project, follow these steps:
 
@@ -59,7 +59,7 @@ By right clicking the **Source**, you can access the following related actions t
 * **Upload to Build Directory on IBM i**: Upload the source to the build directory.
 * **Build Project**: Build the source into the target library.
 
-For more information on the behaviour of these actions, see [Developer build](developerbuild.md).
+For more information on the behaviour of these actions, see [Developer build](./guides/ide/developerbuild.md).
 
 ![Developer Build Actions](../../images/guides/DeveloperBuildActions.png)
 

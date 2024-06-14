@@ -284,7 +284,9 @@ export NAMESPACE=merlin
 oc create namespace ${NAMESPACE}
 ```
 
-#### Configure global pull secret with the entitlement key, see [Create the entitlement key secret](Install_MERLIN_Online.md)
+#### Configure global pull secret with the entitlement key
+
+Follow the instructions to [Create the entitlement key secret](./guides/platform/Install_MERLIN_Online?id=create-the-entitlement-key-secret). 
 
 ### Complete these steps to mirror the images and configure the cluster
 
@@ -460,7 +462,7 @@ IBM i Modernization Engine for Lifecycle Integration can be installed by using t
 
 Complete these steps to install by using the cloudctl CLI.
 
-Create an environment variable for the storage class for the IBM i Modernization Engine for Lifecycle Integration installation. For more information, see [Data Storage for Merlin](Data_Storage_for_MERLIN.md).
+Create an environment variable for the storage class for the IBM i Modernization Engine for Lifecycle Integration installation. For more information, see [Data Storage for Merlin](./guides/platform/Data_Storage_for_MERLIN.md).
 
 
 ```

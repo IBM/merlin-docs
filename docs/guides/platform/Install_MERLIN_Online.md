@@ -34,7 +34,7 @@ Install the OpenShift command line interface (oc) on the cluster's boot node and
 
 ## Configure storage
 
-The storage configuration must satisfy the sizing requirements. For more information on the storage classes that are needed for installing IBM i Modernization Engine For Lifecycle Integration, see [Configure a default storage class](Data_Storage_for_MERLIN.md).
+The storage configuration must satisfy the sizing requirements. For more information on the storage classes that are needed for installing IBM i Modernization Engine For Lifecycle Integration, see [Configure a default storage class](./guides/platform/Data_Storage_for_MERLIN.md).
 
 ## Create a custom project (namespace)
 
