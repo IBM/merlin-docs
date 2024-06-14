@@ -83,16 +83,17 @@ Service Entry Points are saved in the debug service job on the host. When a new 
 
 ## Settings
 
-The following settings can be changed from the **Debugger** tab of the **IBM i: Connection Settings** page. The page can be accessed from the Command Palette.
+The following settings are available from the **Debugger** tab of the **IBM i: Connection Settings** page. The page can be accessed from the Command Palette.
 
-- **Debug port** (default: 8005): Specify the secure port the debug service is running on.
+- **Debug port**: The secure debug port.
 
-- **SEP debug port** (default: 8008): Specify the secure port the Service Entry Point daemon is running on.
+- **SEP debug port**: The Service Entry Point daemon port.
 
 - **Update production files**: Enable updating of production files during debugging.
 
 - **Debug trace**: Enable tracing for **Debug Adapter Protocol**.
 
+The debug port and SEP debug port are specified in the DebugService.env file on the host. 
 
 ## Frequently Asked Questions
 
@@ -127,19 +128,17 @@ The following settings can be changed from the **Debugger** tab of the **IBM i: 
 
     DBGSRV_PORT=8001
 
-For the secure debug port, you need to make two changes:
-- change the following value in /QIBM/ProdData/IBMiDebugService/bin/DebugService.env:
+For the secure debug port, you can change the following value in /QIBM/ProdData/IBMiDebugService/bin/DebugService.env to specify a different port number:
 
     DBGSRV_SECURED_PORT=8005
 
-- change the **Debug port** from the Debugger tab of the Connection Settings page. The debug service must be restarted after the changes.
 
-For the service entry point daemon port, you also need to make two changes:
-- change the following line in the DebugService.env file on the host: 
+For the service entry point daemon port, you can change the following value in /QIBM/ProdData/IBMiDebugService/bin/DebugService.env to specify a different port number:
+
 
     DBGSRV_SEP_DAEMON_PORT=8008
     
-- change the **SEP debug port** setting from the Debugger tab of the Connection Settings page. The debug service must be restarted after the changes.
+You need to restart the debug service after changing a port number.
 
 **Question**: How can I see the output of the debug service?  
 **Answer**: You can see the output of IBM i Debug Service v2.0 from the log file under the following path on the host machine: 
@@ -169,6 +168,17 @@ For the service entry point daemon port, you also need to make two changes:
 
 **Question**: What happens to the Service Entry Points after I disconnect from the current connection?  
 **Answer**: The Service Entry Points are removed from the debug client after the connection is terminated. However, the SEPs are still saved in the running host debug service job. The SEPs will be restored in the client if you connect to the same host again.
+
+**Question**: Service entry point without a condition works for me but conditional service entry point does not work. The program appears to be hung from a 5250 session when a conditional service entry point is hit.  
+**Answer**: It may be an authority issue with your debug user profile. Your debug user profile need to have *USE authority to the profile that owns  the QB5ROUTER job and also its job description. Suppose the owner of the QB5ROUTER job is USR1 and your debug user profile is USR2, and the job description of the USR1 profile is QGPL/USR1, you can use the following commands from a terminal session to grant additional authority to your debug user profile:  
+
+    GRTOBJAUT OBJ(QGPL/USR1) OBJTYPE(*ALL) USER(USR2) AUT(*USE)  
+    GRTOBJAUT OBJ(USR1) OBJTYPE(*USRPRF) USER(USR2) AUT(*USE)  
+
+You need to restart the debug service and the debug router (QB5ROUTER) after these changes.
+
+**Question**: I started the second debug session, but it does not come up.  
+**Answer**: The debug client can support multiple debug sessions, but the IDE has a limitation that the new debug session does not automatically take focus, if you already have an existing debug session. You can select the new debug session from the drop down list of the Debug toolbar, or from the Call Stack view. The source of the new debug session will appear in a debug editor after the debug session is selected.
 
 **Question**: I am seeing a **Password Request** dialog with message “The extension IBM: ibmidebug is requesting connection data.”    
 **Answer**: When the **Service Entry Points** view is populated, it connects to the running debug service to retrieve the current set of SEPs. This operation requires the user password. If you select **Allow**, the **IBM i Developer** extension will allow the **IBM i Debug** extension to access the user password in its secret store.  

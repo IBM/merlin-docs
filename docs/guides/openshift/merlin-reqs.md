@@ -11,8 +11,9 @@ See [Supported product versions](./guides/platform/Install_IBM_i_Modernization_E
 | Name                 | CPU Request | CPU Limit | Memory Request | Memory Limit | Note                              |
 |----------------------|-------------|-----------|----------------|--------------|-----------------------------------|
 | Merlin               | 2.5         | 5         | 7Gi            | 15Gi         |                                   |
-| IBM i Developer Tool | 0.5         | 2.7       | 1.5            | 3Gi          | The resource is per each instance |
+| IBM i Developer Tool | 1.3         | 6.6       | 1.2Gi          | 9Gi          | The resource is per each instance |
 | IBM i CI/CD          | 0.5         | 1         | 1Gi            | 2Gi          | The resource is per each instance |
+| Developer workspace        | 0.08        | 1.4       | 320Mi          | 3.25Gi       | The resource is per user          |
 
 > **Meaning of a instance for IBM i Developer and IBM i CI/CD tools:** If admin installs one of these two tools in a OpenShift project, that means one instance.\
 > **Unit of CPU:** CPU is measured in units called millicores. If a node has 2 cores, the node’s CPU capacity would be represented as 2000m.\

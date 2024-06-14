@@ -1,29 +1,57 @@
 # Upgrade IBM i Modernization Engine for Lifecycle Integration
 
-This document discusses topics related to IBM i Developer Tool.
+## How to upgrade from Merlin v1 to v2
+To upgrade Merlin v1 to v2, the first step is to backup all user data. This includes all source that users have been developing in their respective workspaces. Make sure that all of your work is backed up to a git repository before doing any of the next steps.
 
-## Versioning
+Once your data is backed up, the next step is to upgrade the catalog source to the latest version (v2). [You can follow the steps here](./guides/platform/Update_catalogsource.md)\
+After the catalog source is updated, the next step is to upgrade the Merlin operator to the latest version.
 
-To understand the upgrade and rollback procedures, it is important to understand how components of IBM i Developer Tool are versioned. There is a distinction between (1) the OLM operator that abstracts the installation and management of the components and (2) the operand that is the components themselves. The operator represents the IBM i Developer Tool installer. The operand is the set of IBM i Developer Tool components configured by the resource.
+There are 2 cases.\
+Case 1. The Merlin v1 operator is installed in all namespaces mode\
+Case 2. The Merlin v1 operator is installed in single namespace mode
 
-The operator and operand are versioned independently: but each version of the operator can install a range of the operand. The desired version of the operand is set in the spec.version field of the IBM i Developer Customer Resource resource.
+Here is an example that shows several operators. It can be seen that in this case the Merlin operator is installed in All Namespaces mode where as the IBM Licensing operator is installed only in the namespace ibm-common-services.
 
-## Upgrade
 
-The versions of the operator and operand are decoupled. Upgrading IBM i Developer Tool to the latest version requires updates to both of operator and operand.
+![Check operator install mode](../../images/upgrade/operatorInstallMode.png)
 
-Procedure
 
-    The cluster administrator pulls in an update to the OLM catalog of IBM provided operators, including updates to the catalog for IBM i Developer Tool.
-    Based on the OLM Subscription, the IBM i Developer Tool operator is upgraded either automatically or after manual approval.
-        This will roll out an update to the operator-controller-manager pod, but the IBM i Developer Customer Resource component will not be changed.
-    The namespace administrator chooses an available version and updates the spec.version field on the IBM i Developer Customer Resource custom resource.
-    The change to the desired version triggers reconciliation of the IBM i Developer Customer Resource resource and upgrades the IBM i Developer Tool components.
+If you have the Merlin operator installed in single namespace mode as in case 2, you will need to first patch the operator group before changing the subscription channel.
 
-Rollback
+## Patching the operator group to use All Namespaces Mode (Only if you were in case 2)
+1. Login to your openshift cluster using the openshift cli. `oc login -u <username> -p <password> <openshift-server-url>`
+2. Change to use the project that your Merlin instance is installed in. `oc project <Merlin-project>`
+3. Get the operator group name. `oc get operatorgroup`
+4. Patch the operator group using the name you found in the previous step. `oc patch operatorgroup <operatorgroup-name> --type='json' -p='[{"op": "remove", "path": "/spec/targetNamespaces"}]'`
 
-The versions of the operator and operand are decoupled. A given version of the operator may support multiple versions of the operand. If an issue is encountered after an upgrade, the previous stable state can be restored by changing the IBM i Developer Customer Resource resource’s spec.version back to the previous value. OLM does not support reverting the version of the installed operator, but this should not be necessary to restore a stable state to the IBM i Developer Tool components.
-Procedure
+## Changing the subscription channel
+**The next step is to change the subscription channel.**
+1. Login to the openshift web console, and go the project that your Merlin instance is installed in.
+2. **Only do this step if you had to patch the operatorgroup. Otherwise, skip to step 3.**
+Wait until ibm-cloudpak operator shows an error about intersecting operator groups. This is how you will know the operator group patch completed successfully. Then delete the ibm-cloudpak operator instance and operator in current project.
+3. Change the subscription channel to `v2.0`, and wait for the install to complete.
+![Patch operator subscription](../../images/upgrade/patchOperatorSubscription.png)
+4. If you installed the Merlin operator using the manual upgrade strategy, [follow these steps to manually upgrade the operator](./guides/platform/upgrade_merlin_operator).
 
-    The namespace administrator sets the spec.version field on the IBM i Developer Customer Resource custom resource back to its previous value.
-    The change to the desired version triggers reconciliation of the IBM i Developer Tool components.
+## Upgrading the installed applications
+There are two possible cases you can be in when you are upgrading the applications.
+
+Case 1: You have not installed the IBM i Developer Tool and CI/CD Tool applications in the same project\
+Case 2: You have installed the IBM i Developer Tool and CI/CD Tool applications in the same project
+
+If you're in case 1, you can follow the manual upgrade steps (even if you had previously specified the automatic upgrade option). [Here is the documentation regarding manual upgrade steps](./guides/platform/upgrade_tools).
+
+If you're in case 2, then you will need to uninstall the IBM i Developer Tool application and install it in a separate project. The CI/CD Tool application can be upgraded following these [steps.](./guides/platform/upgrade_tools)
+## Known Issues 
+There are a few known issues that you need to be aware of when upgrading the Merlin operator as well as the installed tools.
+
+1. After upgrading the Merlin operator, it is possible that you may need to restart the engine pod in the namespace for which you have installed Merlin. You will know you need to do this if you see any errors in the Merlin GUI after the Merlin upgrade.
+
+2. When upgrading the IBM i Developer Tool, the IBM i Developer Tool card will disappear from the screen and you won't be able to see the progress indicator while it is being updated. After 10 minutes, try refreshing the page. The new IBM i Developer Tool v2 card should appear on the screen. If it doesn't, you may want to check the ibmi-developer-workspaces-operator pod in the namespace which you've installed the IBM i Developer Tool on to check for any potential errors.
+
+3. If the IBM i Developer Tool v2 is uninstalled and then reinstalled, a user that has previously logged into the IBM i Developer Tool, will not be able to login again. Instead they will receive a message saying "Authentication Error" when trying to login using OpenShift oauth. The work around is to run the command `oc get identity` to get the identity name of the failing user. And then run the command `oc delete identity <identity name>`. Login should work after that. https://access.redhat.com/solutions/6963611
+
+4. You have installed IBM i Developer Tool v2 and it shows available, but after logging in to Dev Spaces an error is shown mentioning how it couldn't find "devworkspaces". The work around is to uninstall the IBM i Developer Tool, and then reinstall it in a different project.
+
+5. After pressing the upgrade button to upgrade the CI/CD Tool application from v1 to v2, the CI/CD Tool card in the Merlin GUI shows that it has been upgraded, but the version still shows v1. If you go to the openshift web console, you will see that the pods are still being recreated in the CI/CD Tool namespace at this point. Wait a few minutes until the pods have finished being recreated, and then refresh the deployed tools page in the Merlin GUI. You will see the CI/CD Tool application with the upgraded version.
+
