@@ -1,0 +1,12 @@
+- [Intro](workshop2/readme)
+- [Admin](workshop2/01_admin)
+- [Start](workshop2/02_start)
+- IDE
+   - [Overview](workshop2/ide_overview)
+   - [Workspace Setup](workshop2/03_ide)
+   - [Impact Analysis](workshop2/04_observer)
+   - [Build](workshop2/05_build)
+   - [Convert to Modern RPG](workshop2/07_transformer)   
+   - [Debug](workshop2/08_debug)   
+- CI/CD
+   - [Usage](workshop2/06_cicd)
