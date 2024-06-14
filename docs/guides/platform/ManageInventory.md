@@ -11,7 +11,7 @@ All the inventories which the user created or has permission to will be shown. I
 
   <img src="../../images/guides/Addinventory.png" width = "400" height = "250" alt="Add Inventory" align=center />    
 
-  For the security connections, Merlin supports the `Test TLS` function which allows customers to accept the remote CA such as for a Power VC Inventory. After specifying the `Hostname` and `Port`, the `Test TLS` button will be enabled and it will catch the Power VC CA. In the detailed certificate windows, click the `Accept` button. Then this CA be added to the Merlin trust store.
+  For secure connections, Merlin supports the `Test TLS` function which allows customers to accept the remote CA such as for a Power VC Inventory. After specifying the `Hostname` and `Port`, the `Test TLS` button will be enabled and it will catch the Power VC CA. In the detailed certificate windows, click the `Accept` button. Then this CA be added to the Merlin trust store.
 
   <img src="../../images/guides/Pvcinventory.png" width = "400" height = "300" alt="Add power vc inventory" align=center />  
 

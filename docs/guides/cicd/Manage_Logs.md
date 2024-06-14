@@ -1,7 +1,7 @@
 # Manage Logs
 
 ## Configure Log Level
-IBM i CI/CD GUI supports configuring the log level. The default log level is INFO, but that sets it to a different level is supported.
+IBM i CI/CD GUI supports configuring the log level. The default log level is INFO. The log level can be set to a different level.
 
 The log levels supported for GUI are **OFF**, **SEVERE**, **WARNING**, **INFO**, **FINEST**, **ALL**.  
 

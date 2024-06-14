@@ -126,7 +126,7 @@ To help zero in on the problem, there is also an action to filter the messages, 
 ![Filter Message Severity](../../images/guides/devBuildFilterMessageSeverity.png ':size=750')
 
 ### Object Level
-The children of a job log are all the ILE objects being built.  The description is the source in the IFS that is being compiled into that object.
+The children of a job log are all the objects built.  The description is the source in the IFS that is being compiled into that object.
 
 ![Copy Command](../../images/guides/devBuildObjectLevelActions.png ':size=750')
 
