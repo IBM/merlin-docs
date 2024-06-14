@@ -2,27 +2,13 @@
 
 ## Installed Extensions
 
-The **Extensions** view is where all VS Code extensions will be managed including several extensions which are automatically installed when creating a new workspace. These extensions add languages, debuggers, and tools to support your development workflow.
+The **Extensions** view is where all VS Code extensions will be managed including several extensions which are automatically installed when creating a new workspace. These extensions add languages, debuggers, and tools to support your IBM i development workflow. Additional extensions can be installed that supplement the capabilities in the development environment.
 
 ![Extensions View](../../images/guides/extensionsView.png ':size=500')
 
-The following extensions will be automatically installed:
-
-* **IBM i Developer** - Provides content assist, code completion, hover information, and more for IBM i programming languages such as RPG and SQL.
-* **Code for IBM i** - Connect to an IBM i, edit/compile all ILE languages, view errors inline, and much more.
-* **IBM i Project Explorer** - Develop IBM i applications using buildable local projects.
-* **IBM i Debug** - Provides a Debug Adapter Protocol (DAP) client for IBM i Debugger.
-* **Db2 for IBM i** - Db2 for IBM i tools.
-* **RPGLE** - Language tools and linter for RPGLE.
-* **CL** - Language tools for CLLE.
-* **IBM i Languages** - Provides syntax highlighting for IBM i languages such as RPG, CL, DDS, MI, and RPGLE fixed/free.
-* **vscode-sourceorbit** - Object dependency management.
-* **Code for IBM i Walkthroughs** - Walkthroughs relevant to **Code for IBM i**.
-* **ARCAD-Elias** - ARCAD tools (**ARCAD-Skipper**, **ARCAD-Observer**, and **ARCAD-Transformer**).
-
 ## Install an Extension
 
-The [Visual Studio Code Extension Marketplace](https://marketplace.visualstudio.com/VSCode) is where extension authors publish extensions that extend the features in VS Code. You may browse for any of these extensions directly in the **Extensions** view. To narrow down your search, use filters such as `@popular` or `@category:"programming languages"`.
+The [Visual Studio Code Extension Marketplace](https://marketplace.visualstudio.com/VSCode) is where extension authors publish extensions that extend the features in VS Code. You may browse for any of these extensions directly in the **Extensions** view.  
 
 ![Browse for Extensions](../../images/guides/extensionsMarketplace.png ':size=600')
 
@@ -30,7 +16,7 @@ After you have found an extension you would like to install, select it to see th
 
 ![Install Extension](../../images/guides/extensionsInstall.png ':size=750')
 
-Extensions may also be installed from the [Open VSX Registry](https://open-vsx.org/), by downloading the `VSIX` file of an extension you would like to install and then using the **Install from VSIX...** action.
+Extensions may also be dowloaded from the [Open VSX Registry](https://open-vsx.org/) and then installed using the **Install from VSIX...** action.
 
 ![Install from VSIX](../../images/guides/extensionsInstallFromVSIX.png ':size=600')
 

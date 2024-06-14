@@ -22,7 +22,7 @@ Apart from the common language features mentioned in [Edit](edit.md), ILE RPG so
 
   ![RPG hover](../../images/guides/iderpghover.png ':size=800')  
 
-- References - Show where a particular code element is referenced throughout the codebase.
+- References - Show where a particular code element is referenced throughout the workspace.
 
   After right clicking on a specific variable, users can select either **Go to References** or **Peek > Peek References** to show all references embedded inline. You can navigate between different references in the peeked editor and make quick edits right there.
 

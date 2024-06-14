@@ -1,6 +1,6 @@
 # Editing
   
-The (Integrated Development Environment) IDE is Visual Studio Code running in Devspaces and it comes equiped with several IBM i related extensions that provide editing support.
+The (Integrated Development Environment) IDE is Visual Studio Code running in Red Hat OpenShift Dev Spaces and it includes IBM i related extensions that provide editing support.
 
 Here are the features for general source code editing.
 
