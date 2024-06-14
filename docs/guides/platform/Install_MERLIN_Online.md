@@ -34,7 +34,7 @@ Install the OpenShift command line interface (oc) on the cluster's boot node and
 
 ## Configure storage
 
-The storage configuration must satisfy the sizing requirements. For more information on the storage classes that are needed for installing IBM i Modernization Engine For Lifecycle Integration, see [Configure a default storage class](Data_Storage_for_MERLIN.md).
+The storage configuration must satisfy the sizing requirements. For more information on the storage classes that are needed for installing IBM i Modernization Engine For Lifecycle Integration, see [Configure a default storage class](./guides/platform/Data_Storage_for_MERLIN.md).
 
 ## Create a custom project (namespace)
 
@@ -62,9 +62,9 @@ Run oc create namespace <namespace> where <namespace> is the name of the project
 
 Complete the following steps to create a docker-registry secret to enable the deployment to pull the IBM i Modernization Engine For Lifecycle Integration images from the IBM® Entitled Registry.
 
-### Create the entitlement key secret with either of the following methods:
+### Create the entitlement key secret with either of the following methods
 
-Obtain the entitlement key that is assigned to the IBMid. Log in to MyIBM Container Software Library Opens in a new tab with the IBMid and password details that are associated with the entitled software. Then configure the global image pull secret on the Openshift environment.
+Obtain the entitlement key that is assigned to the IBMid. Log in to [MyIBM Container Software Library](https://myibm.ibm.com/products-services/) with the IBMid and password details that are associated with the entitled software. Then configure the global image pull secret on the Openshift environment.
 
 - Extract the current global image pull secret from the cluster into a file in the current directory named .dockerconfigjson:
 ```
@@ -161,12 +161,17 @@ Install Merlin operator with either of the following installation methods:
 - Enter the following values:
 ```
         * Set the Namespace to be the project (namespace) in which to install the Operator, such as **merlin**.
-        * Set Update Channel to v1.0.
+        * Set Update Channel to v2.0.
         * Set Approval Strategy to Automatic.
 ```
-- Click Install and wait for the AI Manager operator to install.
+- Click Install and wait for the Merlin operator to install.
 - Verify that the Merlin operator is successfully installed.
 - Navigate to Operators > Installed Operators, and select the project from the Projects dropdown. IBM i Modernization Engine for Lifecycle Integration and its dependant operator in the project are listed with a status of Succeeded.
+- Navigate to Workloads > Pods, and select project `ibm-common-services` from the Projects dropdown. make sure the pods listed below are listed with a status of `Running`.
+  - ibm-common-service-webhook
+  - ibm-namespace-scope-operator
+  - operand-deployment-lifecycle-manager
+  - secretshare
 
 ### Option 2: Install the operator with the OpenShift CLI
 
@@ -182,9 +187,6 @@ Create an Operator group in the custom project (namespace), or the Merlin operat
     metadata:
       name: merlin-operator-group
       namespace: <namespace>
-    spec:
-      targetNamespaces:
-        - <namespace>
     EOF
 ```
 Where <namespace> is the project (namespace created earlier in Create a custom project (namespace).
@@ -198,7 +200,7 @@ metadata:
   name: ibmi-merlin-operator
   namespace: <namespace>
 spec:
-  channel: v1.0
+  channel: v2.0
   installPlanApproval: Automatic
   name: ibmi-merlin-operator
   source: ibm-operator-catalog

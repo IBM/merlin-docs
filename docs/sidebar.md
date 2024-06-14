@@ -56,7 +56,7 @@
          - [Install Merlin in airgap environment](./guides/platform/Install_MERLIN_In_AirGap.md)
       - [Update Merlin CA and certificates](./guides/platform/Update_CA_and_Certificate.md)
       - [Manage browser certificates](./guides/platform/Manage_browser_certs.md)
-      - [Upgrade Merlin platform and tools](./guides/platform/Upgrade_IBM_i_Modernization_Engine_for_Lifecycle_Integration.md)
+      - [Upgrade from Version 1 to Version 2](./guides/platform/Upgrade_IBM_i_Modernization_Engine_for_Lifecycle_Integration.md)
       - [Manage the lifecycle of Merlin tools](./guides/platform/Manage_the_lifecycle_of_MERLIN_Tools.md)
       - [How to manually upgrade IBM i Developer IDE and IBM i CI/CD Tools](./guides/platform/upgrade_tools.md) 
       - [Backup and restore](./guides/platform/Backup_and_Restore_for_MERLIN.md) 
@@ -73,7 +73,7 @@
       - [Manage Merlin users and authorities](./guides/platform/Manage_MERLIN_users_and_authorities.md)
       - [Monitor resources for Merlin tools](./guides/platform/Monitor_resources_for_MERLIN_tools.md)
       - [Manage Vault](./guides/platform/VaultControl.md)
-      - Manage Logs
+      - [Manage Logs](./guides/platform/Manage_Logs.md)
          - [Configure Log Level](./guides/platform/Configure_Log_Level.md)
          - [View Logs](./guides/platform/View_Logs.md)
       - [Update Password](./guides/platform/Update_Password.md)

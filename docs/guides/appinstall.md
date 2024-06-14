@@ -22,7 +22,7 @@ First, head over to the Projects tab and select Create.
 
 ![](../images/appinst/appinst-1.png)
 
-This gives you a name and a desciption to fill out. I named this project `company-system`.
+This gives you a name and a description to fill out. I named this project `company-system`.
 
 ![](../images/appinst/appinst-2.png)
 
@@ -39,12 +39,12 @@ Applications only get installed once into a project. Future developers using thi
 
 To install a tool, head to the **Catalog** and see what tools are available. If you right click on IBM i Developer, have two options:
 
-1. **View Details** which gives you a desciption of the tool
+1. **View Details** which gives you a description of the tool
 2. **Install the Application** which installs it into a chosen project in the next steps
 
 ![](../images/appinst/appinst-3.png)
 
-After you select 'Install the Application', there is a prompt to review and accept a licence agreement.
+After you select 'Install the Application', there is a prompt to review and accept a license agreement.
 
 ![](../images/appinst/appinst-4.png)
 
