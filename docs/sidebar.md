@@ -10,7 +10,7 @@
       - [Moving into git](./guides/git/moving-source.md)
       - [ARCAD initialisation](./guides/git/moving-source-arcad.md)
    - Installation (admin)
-      - [Requirements](./guides/openshift/merlin-reqs.md)
+      <!-- - [Requirements](./guides/openshift/merlin-reqs.md) -->
       - [Entitlement](./guides/openshift/entitlement.md)
       <!-- - [Local (testing only)](./guides/openshift/local.md) -->
       - [Installing Merlin](./guides/openshift/merlininstall.md)
