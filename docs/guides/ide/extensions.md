@@ -10,6 +10,8 @@ The **Extensions** view is where all VS Code extensions will be managed includin
 
 The [Visual Studio Code Extension Marketplace](https://marketplace.visualstudio.com/VSCode) is where extension authors publish extensions that extend the features in VS Code. You may browse for any of these extensions directly in the **Extensions** view.  
 
+Note: IBM does not support extensions from the marketplace.
+
 ![Browse for Extensions](../../images/guides/extensionsMarketplace.png ':size=600')
 
 After you have found an extension you would like to install, select it to see the Extension details page. Here you can find the extension ID, publisher, number of downloads, ratings, general overview of the extension. After selecting the **Install** button, VS Code will download and install the extension from the Marketplace. Once the installation is complete, the **Install** button will be replaced by a **Disable** and **Uninstall** button.
