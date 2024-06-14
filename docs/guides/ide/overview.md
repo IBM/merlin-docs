@@ -5,7 +5,9 @@ The IBM i Developer Dashboard allows the user to create, start, manage, and dele
 
 ![Dashboard](../../images/guides/ideDashboard.png ':size=800')
 
-To create a new `IBM i Developer Workspace`, click on the **IBM i Developer** or **IBM i Developer and demo application** tool stack from the **Create Workspace** page. Other tool stacks are also available.
+To create a new `IBM i Developer Workspace`, click on the **IBM i Developer** or **IBM i Developer and demo application** tool stack from the **Create Workspace** page. Other tool stacks are also available. If you would like to create a new `IBM i Developer Workspace` workspace with a Git repository already imported, use the `Import from Git` feature by pasting your Git repo URL and clicking the **Create and Open** button.
+
+**Note:** If you would like to use an SSH URL when importing the Git repository, you must first create an SSH key in the [Credentials](./guides/platform/ManageCredential.md) page in Merlin.
 
 ![Create Workspace](../../images/guides/ideDashAddWorkspace.png ':size=800')
 
