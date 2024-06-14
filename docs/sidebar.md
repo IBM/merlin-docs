@@ -10,14 +10,14 @@
       - [Moving into git](./guides/git/moving-source.md)
       - [ARCAD initialisation](./guides/git/moving-source-arcad.md)
    - Installation (admin)
-      - [Requirements](./guides/openshift/merlin-reqs.md)
+      <!-- - [Requirements](./guides/openshift/merlin-reqs.md) -->
       - [Entitlement](./guides/openshift/entitlement.md)
-      - [Local (testing only)](./guides/openshift/local.md)
+      <!-- - [Local (testing only)](./guides/openshift/local.md) -->
       - [Installing Merlin](./guides/openshift/merlininstall.md)
-      - [Browser Certificates](./guides/openshift/merlin-certs.md)
+      <!-- - [Browser Certificates](./guides/openshift/merlin-certs.md) -->
       - [Upgrade Strategy](./guides/openshift/merlin-updates.md)
    - Configuration (admin)
-      - [App Installation](./guides/appinstall.md)
+      - [Tool Installation](./guides/appinstall.md)
       - [Configuration](./guides/configuration.md)
    - Merlin IDE
       - [Usage](./guides/crw/main.md)

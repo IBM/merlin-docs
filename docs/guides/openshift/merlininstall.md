@@ -1,6 +1,10 @@
 
 This guide assumes RedHat OpenShift is running, which will allow for the install of IBM i Merlin.
 
+## Supported product versions and OpenShift requirements
+
+See [Supported product versions and OpenShift requirements](./guides/platform/Install_IBM_i_Modernization_Engine_for_Lifecycle_Integration.md).
+
 ## Creating the Project
 
 First, ensure the entitlement key and CatalogSource has been [setup correctly](./guides/openshift/entitlement.md).
