@@ -13,7 +13,7 @@ With access to the Merlin Test Drive environment, this hands-on documentation ca
 #### Value proposition
 
 * Gain hands-on experience with the technology
-* A [self-guided tour](./workshop/readme.md) and sample code are provided
+* A [self-guided tour](./workshop2/readme.md) and sample code are provided (for Version 1.0 see [self-guided tour](./workshop/readme.md))
 * Leverage, test, and / or demonstrate IBM i Merlin.
 * The user is provided an OpenShift Merlin Workspace and a dedicated IBM i partition
 * IBM Client Engineering for Systems team provides the infrastructure, IBM i Development provides the Merlin expertise, and you test-drive Merlin
