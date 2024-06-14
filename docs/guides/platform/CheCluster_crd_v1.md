@@ -1,8 +1,10 @@
-# <span translate="no">CheCluster</span>/v1
+# IBM i Developer Workspaces operator CRDs
+
+## <span translate="no">CheCluster</span>/v1
 
 <span translate="no">CheCluster</span> is the schema for the <span translate="no">checlusters</span> API.
 
-## spec
+### spec
 
 **Description:** Defines the desired state of CheCluster.
 
@@ -23,7 +25,7 @@
 |spec.server          |object       |General configuration settings related to the Che server and the plugin and devfile registries|
 |spec.storage         |object       |Configuration settings related to the persistent storage used by the Che installation|
 
-## status
+### status
 
 **Description:** Defines the observed state of CheCluster.
 
@@ -46,3 +48,48 @@
 |status.openShiftoAuthProvisioned|boolean|Indicates whether an Identity Provider instance, Keycloak or RH-SSO, has been configured to integrate with the OpenShift OAuth|
 |status.pluginRegistryURL|string|Public URL to the plugin registry|
 |status.reason|string|A brief CamelCase message indicating details about why the Pod is in this state|
+
+
+
+
+
+
+
+
+
+## <span translate="no">CheCluster</span>/v2
+
+<span translate="no">CheCluster</span> is the schema for the <span translate="no">checlusters</span> API.
+
+### spec
+
+**Description:** Defines the desired state of CheCluster.
+
+**Type:**  object
+
+| Property            | Type        | Description                       |
+|---------------------|-------------|-----------------------------------|
+|spec                 |object       |Defines the desired state of CheCluster|
+|spec.components|object|Che components configuration.|
+|spec.containerRegistry|object|Configuration of an alternative registry that stores Che images.|
+|spec.devEnvironments|object|Development environment default configuration options.|
+|spec.gitServices|object|A configuration that allows users to work with remote Git repositories.|
+|spec.networking|object|Networking, Che authentication, and TLS configuration.|
+
+### status
+
+**Description:** Defines the observed state of CheCluster.
+
+**Type:**  object
+
+| Property            | Type        | Description                       |
+|---------------------|-------------|-----------------------------------|
+|status.chePhase|string|Specifies the current phase of the Che deployment.|
+|status.chePhase|string|Public URL of the Che server.|
+|status.chePhase|string|Currently installed Che version.|
+|status.chePhase|string|The public URL of the internal devfile registry.|
+|status.chePhase|string|Specifies the current phase of the gateway deployment.|
+|status.chePhase|string|A human readable message indicating details about why the Che deployment is in the current phase.|
+|status.chePhase|string|The public URL of the internal plug-in registry.|
+|status.chePhase|string|A brief CamelCase message indicating details about why the Che deployment is in the current phase.|
+|status.chePhase|string|The resolved workspace base domain. This is either the copy of the explicitly defined property of the same name in the spec or, if it is undefined in the spec and we're running on OpenShift, the automatically resolved basedomain for routes.|
