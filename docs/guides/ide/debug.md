@@ -1,15 +1,13 @@
 #  Debugging
 
-The Integrated Development Environment (IDE) is based on Eclipse Che/Theia and it has a similar user experiences as Visual Studio (VS) Code.
-
-For a demonstration, see the Debugging video in the [Merlin Getting Started for Users](https://www.youtube.com/playlist?list=PLPELYviDwCnY6L5r5ZnmCneqhakLcB7ko) playlist.
-
 The IBM i Debugger for Merlin v2.0 consists of a host component called **IBM i Debug Service**, and a client **IBM i Debug** extension included in the IDE. IBM i Debug Service is delivered as host [PTFs](../platform/ManageIBMiServer.md#running-actions-on-the-ibm-i-server) on the 7.3, 7.4, and 7.5 release levels.  A Java 11 JRE is required to run IBM i Debug Service v2.0.
 
 - Run **Validate the dependent PTFs** action on a template from **Connections** to verify the required PTFs are applied.
 - Run **Enable IBM i debug service** action on a template from **Connections** to start the debug service on the IBM i.
- 
- ## Supported Features
+
+For a demonstration, see the Debugging video in the [Merlin Getting Started for Users](https://www.youtube.com/playlist?list=PLPELYviDwCnY6L5r5ZnmCneqhakLcB7ko) playlist.
+
+## Supported Features
 
 Supported language types:
 
@@ -49,27 +47,25 @@ The following features are not supported in the current release:
 
 ## Debugging from IBM i Project Explorer
 
-With a project in IBM i Project Explorer, connect to the IBM i.  Under the IBM i connection, using Library List or a QSYS query under My Queries, show a program object.  Two debug actions will be available from the Debug popup menu:
- - **As Batch**: Prompt for the command to start a batch debug session. The user can enter program parameters in the prompt. This action is only available on program objects (*PGM).
- - **Set Service Entry Point**: Set a Service Entry Point (SEP) on the selected target. The default Service Entry Point location is presented in the prompt. The user can modify the value to set a SEP on a module or a procedure. This action is available on program (*PGM) and service program (*SRVPGM) objects.
+With a project in **IBM i Project Explorer**, connect to the IBM i.  Once you are connected to an IBM i, navigate to the program you would like to debug using the **Library List** or **Object Libraries**. Two debug actions will be available from the Debug popup menu:
+ - **As Batch**: Prompt for the command to start a batch debug session. The user can enter program parameters in the prompt. This action is only available on program objects (`*PGM`).
+ - **Set Service Entry Point**: Set a Service Entry Point (SEP) on the selected target. The default Service Entry Point location is presented in the prompt. The user can modify the value to set a SEP on a module or a procedure. This action is available on program (`*PGM`) and service program (`*SRVPGM`) objects.
 
-
-![Debug Action](../../images/guides/ideiprojdebug2.png)
+![Debug Action](../../images/guides/debugActions.png ':size=650')
 
 When a batch debug session starts, the debug panel will open on the left and the source will open in the editor.  From the debug panel, the following actions are available: **Continue**, **Step Over**, **Step into**, **Step out**, **Restart**, and **Stop**.  In the editor, breakpoints can be set on lines in the left margin.
 
-![Debug](../../images/guides/idedebug.png)
+![Debug](../../images/guides/debugButtons.png ':size=750')
 
 While debugging, the **Variables** view will show the variable values.  In the editor, hovering over a variable will show its value.
 
-![Debug Hover](../../images/guides/idedebughover.png)
-
+![Debug Hover](../../images/guides/debugHover.png ':size=850')
 
 ## Managing Service Entry Points
 
-Service Entry Point (SEP) can be set using the **Set Service Entry Point** popup menu action from the **Project Explorer** and **Object Browser**. SEP can also be set using the **Create Service Entry Point** toolbar action from the **Service Entry Points** view in the **Run and Debug** side bar. The action will prompt for the Service Entry Point location. The Service Entry Point location can be in a short format which includes the library name and program name (e.g. MY_LIB/MY_PGM), or in a long format which also includes the program type, module name and procedure name (e.g. MY_LIB/MY_PGM *PGM/MY_MOD/MY_PROC). The supported program types are *PGM and *SRVPGM.
+Service Entry Point (SEP) can be set using the **Set Service Entry Point** popup menu action from the **Project Explorer** and **Object Browser**. SEP can also be set using the **Create Service Entry Point** toolbar action from the **Service Entry Points** view in the **Run and Debug** side bar. The action will prompt for the Service Entry Point location. The Service Entry Point location can be in a short format which includes the library name and program name (e.g. `MY_LIB/MY_PGM`), or in a long format which also includes the program type, module name and procedure name (e.g. `MY_LIB/MY_PGM *PGM/MY_MOD/MY_PROC`). The supported program types are `*PGM` and `*SRVPGM`.
 
-![Debug Service Entry Point](../../images/guides/idedebugsepview.png)
+![Debug Service Entry Point](../../images/guides/debugSEPView.png ':size=600')
 
 A checkbox at a SEP indicates that the SEP is enabled. You can clear the checkbox to disable the SEP.
 
