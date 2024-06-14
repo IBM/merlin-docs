@@ -5,12 +5,6 @@ This guide assumes RedHat OpenShift is running, which will allow for the install
 
 See [Supported product versions and OpenShift requirements](./guides/platform/Install_IBM_i_Modernization_Engine_for_Lifecycle_Integration.md).
 
-> **Meaning of a instance for IBM i Developer and IBM i CI/CD tools:** If admin installs one of these two tools in a OpenShift project, that means one instance.\
-> **Unit of CPU:** CPU is measured in units called millicores. If a node has 2 cores, the node’s CPU capacity would be represented as 2000m.\
-> **What is the difference between Request and Limit?** Request can be compared to the minimum amount required, where as Limit indicates the most that will be used.
-
-You can read more about OpenShift Quotas and Limit Ranges on the [official documentation](https://docs.openshift.com/container-platform/3.11/dev_guide/compute_resources.html).
-
 ## Creating the Project
 
 First, ensure the entitlement key and CatalogSource has been [setup correctly](./guides/openshift/entitlement.md).
