@@ -1,6 +1,6 @@
 # Editing RPG
 
-Apart from the common language features mentioned in [Edit](edit.md), ILE RPG source editing also has the following capabilities:
+Apart from the common language features mentioned in [Edit](./guides/ide/edit.md), ILE RPG source editing also has the following capabilities:
 
 - **Outline** view - Provides a structured view of the source code for navigation and supports filtering.
 

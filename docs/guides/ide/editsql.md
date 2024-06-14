@@ -1,6 +1,6 @@
 # Editing SQL
 
-Apart from the common language features mentioned in [Edit](edit.md), SQL source editing also has the following capabilities:
+Apart from the common language features mentioned in [Edit](./guides/ide/edit.md), SQL source editing also has the following capabilities:
 
 * Formatting - Format the whole document or a selected region.
 
