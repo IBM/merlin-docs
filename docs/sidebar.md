@@ -17,7 +17,7 @@
       <!-- - [Browser Certificates](./guides/openshift/merlin-certs.md) -->
       - [Upgrade Strategy](./guides/openshift/merlin-updates.md)
    - Configuration (admin)
-      - [App Installation](./guides/appinstall.md)
+      - [Tool Installation](./guides/appinstall.md)
       - [Configuration](./guides/configuration.md)
    - Merlin IDE
       - [Usage](./guides/crw/main.md)
