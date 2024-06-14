@@ -1,6 +1,6 @@
 # Editing RPG
 
-Apart from those common language features mentioned in [Edit](edit.md), ILE RPG source editing also has these capabilities:
+Apart from those common language features mentioned in [Edit](./guides/ide/edit.md), ILE RPG source editing also has these capabilities:
 
 - outline view - structured view of source that allow navigation to source, filtering the items  
   Use **View > Outline** to open outline view.  
@@ -30,7 +30,7 @@ Apart from those common language features mentioned in [Edit](edit.md), ILE RPG 
    ![RPG definition](../../images/guides/iderpgdefinition.png)
 
 - formatting - format the whole document or selected region  
-  Formatting options can be found at [Preferences](settings.md).  
+  Formatting options can be found at [Preferences](./guides/ide/settings.md).  
    ![RPG formatting options](../../images/guides/iderpgformattingoptions.png)
   
   Users can select **Format Document** to format the whole document or **Format Selection** to format the selected region after right clicking in the source file.  

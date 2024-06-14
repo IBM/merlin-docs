@@ -3,7 +3,7 @@
 SQL source editing capabilities:
 
 * formatting  
-Formatting options can be found at [Preferences](settings.md).  
+Formatting options can be found at [Preferences](./guides/ide/settings.md).  
 ![SQL formatting options](../../images/guides/idesqlformattingoptions.jpg)  
 Formatting supports both **Embedded SQL formatting** and **Pure SQL formatting**. Users can select **Format Document** to format the whole document or **Format Selection** to format the selected region after right clicking in the source file.  
 ![SQL formatting](../../images/guides/idesqlformatting.jpg)

@@ -74,7 +74,7 @@
       - [Manage Merlin users and authorities](./guides/platform/Manage_MERLIN_users_and_authorities.md)
       - [Monitor resources for Merlin tools](./guides/platform/Monitor_resources_for_MERLIN_tools.md)
       - [Manage Vault](./guides/platform/VaultControl.md)
-      - Manage Logs
+      - [Manage Logs](./guides/platform/Manage_Logs.md)
          - [Configure Log Level](./guides/platform/Configure_Log_Level.md)
          - [View Logs](./guides/platform/View_Logs.md)
       - [Update Password](./guides/platform/Update_Password.md)

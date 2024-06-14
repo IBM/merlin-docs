@@ -1,7 +1,7 @@
 # Manage the lifecycle of Merlin Tools
 
 IBM i Modernization Engine For lifecycle Integration guides and simplifies the use of Merlin tools which help implement DevOps & Services-based software. 
-An authorized user can manage the lifecycle of Merlin tools. To learn more about the user role and permissions with Merlin, see [Manage_MERLIN_users_and_authorities](Manage_MERLIN_users_and_authorities.md).
+An authorized user can manage the lifecycle of Merlin tools. To learn more about the user role and permissions with Merlin, see [Manage MERLIN users and authorities](./guides/platform/Manage_MERLIN_users_and_authorities.md).
 
    * View installed tools
    * List Merlin tools in catalog 
@@ -25,7 +25,7 @@ Go to Merlin GUI, then open **Tools->Catalog**, the supported Merlin tools are i
  ![View details of a Merlin tool ](../../images/guides/viewMerlinToolDetails1.png)
 
 - Install Merlin tools
-Ensure a proper role or permissions have been granted to user to do the deployment. To learn more about the user role and permissions with Merlin, see [Manage_MERLIN_users_and_authorities](Manage_MERLIN_users_and_authorities.md).
+Ensure a proper role or permissions have been granted to user to do the deployment. To learn more about the user role and permissions with Merlin, see [Manage MERLIN users and authorities](./guides/platform/Manage_MERLIN_users_and_authorities.md).
 * In catalog, select the tool to be installed
  ![Select A Merlin Tool in Catalog](../../images/guides/installMerlinTool.png)
 * Read the license terms of the Merlin tool and decide if you accept it. 

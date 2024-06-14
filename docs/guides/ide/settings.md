@@ -6,7 +6,7 @@ Access settings from **File > Settings**.
 
 ### IBM i Debug
 
-* See [Settings](debug.md) section of debug documentation
+* See [Settings](./guides/ide/debug.md) section of debug documentation
 
 ### IBM i Developer
  

@@ -1,6 +1,6 @@
 # Editing CL
 
-Apart from those common language features mentioned in [Edit](edit.md), CL source editing also has these capabilities:
+Apart from those common language features mentioned in [Edit](./guides/ide/edit.md), CL source editing also has these capabilities:
 
 - Outline view - view of source that allow navigation to source, filtering the items
 

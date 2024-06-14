@@ -4,7 +4,7 @@ IBM i Developer allows the user to run the project-based developer builds. IBM i
 
 ## Prepare the Workspace and the Project
 
-Before getting started, please make sure you have set up your [IBM i Projects](ibmiprojectexplorer.md).
+Before getting started, please make sure you have set up your [IBM i Projects](./guides/ide/ibmiprojectexplorer.md).
 
 - Specify an IBM i Connection
 - Specify the Build Directory

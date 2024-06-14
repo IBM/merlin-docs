@@ -170,7 +170,7 @@ You need to restart the debug service after changing a port number.
 **Answer**: The Service Entry Points are removed from the debug client after the connection is terminated. However, the SEPs are still saved in the running host debug service job. The SEPs will be restored in the client if you connect to the same host again.
 
 **Question**: Service entry point without a condition works for me but conditional service entry point does not work. The program appears to be hung from a 5250 session when a conditional service entry point is hit.  
-**Answer**: It may be an authority issue with your debug user profile. Your debug user profile need to have *USE authority to the profile that owns  the QB5ROUTER job and also its job description. Suppose the owner of the QB5ROUTER job is USR1 and your debug user profile is USR2, and the job description of the USR1 profile is QGPL/USR1, you can use the following commands from a terminal session to grant additional authority to your debug user profile:  
+**Answer**: It may be an authority issue with your debug user profile. Your debug user profile need to have *USE authority to the profile that owns the QB5ROUTER job and also its job description. Suppose the owner of the QB5ROUTER job is USR1 and your debug user profile is USR2, and the job description of the USR1 profile is QGPL/USR1, you can use the following commands from a terminal session to grant additional authority to your debug user profile:  
 
     GRTOBJAUT OBJ(QGPL/USR1) OBJTYPE(*ALL) USER(USR2) AUT(*USE)  
     GRTOBJAUT OBJ(USR1) OBJTYPE(*USRPRF) USER(USR2) AUT(*USE)  
