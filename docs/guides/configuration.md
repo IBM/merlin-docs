@@ -6,7 +6,7 @@ Before you can make serious use of Merlin, you have to setup a number of things.
 * **Credentials** your user and password and/or SSH keys belong here
 * **Templates** are used to connect a defined inventory and credentials together
 
-You can setup inventories, connections and templates by following the instructions in [Connections](./guides/platform/Manage_connections.md).
+You can setup inventories, credentials and templates by following the instructions in [Connections](./guides/platform/Manage_connections.md).
 <!-- But of course, you have to register to your Merlin instance first.
 
 ## Setting up Your Inventory (IBM i)
@@ -42,7 +42,7 @@ Head to the Templates tab and select Add.
 Fill out the required fields. The Inventory and Credential dropdowns only show you the items you have access to. You can give this Template another unique name, as well as custom description.
 
 ![](../images/home/home-5.png) -->
-### Verifying the template
+### Configuring IBM i server
 
 After an IBM i template has been created, the provided Ansible playbooks should be run to ensure the IBM i has the required software to allow for smooth interaction with Merlin.
 
