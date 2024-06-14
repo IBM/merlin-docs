@@ -48,9 +48,7 @@
       - [Deploy and initialize IBM i CICD](./guides/cicd/Deploy_and_initialize_IBM_i_CICD.md)
       - [IBM i CICD tasks](./guides/cicd/Work_with_IBM_i_CICD_profiles.md)
       - [Jenkins](./guides/cicd/Work_with_Jenkins.md)
-      - [Logs](./guides/cicd/Manage_Logs.md)
-         - [Configure Log Level](./guides/cicd/Configure_Log_Level.md)
-         - [View Logs](./guides/cicd/View_Logs.md)
+      - [Manage Logs](./guides/cicd/Manage_Logs.md)
 - Administrator guide
    - [OpenShift Administrator Guide](./guides/platform/OpenShift_Admin_Guide.md)
       - [Install](./guides/platform/Install_IBM_i_Modernization_Engine_for_Lifecycle_Integration.md)  
