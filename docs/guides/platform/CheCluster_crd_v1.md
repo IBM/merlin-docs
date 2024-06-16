@@ -85,11 +85,11 @@
 | Property            | Type        | Description                       |
 |---------------------|-------------|-----------------------------------|
 |status.chePhase|string|Specifies the current phase of the Che deployment.|
-|status.chePhase|string|Public URL of the Che server.|
-|status.chePhase|string|Currently installed Che version.|
-|status.chePhase|string|The public URL of the internal devfile registry.|
-|status.chePhase|string|Specifies the current phase of the gateway deployment.|
-|status.chePhase|string|A human readable message indicating details about why the Che deployment is in the current phase.|
-|status.chePhase|string|The public URL of the internal plug-in registry.|
-|status.chePhase|string|A brief CamelCase message indicating details about why the Che deployment is in the current phase.|
-|status.chePhase|string|The resolved workspace base domain. This is either the copy of the explicitly defined property of the same name in the spec or, if it is undefined in the spec and we're running on OpenShift, the automatically resolved basedomain for routes.|
+|status.cheURL|string|Public URL of the Che server.|
+|status.cheVersion|string|Currently installed Che version.|
+|status.devfileRegistryURL|string|The public URL of the internal devfile registry.|
+|status.gatewayPhase|string|Specifies the current phase of the gateway deployment.|
+|status.message|string|A human readable message indicating details about why the Che deployment is in the current phase.|
+|status.pluginRegistryURL|string|The public URL of the internal plug-in registry.|
+|status.reason|string|A brief CamelCase message indicating details about why the Che deployment is in the current phase.|
+|status.workspaceBaseDomain|string|The resolved workspace base domain. This is either the copy of the explicitly defined property of the same name in the spec or, if it is undefined in the spec and we're running on OpenShift, the automatically resolved base domain for routes.|
