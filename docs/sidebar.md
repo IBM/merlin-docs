@@ -82,3 +82,4 @@
          - [ibmi-merlin-operator](./guides/platform/Merlin_crd_v1beta1.md)
          - [ibmi-developer-workspaces-operator](./guides/platform/CheCluster_crd_v1.md)
          - [merlin-cicd-operator](./guides/platform/CicdComponent_crd_v1beta1.md)
+         - [devworkspace-operator](./guides/platform/DevWorkspace_operator_CRDs.md)
