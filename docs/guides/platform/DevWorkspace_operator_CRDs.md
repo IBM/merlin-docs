@@ -33,7 +33,7 @@ DevWorkspaceOperatorConfig is the schema for the <span translate="no">devworkspa
 |config.workspace.imagePullPolicy|string|ImagePullPolicy defines the imagePullPolicy used for containers in a DevWorkspace For additional information, see Kubernetes documentation for imagePullPolicy. If not specified, the default value of "Always" is used.|
 |config.workspace.persistUserHome|object|PersistUserHome defines configuration options for persisting the `/home/user/` directory in workspaces.|
 |config.workspace.podSecurityContext|object|PodSecurityContext overrides the default PodSecurityContext used for all workspace-related pods created by the DevWorkspace Operator. If set, defined values are merged into the default configuration|
-|config.workspace.progressTimeout|string|ProgressTimeout determines the maximum duration a DevWorkspace can be in a "Starting" or "Failing" phase without progressing before it is automatically failed. Duration should be specified in a format parseable by Go's time package.|
+|config.workspace.progressTimeout|string|ProgressTimeout determines the maximum duration a DevWorkspace can be in a "Starting" or "Failing" phase without progressing before it is automatically failed. Duration should be specified in a format parsable by Go's time package.|
 |config.workspace.projectClone|object|ProjectCloneConfig defines configuration related to the project clone init container that is used to clone git projects into the DevWorkspace.|
 |config.workspace.pvcName|string|PVCName defines the name used for the persistent volume claim created to support workspace storage when the 'common' storage class is used. If not specified, the default value of `claim-devworkspace` is used.|
 |config.workspace.schedulerName|string|SchedulerName is the name of the pod scheduler for DevWorkspace pods. If not specified, the pod scheduler is set to the default scheduler on the cluster.|
@@ -116,7 +116,7 @@ DevWorkspaceTemplate is the schema for the <span translate="no">devworkspacetemp
 |spec.attributes|object|Map of implementation-dependant free-form YAML attributes.|
 |spec.commands|array|Predefined, ready-to-use, devworkspace-related commands|
 |spec.components|array|List of the devworkspace components, such as editor and plugins, user-provided containers, or other types of components|
-|spec.dependentProjects|array|Additional projects related to the main project in the devfile, contianing names and sources locations|
+|spec.dependentProjects|array|Additional projects related to the main project in the devfile, containing names and sources locations|
 |spec.events|object|Bindings of commands to events. Each command is referred-to by its name.|
 |spec.parent|object|Parent devworkspace template|
 |spec.projects|array|Projects worked on in the devworkspace, containing names and sources locations|
