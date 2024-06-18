@@ -3,7 +3,7 @@ The Credentials manage the credential info used for Merlin. It will save the cre
 
 Go to Merlin GUI and select **Connections -> Credentials** to go to the Credentials page.  
 
-<img src="../../images/guides/Credentials.png" width = "800" height = "500" alt="Credential" align=center />
+![Credentials Page](../../images/guides/Credentials.png ':size=800')
 
 An admin will see all credentials, but a user will only see credentials which they own. It will display the `Name`, `Type`, `Description`, `Owner`, `Created Time`, and `Updated Time`. 
 
@@ -11,7 +11,7 @@ An admin will see all credentials, but a user will only see credentials which th
 
   **Note**: If using ssh key, additional configuration is performed during connection to the IBM i before the build starts.  
 
-  <img src="../../images/guides/AddCredentials.png" width = "600" height = "300" alt="Add Credential" align=center />
+  ![Add Credential](../../images/guides/AddCredentials.png ':size=600')
 
 - **Delete Credentials** - The `Delete` button is disabled by default. Selecting items in the credential table will highlight them and also enable the `Delete` button. Click the `Delete` button and click `Yes` to the confirmation to delete all selected items.
 
