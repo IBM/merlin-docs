@@ -36,28 +36,6 @@ Install the OpenShift command line interface (oc) on the cluster's boot node and
 
 The storage configuration must satisfy the sizing requirements. For more information on the storage classes that are needed for installing IBM i Modernization Engine For Lifecycle Integration, see [Configure a default storage class](./guides/platform/Data_Storage_for_MERLIN.md).
 
-## Create a custom project (namespace)
-
-Create a project (namespace) to deploy IBM i Modernization Engine For Lifecycle Integration into.
-
-A project is a Openshift namespace. a custom project (namespace) must be created and not use the default, kube-system, kube-public, openshift-node, openshift-infra, or openshift projects (namespaces). This is because IBM i Modernization Engine For Lifecycle Integration uses Security Context Constraints (SCC), and SCCs cannot be assigned to pods created in one of the default OpenShift projects (namespaces).
-
-Create a project (namespace) with either of the following methods:
-
-- Option 1: Create a project with the OpenShift console
-- Option 2: Create a project with the OpenShift CLI
-
-### Option 1: Create a project with the OpenShift console
-
-From the OpenShift console, click Home > Projects. Select Create Project, specify the Name of the project, for example **merlin** and click Create.
-
- ![Create Openshift Namespace](../../images/guides/createNamespaceOnOpenshift.png)
-
-### Option 2: Create a project with the OpenShift CLI
-```
-Run oc create namespace <namespace> where <namespace> is the name of the project (namespace), for example **merlin**.
-```
-
 ## Create the entitlement key secret
 
 Complete the following steps to create a docker-registry secret to enable the deployment to pull the IBM i Modernization Engine For Lifecycle Integration images from the IBM® Entitled Registry.
@@ -160,9 +138,9 @@ Install Merlin operator with either of the following installation methods:
 - Click Install. The Install Operator page is displayed.
 - Enter the following values:
 ```
-        * Set the Namespace to be the project (namespace) in which to install the Operator, such as **merlin**.
-        * Set Update Channel to v2.0.
-        * Set Approval Strategy to Automatic.
+* Set the Namespace to be openshift-operators in which to install the Operator.
+* Set Update Channel to v2.0.
+* Set Approval Strategy to Automatic.
 ```
 - Click Install and wait for the Merlin operator to install.
 - Verify that the Merlin operator is successfully installed.
@@ -175,30 +153,14 @@ Install Merlin operator with either of the following installation methods:
 
 ### Option 2: Install the operator with the OpenShift CLI
 
-- Create Operator Group.
-
-Create an Operator group in the custom project (namespace), or the Merlin operator will not install. There might be an Operator group for managing a namespace for given APIs. If there is an Operator group for the namespace, do not create a second one.
-
-- Create the Operator group by running the following command:
-```
-    cat << EOF | oc apply -f -
-    apiVersion: operators.coreos.com/v1
-    kind: OperatorGroup
-    metadata:
-      name: merlin-operator-group
-      namespace: <namespace>
-    EOF
-```
-Where <namespace> is the project (namespace created earlier in Create a custom project (namespace).
-
-- Install the Merlin operator with the following command.
+Install the Merlin operator with the following command.
 ```
 cat << EOF | oc apply -f -
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
   name: ibmi-merlin-operator
-  namespace: <namespace>
+  namespace: openshift-operators
 spec:
   channel: v2.0
   installPlanApproval: Automatic
@@ -207,13 +169,13 @@ spec:
   sourceNamespace: openshift-marketplace
 EOF
 ```
-Where <namespace> is the project (namespace) created earlier, such as merlin.
 
 After a few minutes, the operator is installed. Verify that the all components are in the Succeeded state by running the following command:
 ```
-oc get csv -n <namespace> | grep ibmi-merlin-operator
+oc get csv -n openshift-operators | grep ibmi-merlin-operator
 ```
-Where <namespace> is openshift-operators if using the AllNamespaces installation mode, or the project (namespace) created earlier in Create a custom project (namespace) if using the OwnNamespace installation mode. For more information about installation modes, see Operator installation mode.
+
+> Note: Make sure the namespace/project for Merlin operator is `openshift-operators`.
 
 ## Deploy Merlin instance
 Once Merlin operator has been installed into a specific project, Merlin instance can be installed.
