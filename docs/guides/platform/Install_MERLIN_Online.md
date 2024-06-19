@@ -137,11 +137,11 @@ Install Merlin operator with either of the following installation methods:
 - Click the IBM i Modernization Engine for Lifecycle Integration tile. The IBM i Modernization Engine for Lifecycle Integration window is displayed.
 - Click Install. The Install Operator page is displayed.
 - Enter the following values:
-```
-* Set the Namespace to be openshift-operators in which to install the Operator.
-* Set Update Channel to v2.0.
-* Set Approval Strategy to Automatic.
-```
+
+  * Set the Namespace to be `openshift-operators` in which to install the Operator.
+  * Set Update Channel to v2.0.
+  * Set Approval Strategy to Automatic.
+
 - Click Install and wait for the Merlin operator to install.
 - Verify that the Merlin operator is successfully installed.
 - Navigate to Operators > Installed Operators, and select the project from the Projects dropdown. IBM i Modernization Engine for Lifecycle Integration and its dependant operator in the project are listed with a status of Succeeded.
