@@ -11,7 +11,6 @@ Complete these prerequisite tasks to prepare for the IBM i Modernization Engine 
    * Install OpenShift
    * Install the OpenShift CLI
    * Configure storage
-   * Create a custom project (namespace)
    * Create the entitlement key secret
    * Configure network policies
    * Create the catalog source
@@ -172,13 +171,13 @@ EOF
 
 After a few minutes, the operator is installed. Verify that the all components are in the Succeeded state by running the following command:
 ```
-oc get csv -n openshift-operators | grep ibmi-merlin-operator
+oc get csv -n openshift-operators | grep ibm-merlin
 ```
 
 > Note: Make sure the namespace/project for Merlin operator is `openshift-operators`.
 
 ## Deploy Merlin instance
-Once Merlin operator has been installed into a specific project, Merlin instance can be installed.
+Once Merlin operator has been installed in project `openshift-operators`, Merlin instance can be installed. Note that the instance must be installed in the same project `openshift-operators` as the operator.
 1. Click on 'Installed Operators' under 'Operators' section in the left navigation panel of OCP. 
 2. Two operators will be shown. Click the link of 'IBM i Modernization Engine for LifeCycle Integration' operator.
 3. Click on 'Details' tab of Operator details page. 
