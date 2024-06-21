@@ -143,7 +143,7 @@ Install Merlin operator with either of the following installation methods:
 
 - Click Install and wait for the Merlin operator to install.
 - Verify that the Merlin operator is successfully installed.
-- Navigate to Operators > Installed Operators, and select the project from the Projects dropdown. IBM i Modernization Engine for Lifecycle Integration and its dependant operator in the project are listed with a status of Succeeded.
+- Navigate to Operators > Installed Operators, and select the project from the Projects dropdown. IBM i Modernization Engine for Lifecycle Integration and its dependant operator in the project are listed with a status of `Succeeded`.
 - Navigate to Workloads > Pods, and select project `ibm-common-services` from the Projects dropdown. make sure the pods listed below are listed with a status of `Running`.
   - ibm-common-service-webhook
   - ibm-namespace-scope-operator
@@ -169,7 +169,7 @@ spec:
 EOF
 ```
 
-After a few minutes, the operator is installed. Verify that the all components are in the Succeeded state by running the following command:
+After a few minutes, the operator is installed. Verify that the all components are in the `Succeeded` state by running the following command:
 ```
 oc get csv -n openshift-operators | grep ibm-merlin
 ```
