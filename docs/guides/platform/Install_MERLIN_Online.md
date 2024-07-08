@@ -90,6 +90,9 @@ Create the catalog source with either of the following methods:
       publisher: IBM Content
       sourceType: grpc
       image: icr.io/cpopen/ibm-operator-catalog:latest
+      updateStrategy:
+        registryPoll:
+          interval: 45m
 ```
 - Go to Administration > Cluster Settings. Under Global Configuration > OperatorHub > Sources, verify that the ibm-operator-catalog CatalogSource object is present.
 
@@ -108,6 +111,9 @@ Create the catalog source with either of the following methods:
       publisher: IBM Content
       sourceType: grpc
       image: icr.io/cpopen/ibm-operator-catalog:latest
+      updateStrategy:
+        registryPoll:
+          interval: 45m
     EOF
 ```
 - Verify that the ibm-operator-catalog CatalogSource object is present, and is returned by the following command.
