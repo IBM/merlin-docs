@@ -44,6 +44,18 @@ Select `IBM-i-developer`
 
 <!-- div:left-panel -->
 
+If a dialog appears and asks allow the IDE to access your account, click `Allow selected permissions`.
+
+<!-- div:right-panel -->
+
+![](03/idesetup_a4.png)
+
+<!-- panels:end -->
+---
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+
 From `Create Workspace`, create a workspace by selecting `IBM i Developer` 
 
 <!-- div:right-panel -->
@@ -110,7 +122,7 @@ Do NOT change the repository location from `projects`.  Click `Select Repository
 
 <!-- div:left-panel -->
 
-If a dialog appears and asks to open the cloned repository or add it to the current workspace, click `Open`.
+If a dialog appears and asks to open the cloned repository or add it to the current workspace, click `Add to Workspace`.
 
 <!-- div:right-panel -->
 
@@ -168,7 +180,7 @@ In the `Project Explorer` view, select `Please configure project metadata`
 
 <!-- div:left-panel -->
 
-If prompted for description, enter `merlin`
+If prompted for description, enter `SAMCO`
 
 <!-- div:right-panel -->
 
@@ -222,18 +234,43 @@ In the `Connections` view, select the tempate (which has the host name and IBM i
 
 ---
 
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+
+If a dialog appears and asks to fix the $PATH shell environment variable, select `Yes`
+
+<!-- div:right-panel -->
+
+![](03/idesetup_j2.png)
+
+<!-- panels:end -->
+
+---
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+
+In the `Project Explorer` view, expand `arcad-example` project, expand `Source`, and click on `Please configure deploy location`
+<!-- div:right-panel -->
+
+![](03/idesetup_j3.png)
+
+<!-- panels:end -->
+
+---
 
 
 <!-- panels:start -->
 
 <!-- div:left-panel -->
-<!--
-The build directory will have a valid default.  Click `Enter`
--->
+
+The deploy directory will have a valid IFS directory default.  Click `Enter`
+
 <!-- div:right-panel -->
-<!--
-![](03/idesetup_k.png)
--->
+
+![](03/idesetup_j4.png)
+
 <!-- panels:end -->
 <!--
 ---
@@ -265,6 +302,63 @@ The IBM i will be connected and `arcad-example` project will have a green icon. 
 <!-- div:right-panel -->
 
 ![](03/idesetup_m.png)
+
+<!-- panels:end -->
+
+---
+## Create git branch
+
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+
+* On the bottom left, the current branch that you are working on will be shown. Work should not be done on the `main`/`master` branch. 
+* Create your own branch by clicking on the branch then select `Create new branch`.  Type your branch name, which must be unique, e.g. `feature/userXX`, and press Enter. 
+
+<!-- div:right-panel -->
+
+![](03/branch_a.png)
+
+![](03/branch_b.png)
+
+<!-- panels:end -->
+
+> [!NOTE]
+> `feature/xxx` refers to Arcad  mapping between git & Arcad types (feature, sandbox, or release).
+>
+> GIT BRANCH <==> Arcad Version
+
+---
+
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+
+You are now working locally on your branch. Click on the Git view icon, then the ellipsis (…) in the Source Control: Git toolbar, then **Push** to create your branch on the git repository.
+
+> [!NOTE]
+> This push (Branch creation event) will be caught by Arcad Builder and will create a build of your application. 
+
+> [!NOTE]
+> From the Git view, you are able to do all the Git actions such as stage, commit, push and pull    .
+
+<!-- div:right-panel -->
+
+![](03/branch_c.png)
+
+<!-- panels:end -->
+
+---
+
+<!-- panels:start -->
+
+<!-- div:left-panel -->
+
+You can also push to the git repository by clicking the git status button at the bottom:
+
+<!-- div:right-panel -->
+
+![](03/branch_e.png)
 
 <!-- panels:end -->
 
@@ -462,65 +556,6 @@ In `Project Explorer`, `arcad-example` will now have an `ARCAD` node
 
 ---
 
-
-## Create git branch
-
-<!-- panels:start -->
-
-<!-- div:left-panel -->
-
-* On the bottom left, the current branch that you are working on will be shown. Work should not be done on the `main`/`master` branch. 
-* Create your own branch by clicking on the branch then select `Create new branch`.  Type your branch name, which must be unique, e.g. `feature/userXX`, and press Enter. 
-
-<!-- div:right-panel -->
-
-![](03/branch_a.png)
-
-![](03/branch_b.png)
-
-<!-- panels:end -->
-
-> [!NOTE]
-> `feature/xxx` refers to Arcad  mapping between git & Arcad types (feature, sandbox, or release).
->
-> GIT BRANCH <==> Arcad Version
-
----
-
-<!-- panels:start -->
-
-<!-- div:left-panel -->
-
-You are now working locally on your branch. Click on the Git view icon, then the ellipsis (…) in the Source Control: Git toolbar, then **Push** to create your branch on the git repository.
-
-> [!NOTE]
-> This push (Branch creation event) will be caught by Arcad Builder and will create a build of your application. 
-
-> [!NOTE]
-> From the Git view, you are able to do all the Git actions such as stage, commit, push and pull    .
-
-<!-- div:right-panel -->
-
-![](03/branch_c.png)
-
-<!-- panels:end -->
-
----
-
-<!-- panels:start -->
-
-<!-- div:left-panel -->
-
-You can also push to the git repository by clicking the git status button at the bottom:
-
-<!-- div:right-panel -->
-
-![](03/branch_e.png)
-
-<!-- panels:end -->
-
----
-
 <!-- panels:start -->
 
 <!-- div:left-panel -->
@@ -544,7 +579,7 @@ You can also push to the git repository by clicking the git status button at the
 
 <!-- div:left-panel -->
 
-In `CHE (WORKSPACE)`, open `arcad-example>QDDSSRC>ART201D.DSPF`
+In `WORKSPACE`, open `arcad-example>QDDSSRC>ART201D.DSPF`
 
 <!-- div:right-panel -->
 
@@ -574,7 +609,7 @@ On line 36, change `ART201-1` to `ART201F1` and save the file
 
 <!-- div:left-panel -->
 
-Press `F1`.  Type `COMPILE` to find the `IBM i Developer: Compile` action and press `Enter` to run a build which will compile the changed source
+Press `F1`.  Type `COMPILE` to find the `Project Explorer: Run Compile` action and press `Enter` to run a build which will compile the changed source
 
 <!-- div:right-panel -->
 
@@ -589,7 +624,7 @@ Press `F1`.  Type `COMPILE` to find the `IBM i Developer: Compile` action and pr
 
 <!-- div:left-panel -->
 
-The `Output` view will show the successful result
+The `Terminal` view will show the successful result
 
 <!-- div:right-panel -->
 
@@ -604,7 +639,7 @@ The `Output` view will show the successful result
 
 <!-- div:left-panel -->
 
-In `IBM I Project Explorer`, `arcad-example>ARCAD` will have a Sandbox version and underneath `Components` will be shown the object compiled
+In `Project Explorer`, `arcad-example>ARCAD` will have a Sandbox version and underneath `Components` will be shown the object compiled
 
 <!-- div:right-panel -->
 
