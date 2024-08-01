@@ -297,7 +297,7 @@ If prompted about authenticity of host, click `Always`
 
 <!-- div:left-panel -->
 
-The IBM i will be connected and `arcad-example` project will have a green icon.  The connection will be shown at the bottom of the window.
+The IBM i will be connected.  The connection will be shown at the bottom of the window.
 
 <!-- div:right-panel -->
 
@@ -334,10 +334,12 @@ The IBM i will be connected and `arcad-example` project will have a green icon. 
 
 <!-- div:left-panel -->
 
-You are now working locally on your branch. Click on the Git view icon, then the ellipsis (…) in the Source Control: Git toolbar, then **Push** to create your branch on the git repository.
+You are now working locally on your branch. Click on the `Git` view icon, then the ellipsis (…) in the Source Control: Git toolbar, then **Push** to create your branch on the git repository.
 
+<!--
 > [!NOTE]
 > This push (Branch creation event) will be caught by Arcad Builder and will create a build of your application. 
+-->
 
 > [!NOTE]
 > From the Git view, you are able to do all the Git actions such as stage, commit, push and pull    .
@@ -371,6 +373,8 @@ You can also push to the git repository by clicking the git status button at the
 <!-- div:left-panel -->
 
 In `Project Explorer`, right-click on `arcad-example` and select `Configure project for ARCAD`
+
+If prompted for `The extension ARCAD-Elias(arcadsoftware.arcad-elias) is requesting connection data from Merlin`, click `Allow`.
 
 <!-- div:right-panel -->
 
@@ -654,10 +658,10 @@ In `Project Explorer`, `arcad-example>ARCAD` will have a Sandbox version and und
 
 <!-- div:left-panel -->
 
-On the bottom left, click on the branch status icon and publish the changes
+On the bottom left, click on the branch status icon and synchronize the changes
 
 <!-- div:right-panel -->
 
-![](03/ideedit_f.png)
+![](03/ideedit_f2.png)
 
 <!-- panels:end -->
