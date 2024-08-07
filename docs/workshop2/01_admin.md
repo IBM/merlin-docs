@@ -3,26 +3,40 @@
 
 These set-up steps have already been run for you.  They are documented here for your awareness and education and will be useful when you want to set up Merlin in your own environment.
 
-1. Setup git
-   1. Configure git repository for Source Configuration Management  
-   2. Load ARCAD-EXAMPLE source into git repository (in general, if necessary migrate source from physical files -> IFS -> git repository)
-   3. Generate SSH key pair for use from Merlin IDE, git repository, and IBM i userid
-   4. Configure webhook for Arcad builder
-2. Create ide and cicd projects in Merlin
-3. Install IDE tool into ide project, install CICD tool into cicd project
-4. Create Merlin users, e.g. `userX`
-5. Add Inventory for each IBM i hostname
-6. Add Merlin users and inventory into group
-7. Add group to project
-8. For each user, create credentials with IBM i userid and password, create template using credential and inventory
-9. Run IBM i configuration for Merlin
-10. In CICD tool: 
-    1. initialize internal Jenkins server
-    2. add users
-    3. add jenkins credential for IBM i user id to access ARCAD build server,
-    4. enable ARCAD integration for jenkins server
-<!--4. Create Application definition - source and object libraries-->
-11. Initialize ARCAD application
+1. Initialize vault.  Store the secrets and token.
+2. Create `ideproj` and `cicdproj` projects in Merlin
+3. Install IBM i Developer tool into `ideproj` project.  Accept license. Specify `openVSXURL` of https://open-vsx.org
+4. Install CI/CD tool into `cicdproj` project.  Accept license.
+5. Create connection information (Inventory/Credential/Template) for IBM i with admin id
+6. Run actions on template to configure IBM i 
+   1. Enable ansible environment
+   2. Validate dependent PTFs
+   3. Add certificate
+   4. Enable IBM i developer environment
+   5. Enable debug service
+   6. Enable Arcad environment
+7. Configure CICD tool
+   1. Start CICD tool
+   2. Initialize jenkins server (use internal jenkins server)
+   3. Add jenkins credential for Arcad
+   4. Enable Arcad integration for jenkins
+8. Create IBM i user ids with IFS home directory specified, bash as default shell, and `/QOpenSys/pkgs/bin` in `PATH`
+9. Create Merlin users
+10. Create group and add users as members
+11. In Authorization, add permissions for group to `ideproj` and `cicdproj` projects with `VIEW`
+12. In CICD tool's jenkins configuration>manage permissions, add each user
+13. For each Merlin user, log into Merlin and create connection information (Inventory/Credential/Template)
+14. Setup git on IBM i
+    1. Configure git repository for Source Configuration Management  
+    2. Load ARCAD-EXAMPLE source into git repository (in general, if necessary migrate source from physical files -> IFS -> git repository)
+    3. Generate SSH key pair for use from Merlin IDE, git repository, and IBM i userid
+    4. Configure webhook for Arcad builder
+15. Verify servers
+    1. gitbucket http://<ibmi_ipaddress>:7450/ 
+    2. Arcad builder http://<ibmi_ipaddress>:5252/about/ 
+    3. Arcad builder web console https://<ibmi_ipaddress>:2012/builder/
+    4. Elias https://<ibmi_ipaddress>:2012/elias/arcad/v1/ping/
+16. Configure ARCAD-EXAMPLE project for Arcad in Merlin
 
 ### Configuring of Source Control Management
 Modern application development presupposes good source control that can enable best practices.
