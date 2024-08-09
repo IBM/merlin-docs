@@ -13,10 +13,10 @@ With access to the Merlin Test Drive environment, this hands-on documentation ca
 #### Value proposition
 
 * Gain hands-on experience with the technology
-* A [self-guided tour](./workshop2/readme.md) and sample code are provided (for Version 1.0 see [self-guided tour](./workshop/readme.md))
+* A [self-guided tour](./workshop2/readme.md) and sample code are provided
 * Leverage, test, and / or demonstrate IBM i Merlin.
 * The user is provided an OpenShift Merlin Workspace and a dedicated IBM i partition
-* IBM TechZone and the IBM Client Engineering for Systems team provides the [infrastructure](https://techzone.ibm.com/collection/6357a52fda39b60018b61e06). IBM i Development provides the Merlin expertise. And you test-drive Merlin.
+* IBM TechZone and the IBM Client Engineering for Systems team provides the [infrastructure](https://techzone.ibm.com/collection/6357a52fda39b60018b61e06). The IBM i Development team provides the Merlin expertise. And you test-drive Merlin.
 
 #### Limitations
 
@@ -26,7 +26,7 @@ With access to the Merlin Test Drive environment, this hands-on documentation ca
 
 # How to participate?
 
-* BP or IBM Sellers can request a [Merlin environment](https://techzone.ibm.com/my/reservations/create/63b71608186dad00181dc348) on IBM TechZone with a Sales Opportunity number.  Then contact Merlin.Sandbox.Support@ibm.com to have the environment configured for the test drive.
+* Business Partners or IBM Sellers can request a [Merlin environment](https://techzone.ibm.com/my/reservations/create/63b71608186dad00181dc348) on IBM TechZone with a Sales Opportunity number.  Then contact Merlin.Sandbox.Support@ibm.com to have the environment configured for the test drive.
 * Clients should reach out to your Seller to be nominated for participation.  
  
 For general inquiries, contact ce4s@ibm.com.
