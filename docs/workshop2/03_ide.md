@@ -571,7 +571,7 @@ In `Project Explorer`, `arcad-example` will now have an `ARCAD` node
 
 <!-- div:right-panel -->
 
-![](04/git.png)
+![](03/git.png)
 
 <!-- panels:end -->
 
