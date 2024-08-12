@@ -29,5 +29,5 @@ With access to the Merlin Test Drive environment, this hands-on documentation ca
 * Business Partners or IBM Sellers can request a [Merlin environment](https://techzone.ibm.com/my/reservations/create/63b71608186dad00181dc348) on IBM TechZone with a Sales Opportunity number.  Then contact Merlin.Sandbox.Support@ibm.com to have the environment configured for the test drive.
 * Clients should reach out to your Seller to be nominated for participation.  
  
-For general inquiries, contact ce4s@ibm.com.
+
 
