@@ -64,6 +64,8 @@ oc set data secret/pull-secret -n openshift-config --from-file=.dockerconfigjson
 ```
 -	Monitor the node status using the command: oc get nodes
 - When the nodes are finish restarting, the cluster is now ready to pull images from the staging registry with production image references.
+> Note: If the OpenShift cluster is deployed using Red Hat OpenShift on IBM Cloud, the nodes will not be restarted automatically to pick up this global configuration change.  
+The cluster admin needs to restart the nodes following the instructions in this link: [reload nodes](https://cloud.ibm.com/docs/openshift?topic=openshift-registry#:~:text=To%20pick%20up%20the%20global%20configuration%20changes%2C%20reload%20all%20the%20worker%20nodes%20in%20your%20cluster)
 
 ## Install IBM catalog source
 
