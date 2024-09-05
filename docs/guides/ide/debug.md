@@ -1,9 +1,15 @@
 #  Debugging
 
-The IBM i Debugger for Merlin v2.0 consists of a host component called **IBM i Debug Service**, and a client **IBM i Debug** extension included in the IDE. IBM i Debug Service is delivered as host [PTFs](../platform/ManageIBMiServer.md#running-actions-on-the-ibm-i-server) on the 7.3, 7.4, and 7.5 release levels.  A Java 11 JRE is required to run IBM i Debug Service v2.0.
+The IBM i Debugger for Merlin consists of a host component called **IBM i Debug Service**, and a client **IBM i Debug** extension included in the IDE. IBM i Debug Service is delivered as host [PTFs](../platform/ManageIBMiServer.md#running-actions-on-the-ibm-i-server) on the 7.3, 7.4, and 7.5 release levels.  A Java 11 JRE is required to run IBM i Debug Service.
 
 - Run **Validate the dependent PTFs** action on a template from **Connections** to verify the required PTFs are applied.
 - Run **Enable IBM i debug service** action on a template from **Connections** to start the debug service on the IBM i.
+
+The IBM i user profile needs to have the following authorities:
+- `*USE` authority to the Start Debug (`STRDBG`) command.
+- `*USE` authority to the End Debug (`ENDDBG`) command.
+- `*USE` authority to the Start Service Job (`STRSRVJOB`) command.
+- `*USE` authority to the End Service Job (`ENDSRVJOB`) command.
 
 For a demonstration, see the Debugging video in the [Merlin Getting Started for Users](https://www.youtube.com/playlist?list=PLPELYviDwCnY6L5r5ZnmCneqhakLcB7ko) playlist.
 
