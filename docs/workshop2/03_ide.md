@@ -251,7 +251,7 @@ If a dialog appears and asks to fix the $PATH shell environment variable, select
 
 <!-- div:left-panel -->
 
-In the `Project Explorer` view, expand `arcad-example` project, expand `Source`, and click on `Please configure deploy location`
+In the `Project Explorer` view, expand `arcad-example` project, beside `Source` click on `Please configure deploy location`
 <!-- div:right-panel -->
 
 ![](03/idesetup_j3.png)
@@ -297,7 +297,7 @@ If prompted about authenticity of host, click `Always`
 
 <!-- div:left-panel -->
 
-The IBM i will be connected.  The connection will be shown at the bottom of the window.
+The IBM i will be connected.  The connection will be shown at the bottom of the window using the Merlin template name.
 
 <!-- div:right-panel -->
 
@@ -313,7 +313,7 @@ The IBM i will be connected.  The connection will be shown at the bottom of the 
 <!-- div:left-panel -->
 
 * On the bottom left, the current branch that you are working on will be shown. Work should not be done on the `main`/`master` branch. 
-* Create your own branch by clicking on the branch then select `Create new branch`.  Type your branch name, which must be unique, e.g. `feature/userXX`, and press Enter. 
+* Create your own branch by clicking on the `main`/`master` branch then select `Create new branch`.  Type your branch name, which must be unique, e.g. `feature/userX`, and press Enter. 
 
 <!-- div:right-panel -->
 
@@ -334,7 +334,7 @@ The IBM i will be connected.  The connection will be shown at the bottom of the 
 
 <!-- div:left-panel -->
 
-You are now working locally on your branch. Click on the `Git` view icon, then the ellipsis (…) in the Source Control: Git toolbar, then **Push** to create your branch on the git repository.
+You are now working locally on your branch. Click on the `Source Control` view icon on the left, then the ellipsis (…) in the Source Control toolbar to show the menu.  Select **Push** to create your branch on the git repository.
 
 <!--
 > [!NOTE]
@@ -355,6 +355,8 @@ You are now working locally on your branch. Click on the `Git` view icon, then t
 <!-- panels:start -->
 
 <!-- div:left-panel -->
+
+If asked to publish the branch because it has no remote branch, click OK.
 
 You can also push to the git repository by clicking the git status button at the bottom:
 
@@ -567,7 +569,7 @@ In `Project Explorer`, `arcad-example` will now have an `ARCAD` node
 ## Change source code
 
 - Save modification can be done automatically or manually (`File>Save` or key combination, e.g Ctrl+S (depends on preferences)).
-- After the save, a badge appears on the Git icon and a `M` to the right of the source member to indicate the file has been modified.
+- After the save, a badge appears on the Source Control view icon and a `M` to the right of the source member to indicate the file has been modified.
 
 <!-- div:right-panel -->
 
@@ -583,7 +585,9 @@ In `Project Explorer`, `arcad-example` will now have an `ARCAD` node
 
 <!-- div:left-panel -->
 
-In `WORKSPACE`, open `arcad-example>QDDSSRC>ART201D.DSPF`
+Use Control/Command + P (Fast Open) and specify ART201D.DSPF and click Enter.
+
+The editor will open workspace file `arcad-example>QDDSSRC>ART201D.DSPF`
 
 <!-- div:right-panel -->
 
@@ -600,6 +604,8 @@ In `WORKSPACE`, open `arcad-example>QDDSSRC>ART201D.DSPF`
 
 On line 36, change `ART201-1` to `ART201F1` and save the file
 
+`M` will be shown beside the file to indicate it has been modified
+
 <!-- div:right-panel -->
 
 ![](03/ideedit_b.png)
@@ -613,7 +619,9 @@ On line 36, change `ART201-1` to `ART201F1` and save the file
 
 <!-- div:left-panel -->
 
-Press `F1`.  Type `COMPILE` to find the `Project Explorer: Run Compile` action and press `Enter` to run a build which will compile the changed source
+Press F1 to see the workspace functions available, including “IBM i”, “Arcad”, and “Project Explorer” functions.
+
+Type `COMPILE` to find the `Project Explorer: Run Compile` action and press `Enter`to deploy the source to the IBM i and run a build which will compile the changed source
 
 <!-- div:right-panel -->
 
@@ -643,7 +651,7 @@ The `Terminal` view will show the successful result
 
 <!-- div:left-panel -->
 
-In `Project Explorer`, `arcad-example>ARCAD` will have a Sandbox version and underneath `Components` will be shown the object compiled
+In `Project Explorer`, `arcad-example>ARCAD` will have a `SB` Sandbox version and underneath `Components` will be shown the object compiled
 
 <!-- div:right-panel -->
 
@@ -652,16 +660,3 @@ In `Project Explorer`, `arcad-example>ARCAD` will have a Sandbox version and und
 <!-- panels:end -->
 ---
 
-
-
-<!-- panels:start -->
-
-<!-- div:left-panel -->
-
-On the bottom left, click on the branch status icon and synchronize the changes
-
-<!-- div:right-panel -->
-
-![](03/ideedit_f2.png)
-
-<!-- panels:end -->

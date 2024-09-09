@@ -8,18 +8,18 @@
 * Red panel:  outline view displays all defined variables, structs and files in active editor
 * Blue panel: Problems & Output view, compilation output, warnings, etc.
 
-## ILE RPG has extensive support
+## ILE RPG 
 
-* Outline
-* Model created
-* Easy navigation
-* Hover information
-* Showing information from procedure definition
-* Procedure call
-   * Right click to references
-   * See everywhere it’s used
-   * And lets you go to those calls
-* Collapsible blocks of code
+* Outline – provides structured view of the source code for navigation and supports filtering
+* Hover – shows information for item under cursor
+* References – show where a particular code element is referenced throughout the workspace
+* Definitions – show source of particular code element
+* Formatting – format the whole document or a selected region
+* Content Assist – code and variable completion
+* Rename – intelligently rename all references to variables
+* Extract Constant – extract a literal value into a constant
+* Source Error Reporting – errors are shown beside the text in the editor and in the Problems view
+
 
 
 ### Tokenization
@@ -54,7 +54,7 @@
 ### Refactoring
 
 * Rename a symbol
-  * Intelligent, not just find and replace
+  * Intelligent - not just find and replace
   * Updates the model 
 * Shift+enter to preview
   * Decide to apply or not
@@ -83,44 +83,6 @@
 <!-- div:right-panel -->
 
 ![](ide_overview/sql.png)
-
-<!-- panels:end -->
-
----
-
-## IBM i Workspace actions
-<!-- panels:start -->
-
-<!-- div:left-panel -->
-
-Press F1, then type “IBM” to see the IBM i functions available: 
-
-* Compile (single opened file), 
-* Build (all), 
-* Arcad Build, 
-* Convert to Free, 
-* Observer, 
-* etc
-
-<!-- div:right-panel -->
-
-![](ide_overview/ibmi_pal.png)
-
-<!-- panels:end -->
-
----
-
-<!-- panels:start -->
-
-<!-- div:left-panel -->
-
-## Fast open
-
-Using Control/Command + P to filter workspace files.
-
-<!-- div:right-panel -->
-
-![](ide_overview/openfiles.png)
 
 <!-- panels:end -->
 

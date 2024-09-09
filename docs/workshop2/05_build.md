@@ -74,7 +74,7 @@ View Spool files in `.logs` folder:
 
 Standard process is: 
 
-1. Show change in Git view
+1. Show change in Source Control view
 2. See compare
 3. Stage change
 4. Commit
