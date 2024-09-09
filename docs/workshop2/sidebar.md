@@ -1,5 +1,5 @@
-- [Intro](workshop2/readme)
-- [Admin](workshop2/01_admin)
+- [Introduction](workshop2/readme)
+- [Administrator Information](workshop2/01_admin)
 - [Start](workshop2/02_start)
 - IDE
    - [Overview](workshop2/ide_overview)
@@ -8,5 +8,4 @@
    - [Build](workshop2/05_build)
    - [Convert to Modern RPG](workshop2/07_transformer)   
    - [Debug](workshop2/08_debug)   
-- CI/CD
-   - [Usage](workshop2/06_cicd)
+- [CI/CD](workshop2/06_cicd)
