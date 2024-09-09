@@ -37,8 +37,7 @@
 
 * In `IBM I Project Explorer`, expand `arcad-example>IBM i>Object Libraries`.
 * Expand the library and select the compiled program object 
-* Right-click and select `Debug as Batch (Prompt)...` action icon  
-* Add `CURLIB(<your library name)` to the end of the command string.  Press Enter
+* Right-click and select `Debug>As Batch` action icon  
 
 <!-- div:right-panel -->
 

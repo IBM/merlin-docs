@@ -20,7 +20,7 @@ These set-up steps have already been run for you.  They are documented here for 
    2. Initialize jenkins server (use internal jenkins server)
    3. Add jenkins credential for Arcad
    4. Enable Arcad integration for jenkins
-8. Create IBM i user ids with IFS home directory specified, bash as default shell, and `/QOpenSys/pkgs/bin` in `PATH`
+8. Create IBM i user ids with IFS home directory specified, bash as default shell, and `/QOpenSys/pkgs/bin` in `PATH`.  Grant authority to commands for debugging.
 9. Create Merlin users
 10. Create group and add users as members
 11. In Authorization, add permissions for group to `ideproj` and `cicdproj` projects with `VIEW`

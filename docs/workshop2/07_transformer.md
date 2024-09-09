@@ -6,7 +6,7 @@
 ## Convert to fully free RPGLE
 
 * Edit `arcad-example/QRPGLESRC/ORD700.PGM.RPGLE` file.
-* The file is using fixed-form RPG for D/C/P specs.  
+* The file is using fixed-form RPG for D/F/P specs.  
 
 <!-- div:right-panel -->
 
@@ -33,7 +33,7 @@
 
 <!-- div:left-panel -->
 
-* When completed, the component is automatically recompiled and the editor is refreshed with free-form D/C/P specs.
+* When completed, the component is automatically recompiled and the editor is refreshed with free-form D/F/P specs.
 
 <!-- div:right-panel -->
 
