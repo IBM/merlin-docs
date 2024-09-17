@@ -224,7 +224,7 @@ Since the IDE will connect to Merlin to retrieve the templates defined, enter yo
 
 <!-- div:left-panel -->
 
-In the `Connections` view, select the tempate (which has the host name and IBM i credentials to use) to connect to the IBM i
+In the `Connections` view, select the template (which has the host name and IBM i credentials to use) to connect to the IBM i
 
 <!-- div:right-panel -->
 
