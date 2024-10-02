@@ -4,9 +4,9 @@ Welcome to the documentation for IBM i Merlin. This includes hands-on tutorials,
 
 IBM i Modernization Engine for Lifecycle Integration (Merlin) is a set of tools run in OpenShift containers which guide and assist software developers in the modernization of IBM i applications, allowing them to realize the value of a hybrid cloud, multi-platform DevOps implementation.  
 
-**News**: Version 2.0 is available.  See the [announcement](https://www.ibm.com/docs/en/announcements/i-modernization-engine-lifecycle-integration-merlin-20) for details.
+See the [announcement](https://www.ibm.com/docs/en/announcements/i-modernization-engine-lifecycle-integration-merlin-20) for Version 2.0 details.
 
-Version 1.0 documentation is available at [IBM Documentation for Merlin](https://www.ibm.com/docs/en/merlin/1.0?topic=overview).
+**News**: Version 2.0.3 is available!
 
 #### Getting started videos
 
@@ -22,11 +22,10 @@ Version 1.0 documentation is available at [IBM Documentation for Merlin](https:/
 
 #### Additional resources
 
-* Check out the official [Security considerations](https://www.ibm.com/docs/en/merlin/1.0?topic=overview-security-considerations) from IBM.
-* See the [Version 1 announcement](https://www.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/8/897/ENUS222-128/index.html).
 * See the [product page](https://www.ibm.com/products/ibm-i-merlin) for more information.
 * See [Frequently Asked Questions](https://www.ibm.com/support/pages/ibm-i-modernization-engine-lifecycle-integration-merlin-overview#faq).
 * Visit [YouTube](https://www.youtube.com/playlist?list=PLPELYviDwCnYe60cNHs_Hf-4Sr8h_0uVE) for a play list of videos to learn more about Merlin including the integration with ARCAD tools.
 * Listen to a [podcast introducing Merlin](https://techchannel.com/Trends/05/2022/merlin-ibm-i-wizard).
 * Watch a [COMMON webcast](https://learn.common.org/products/may-2022-ibm-i-updates#tab-product_tab_overview) for a Merlin overview.
 * Read a [blog post](https://www.arcadsoftware.com/news-events/blog/a-wizard-for-application-development-and-modernization-on-ibm-i/) on a “Wizard” for Application Development and Modernization on IBM i.
+* See the [Version 1 announcement](https://www.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/8/897/ENUS222-128/index.html).
