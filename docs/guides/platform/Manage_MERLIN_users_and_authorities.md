@@ -2,7 +2,10 @@
 
 
 ## Users and Groups
-Merlin support users and groups. Group is the container of a set of users and groups. All the role and permissions granted to a group are inherited by all its members. Merlin supports user federation. Users and groups can be created in Merlin local repository directly or imported from a LDAP server. Multiple LDAP servers can be added to Merlin at the same time. When add a LDAP server to Merlin, the users and groups in the LDAP server are imported into Merlin local user repository. All the updates to users and groups through Merlin are kept in Merlin local repository and are not synchronized back to the original LDAP server.
+Merlin support users and groups. Group is the container of a set of users and groups. All the role and permissions granted to a group are inherited by all its members. 
+
+### User Federation
+Merlin supports user federation. Users and groups can be created in Merlin local repository directly or imported from a LDAP server. Multiple LDAP servers can be added to Merlin at the same time. When add a LDAP server to Merlin, the users and groups in the LDAP server are imported into Merlin local user repository. All the updates to users and groups through Merlin are kept in Merlin local repository and are not synchronized back to the original LDAP server.
 
 ## Authorization
 ### Manage Roles
