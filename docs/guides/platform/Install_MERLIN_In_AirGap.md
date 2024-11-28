@@ -12,7 +12,7 @@ A local Docker registry that is accessible from both the bastion server and the 
 
 ## Prepare a bastion host
 
-Prepare a bastion host that can access the OpenShift Container Platform cluster, the local Docker registry, and the internet. The bastion host must be on a Linux® platform with any operating system that the IBM Cloud Pak® CLI and the OpenShift Container Platform CLI support.
+Prepare a bastion host that can access the OpenShift Container Platform cluster, the local Docker registry, and the internet. The bastion host must be on a Linux® platform with any operating system that the IBM Catalog Management Plug-in and the OpenShift Container Platform CLI support.
 
 Complete these steps on the bastion node:
 
@@ -106,7 +106,10 @@ cd /opt/registry/certs
 Generate a certificate.
 
 ```bash
-openssl req -newkey rsa:4096 -nodes -sha256 -keyout domain.key -x509 -days 365 -out domain.crt
+openssl req -newkey rsa:4096 -nodes -sha256 \
+    -keyout domain.key -x509 -days 365 \
+    -out domain.crt \
+    -addext "subjectAltName=DNS:<the_registry_hostname>"
 ```
 
 At the prompts, provide the required values for the certificate:
@@ -139,7 +142,7 @@ htpasswd -bBc /opt/registry/auth/htpasswd <registry_user_name> <registry_passwor
 Create the Docker registry container to host the registry.
 
 ```bash
-docker run --name mirror-registry -p <the_registry_hostname>:<the_registry_host_port> \
+docker run --name mirror-registry -p <the_registry_host_port>:5000 \
   -v /opt/registry/data:/var/lib/registry:z \
   -v /opt/registry/auth:/auth:z \
   -e "REGISTRY_AUTH=htpasswd" \
@@ -197,12 +200,6 @@ mkdir -p /etc/docker/certs.d/<the_registry_host_name>:<the_registry_host_port>
 cp /opt/registry/certs/domain.crt /etc/docker/certs.d/<the_registry_host_name>:<the_registry_host_port>/ca.crt
 ```
 
-Log in the Docker registry.
-
-```bash
-docker login <the_registry_host_name>:<the_registry_host_port> -u <registry_user_name> -p <registry_password>
-```
-
 #### Configure the registry
 
 After creates the registry, configure the Docker registry:
@@ -225,24 +222,23 @@ Complete these steps on the bastion host.
 Create the following environment variables with the installer CASE name and the image inventory.
 
 ```bash
-export CASE_ARCHIVE=ibm-merlin-2.0.0.tgz
-export CASE_INVENTORY_SETUP=merlinOperatorSetup
+export MERLIN_CASE_NAME=ibm-merlin
+export CICD_CASE_NAME=ibm-merlin-cicd
+export IDE_CASE_NAME=ibm-merlin-development-environment
+export DEVWORKSPACE_CASE_NAME=ibm-merlin-devworkspace
+export CASE_VERSION=<case_version>
 ```
+
+To find the CASE name and version, see [IBM: Product CASE to Application Version](https://www.ibm.com/links?url=https%3A%2F%2Fibm.github.io%2Fcloud-pak).
+
 
 #### Download the IBM i Modernization Engine for Lifecycle Integration installer and image inventory to the bastion host.
 
 ```bash
-cloudctl case save \
-  --case https://github.com/IBM/cloud-pak/raw/master/repo/case/ibm-merlin-2.0.0.tgz \
-  --outputdir $HOME/offline/
-
-cloudctl case save \
-  --case https://github.com/IBM/cloud-pak/raw/master/repo/case/ibm-merlin-cicd-2.0.0.tgz \
-  --outputdir $HOME/offline/
-
-cloudctl case save \
-  --case https://github.com/IBM/cloud-pak/raw/master/repo/case/ibm-merlin-development-environment-2.0.0.tgz \
-  --outputdir $HOME/offline/
+oc ibm-pak get $MERLIN_CASE_NAME --version $CASE_VERSION
+oc ibm-pak get $CICD_CASE_NAME --version $CASE_VERSION
+oc ibm-pak get $IDE_CASE_NAME --version $CASE_VERSION
+oc ibm-pak get $DEVWORKSPACE_CASE_NAME --version $CASE_VERSION
 ```
 
 #### Log in to the OpenShift Container Platform cluster as a cluster administrator
@@ -252,17 +248,6 @@ Following is an example command to log in to the OpenShift Container Platform cl
 ```bash
 oc login <cluster host:port> --username=<cluster admin user> --password=<cluster admin password>
 ```
-
-#### Create a Kubernetes namespace for the IBM i Modernization Engine for Lifecycle Integration
-
-```bash
-export NAMESPACE=merlin
-oc create namespace ${NAMESPACE}
-```
-
-#### Configure global pull secret with the entitlement key
-
-Follow the instructions to [Create the entitlement key secret](./guides/platform/Install_MERLIN_Online?id=create-the-entitlement-key-secret). 
 
 ### Complete these steps to mirror the images and configure the cluster
 
@@ -274,61 +259,36 @@ Follow the instructions to [Create the entitlement key secret](./guides/platform
 * Run the following command to configure authentication credentials for the registry
 
 ```bash
-cloudctl case launch \
-    --case $HOME/offline/${CASE_ARCHIVE} \
-    --inventory ${CASE_INVENTORY_SETUP} \
-    --action configure-creds-airgap \
-    --namespace ${NAMESPACE} \
-    --args "--registry cp.icr.io --user cp --pass <the-entitlement-key>" \
-    --tolerance 1
-
-cloudctl case launch \
-    --case $HOME/offline/${CASE_ARCHIVE} \
-    --inventory ${CASE_INVENTORY_SETUP} \
-    --action configure-creds-airgap \
-    --namespace ${NAMESPACE} \
-    --args "--registry registry.redhat.io --user <redhat-user> --pass <redhat-token>" \
-    --tolerance 1
+export REGISTRY_AUTH_FILE=~/.ibm-pak/auth.json
+export TARGET_REGISTRY=<the_registry_hostname>:<the_registry_host_port>
+export TARGET_REGISTRY_USERNAME=<registry_user_name>
+export TARGET_REGISTRY_PASSWORD=<registry_password>
+docker login $TARGET_REGISTRY -u $TARGET_REGISTRY_USERNAME -p $TARGET_REGISTRY_PASSWORD
+docker login cp.icr.io -u cp -p <the-entitlement-key>
+docker login registry.redhat.io -u <redhat-user> -p <redhat-token>
 ```
 
-The command stores and caches the registry credentials in a file on the file system in the $HOME/.airgap/secrets location.
-
-#### Create environment variables with the local Docker registry connection information.
-
-```bash
-export LOCAL_DOCKER_REGISTRY=<IP_or_FQDN_of_local_docker_registry>
-export LOCAL_DOCKER_USER=<username>
-export LOCAL_DOCKER_PASSWORD=<password>
-```
-
-> Note: The Docker registry uses standard ports such as 80 or 443. If the Docker registry uses a non-standard port, specify the port by using the syntax <host>:<port>. For example, export LOCAL_DOCKER_REGISTRY=myregistry.local:5000.
-
-#### Configure an authentication secret for the local Docker registry.
-
-Note: This step needs to be done only one time.
-
-```bash
-cloudctl case launch \
-  --case $HOME/offline/${CASE_ARCHIVE} \
-  --inventory ${CASE_INVENTORY_SETUP} \
-  --action configure-creds-airgap \
-  --namespace ${NAMESPACE} \
-  --args "--registry ${LOCAL_DOCKER_REGISTRY} --user ${LOCAL_DOCKER_USER} --pass ${LOCAL_DOCKER_PASSWORD}" \
-  --tolerance 1
-```
-
-The command stores and caches the registry credentials in a file on the file system in the $HOME/.airgap/secrets location.
+The command stores and caches the registry credentials in a file on the file system in the $REGISTRY_AUTH_FILE location.
 
 #### Configure a global image pull secret and ImageContentSourcePolicy.
+
+Follow the instructions to [Create the entitlement key secret](./guides/platform/Install_MERLIN_Online?id=create-the-entitlement-key-secret).
+
+The documented steps in the link enable your cluster to have proper authentication credentials in place to pull images from your local docker registry as specified in the image-content-source-policy.yaml that is applied to your cluster in the next step.
+
+Run the following command to generate the image-mapping.txt file:
 ```
-cloudctl case launch \
-  --case $HOME/offline/${CASE_ARCHIVE} \
-  --inventory ${CASE_INVENTORY_SETUP} \
-  --action configure-cluster-airgap \
-  --namespace ${NAMESPACE} \
-  --args "--registry ${LOCAL_DOCKER_REGISTRY} --user ${LOCAL_DOCKER_USER} --pass ${LOCAL_DOCKER_PASSWORD}" \
-  --tolerance 1
+oc ibm-pak generate mirror-manifests $MERLIN_CASE_NAME $TARGET_REGISTRY --version $CASE_VERSION
+oc ibm-pak generate mirror-manifests $CICD_CASE_NAME $TARGET_REGISTRY --version $CASE_VERSION
+oc ibm-pak generate mirror-manifests $IDE_CASE_NAME $TARGET_REGISTRY --version $CASE_VERSION
+oc ibm-pak generate mirror-manifests $DEVWORKSPACE_CASE_NAME $TARGET_REGISTRY --version $CASE_VERSION
 ```
+
+Run the following command to create ImageContentSourcePolicy:
+```
+oc apply -f  ~/.ibm-pak/data/mirror/$MERLIN_CASE_NAME/$CASE_VERSION/image-content-source-policy.yaml
+```
+
 #### Verify that the ImageContentSourcePolicy resource is created.
 ```
 oc get imageContentSourcePolicy
@@ -336,7 +296,7 @@ oc get imageContentSourcePolicy
 
 Optional: If an insecure registry is being used, the local registry must be added to the cluster insecureRegistries list.
 ```
-oc patch image.config.openshift.io/cluster --type=merge -p '{"spec":{"registrySources":{"insecureRegistries":["'${LOCAL_DOCKER_REGISTRY}'"]}}}'
+oc patch image.config.openshift.io/cluster --type=merge -p '{"spec":{"registrySources":{"insecureRegistries":["'${TARGET_REGISTRY}'"]}}}'
 ```
 
 Verify the cluster node status.
@@ -348,106 +308,62 @@ After the imageContentsourcePolicy and global image pull secret are applied, wai
 
 #### Mirror the images to the local registry.
 ```
-    cloudctl case launch \
-      --case $HOME/offline/${CASE_ARCHIVE} \
-      --inventory ${CASE_INVENTORY_SETUP} \
-      --action mirror-images \
-      --namespace ${NAMESPACE} \
-      --args "--registry ${LOCAL_DOCKER_REGISTRY} --inputDir $HOME/offline" \
-      --tolerance 1
+oc image mirror \
+  -f ~/.ibm-pak/data/mirror/$MERLIN_CASE_NAME/$CASE_VERSION/images-mapping.txt \
+  --filter-by-os '.*'  \
+  -a $REGISTRY_AUTH_FILE \
+  --insecure  \
+  --skip-multiple-scopes \
+  --max-per-registry=1 \
+  --continue-on-error=true
 ```
 ```
-    cloudctl case launch \
-      --case $HOME/offline/ibm-merlin-cicd-2.0.0.tgz \
-      --inventory merlinCicdOperatorSetup \
-      --action mirror-images \
-      --namespace ${NAMESPACE} \
-      --args "--registry ${LOCAL_DOCKER_REGISTRY} --inputDir $HOME/offline" \
-      --tolerance 1
+oc image mirror \
+  -f ~/.ibm-pak/data/mirror/$CICD_CASE_NAME/$CASE_VERSION/images-mapping.txt \
+  --filter-by-os '.*'  \
+  -a $REGISTRY_AUTH_FILE \
+  --insecure  \
+  --skip-multiple-scopes \
+  --max-per-registry=1 \
+  --continue-on-error=true
 ```
 ```
-    cloudctl case launch \
-      --case $HOME/offline/ibm-merlin-development-environment-2.0.0.tgz \
-      --inventory merlinDevelopmentEnvironmentOperatorSetup \
-      --action mirror-images \
-      --namespace ${NAMESPACE} \
-      --args "--registry ${LOCAL_DOCKER_REGISTRY} --inputDir $HOME/offline" \
-      --tolerance 1
+oc image mirror \
+  -f ~/.ibm-pak/data/mirror/$IDE_CASE_NAME/$CASE_VERSION/images-mapping.txt \
+  --filter-by-os '.*'  \
+  -a $REGISTRY_AUTH_FILE \
+  --insecure  \
+  --skip-multiple-scopes \
+  --max-per-registry=1 \
+  --continue-on-error=true
 ```
 ```
-    cloudctl case launch \
-      --case $HOME/offline/ibm-merlin-devworkspace-2.0.0.tgz \
-      --inventory merlinDevworkspaceOperatorSetup \
-      --action mirror-images \
-      --namespace ${NAMESPACE} \
-      --args "--registry ${LOCAL_DOCKER_REGISTRY} --inputDir $HOME/offline" \
-      --tolerance 1
+oc image mirror \
+  -f ~/.ibm-pak/data/mirror/$DEVWORKSPACE_CASE_NAME/$CASE_VERSION/images-mapping.txt \
+  --filter-by-os '.*'  \
+  -a $REGISTRY_AUTH_FILE \
+  --insecure  \
+  --skip-multiple-scopes \
+  --max-per-registry=1 \
+  --continue-on-error=true
 ```
-
 
 ### Create the IBM i Modernization Engine for Lifecycle Integration catalog source
 
-#### Create a catalog source for IBM i Modernization Engine for Lifecycle Integration and common services.
+#### Create a catalog source for IBM i Modernization Engine for Lifecycle Integration
 ```
-    cloudctl case launch \
-      --case $HOME/offline/${CASE_ARCHIVE} \
-      --inventory ${CASE_INVENTORY_SETUP} \
-      --action install-catalog \
-      --namespace ${NAMESPACE} \
-      --args "--registry ${LOCAL_DOCKER_REGISTRY} --inputDir $HOME/offline --recursive" \
-      --tolerance 1
+oc apply -f ~/.ibm-pak/data/mirror/$MERLIN_CASE_NAME/$CASE_VERSION/catalog-sources.yaml
+oc apply -f ~/.ibm-pak/data/mirror/$CICD_CASE_NAME/$CASE_VERSION/catalog-sources.yaml
+oc apply -f ~/.ibm-pak/data/mirror/$IDE_CASE_NAME/$CASE_VERSION/catalog-sources.yaml
+oc apply -f ~/.ibm-pak/data/mirror/$DEVWORKSPACE_CASE_NAME/$CASE_VERSION/catalog-sources.yaml
 ```
-```
-    cloudctl case launch \
-      --case $HOME/offline/ibm-merlin-cicd-2.0.0.tgz \
-      --inventory merlinCicdOperatorSetup \
-      --action install-catalog \
-      --namespace ${NAMESPACE} \
-      --args "--registry ${LOCAL_DOCKER_REGISTRY} --inputDir $HOME/offline --recursive" \
-      --tolerance 1
-```
-```
-    cloudctl case launch \
-      --case $HOME/offline/ibm-merlin-development-environment-2.0.0.tgz \
-      --inventory merlinDevelopmentEnvironmentOperatorSetup \
-      --action install-catalog \
-      --namespace ${NAMESPACE} \
-      --args "--registry ${LOCAL_DOCKER_REGISTRY} --inputDir $HOME/offline --recursive" \
-      --tolerance 1
-```
-```
-    cloudctl case launch \
-      --case $HOME/offline/ibm-merlin-devworkspace-2.0.0.tgz \
-      --inventory merlinDevworkspaceOperatorSetup \
-      --action install-catalog \
-      --namespace ${NAMESPACE} \
-      --args "--registry ${LOCAL_DOCKER_REGISTRY} --inputDir $HOME/offline --recursive" \
-      --tolerance 1
-```
-Verify that the catalog sources for the IBM i Modernization Engine for Lifecycle Integration installer and common services are created.
+
+Verify that the catalog sources for the IBM i Modernization Engine for Lifecycle Integration installer are created.
 ```
 oc get pods -n openshift-marketplace
 oc get catalogsource -n openshift-marketplace
 ```
 
-#### Install IBM i Modernization Engine for Lifecycle Integration
+### Install IBM i Modernization Engine for Lifecycle Integration
 
-IBM i Modernization Engine for Lifecycle Integration can be installed by using the cloudctl CLI or by using the OpenShift Container Platform console.
-
-##### Install by using the CLI
-
-Complete these steps to install by using the cloudctl CLI.
-
-Create an environment variable for the storage class for the IBM i Modernization Engine for Lifecycle Integration installation. For more information, see [Data Storage for Merlin](./guides/platform/Data_Storage_for_MERLIN.md).
-
-
-```
-cloudctl case launch  \
-    --inventory merlinOperator \
-    --case $HOME/offline/${CASE_ARCHIVE} \
-    --namespace ${NAMESPACE} \
-    --action apply-custom-resources \
-    --args "--licenseAccept true" \
-    --tolerance 1
-```
-Doesn't support to create multiple Merlin CRs with one namespace. 
+After the catalog source are created, follow the [instructions](./guides/platform/Install_MERLIN_Online?id=install-the-operator) to install Merlin operator and deploy Merlin instance using OpenShift web console.
