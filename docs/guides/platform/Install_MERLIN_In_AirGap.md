@@ -33,37 +33,25 @@ systemctl start docker
 yum install httpd-tools
 ```
 
-* Install the IBM Cloud Pak® CLI.  
-Install the latest version of the binary file for the platform. For more information, see [cloud-pak-cli](https://github.com/IBM/cloud-pak-cli).  
-Download the binary file.
-```bash
-wget https://github.com/IBM/cloud-pak-cli/releases/download/v<version-number>/<binary-file-name>
-```
-For example, `wget https://github.com/IBM/cloud-pak-cli/releases/latest/download/cloudctl-linux-amd64.tar.gz`.  
-Extract the binary file.
-```bash
-tar -xf <binary-file-name>
-```
-Run the following commands to modify and move the file.
-```bash
-chmod 755 <file-name>
-mv <file-name> /usr/local/bin/cloudctl
-```
-Confirm that cloudctl is installed.
-```bash
-cloudctl --help
-```
-
 * Install the oc OpenShift Container Platform CLI tool. For more information, see [OpenShift Container Platform CLI tools](https://docs.openshift.com/container-platform/4.14/cli_reference/openshift_cli/getting-started-cli.html).
 
-* Create a directory that serves as the offline store.
+* Install the IBM Catalog Management Plug-in
 
-Following is an example directory. This example is used in the subsequent steps.
-```bash
-mkdir $HOME/offline
+Download and install the most recent version of IBM Catalog Management Plug-in for IBM Cloud Paks from the [IBM/ibm-pak](https://www.ibm.com/links?url=https%3A%2F%2Fgithub.com%2FIBM%2Fibm-pak). Extract the binary file by entering the following command:
 ```
+tar -xf oc-ibm_pak-linux-amd64.tar.gz
+```
+Run the following command to move the file to the `/usr/local/bin` directory.
+```
+mv oc-ibm_pak-linux-amd64 /usr/local/bin/oc-ibm_pak
+```
+You can confirm that oc ibm-pak -h is installed by running the following command:
+```
+oc ibm-pak --help
+```
+The plug-in usage is displayed.
 
-> Note: This offline store must be persistent to avoid transferring data more than once. The persistence also helps to run the mirroring process multiple times or on a schedule.
+For more information on plug-in commands, see [command-help](https://www.ibm.com/links?url=https%3A%2F%2Fgithub.com%2FIBM%2Fibm-pak%2Fblob%2Fmain%2Fdocs%2Fcommand-help.md).
 
 ### Prepare a local Docker registry
 
@@ -151,7 +139,7 @@ htpasswd -bBc /opt/registry/auth/htpasswd <registry_user_name> <registry_passwor
 Create the Docker registry container to host the registry.
 
 ```bash
-docker run --name mirror-registry -p <the_registry_host_port>:5000 \
+docker run --name mirror-registry -p <the_registry_hostname>:<the_registry_host_port> \
   -v /opt/registry/data:/var/lib/registry:z \
   -v /opt/registry/auth:/auth:z \
   -e "REGISTRY_AUTH=htpasswd" \
@@ -192,7 +180,7 @@ See these parameter descriptions:
 ```text
 registry_user_name is the username to access the registry.
 registry_password is the password of the registry user.
-the_registry_host_nameis the registry domain name that was specified in the certificate. For example, registry.example.com.
+the_registry_host_name is the registry domain name that was specified in the certificate. For example, registry.example.com.
 the_registry_host_port is the port that the Docker registry uses to serve content.
 ```
 
