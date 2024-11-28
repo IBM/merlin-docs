@@ -138,7 +138,26 @@ Install Merlin operator with either of the following installation methods:
 
 ### Option 1: Install the operator with the OpenShift console
 
+IBM Cert Manager and Licensing operators needs to be installed in the cluster before Merlin operator installation.  
+Here are the steps to install IBM Cert Manager operator using OpenShift console.
+
 - Log in to the OpenShift cluster's console.
+- Click Operators > OperatorHub. The OperatorHub page is displayed.
+- In the All Items field, enter IBM Cert Manager, the operator is displayed.
+- Click the IBM Cert Manager title, the operator window is displayed.
+- Click Install. The Install Operator page is displayed.
+- Enter the following values:
+
+  * Set the Namespace to be `ibm-cert-manager` in which to install the Operator.
+  * Set Update Channel to v4.2.
+  * Set Approval Strategy to Automatic.
+
+- Click Install button to install IBM Cert Manager operator.
+
+The installation process for the IBM Licensing Operator is very similar to that of the IBM Cert Manager. The only difference is the namespace for installation is `ibm-licensing`.  
+
+After installing both the IBM Cert Manager and Licensing operators, follow the steps below to install the Merlin operator using the OpenShift console.
+
 - Click Operators > OperatorHub. The OperatorHub page is displayed.
 - In the All Items field, enter IBM i Modernization Engine for Lifecycle Integration. The Merlin Operator is displayed.
 - Click the IBM i Modernization Engine for Lifecycle Integration tile. The IBM i Modernization Engine for Lifecycle Integration window is displayed.
@@ -152,17 +171,61 @@ Install Merlin operator with either of the following installation methods:
 - Click Install and wait for the Merlin operator to install.
 - Verify that the Merlin operator is successfully installed.
 - Navigate to Operators > Installed Operators, and select the project from the Projects dropdown. IBM i Modernization Engine for Lifecycle Integration and its dependant operator in the project are listed with a status of `Succeeded`.
-- Navigate to Workloads > Pods, and select project `ibm-common-services` from the Projects dropdown. make sure the pods listed below are listed with a status of `Running`.
-  - ibm-common-service-webhook
-  - ibm-namespace-scope-operator
-  - operand-deployment-lifecycle-manager
-  - secretshare
 
 ### Option 2: Install the operator with the OpenShift CLI
 
 Install the Merlin operator with the following command.
 ```
 cat << EOF | oc apply -f -
+apiVersion: project.openshift.io/v1
+kind: Project
+metadata:
+  name: ibm-cert-manager
+---
+apiVersion: project.openshift.io/v1
+kind: Project
+metadata:
+  name: ibm-licensing
+---
+kind: OperatorGroup
+apiVersion: operators.coreos.com/v1
+metadata:
+  name: ibm-cert-manager-operatorgroup
+  namespace: ibm-cert-manager
+---
+kind: OperatorGroup
+apiVersion: operators.coreos.com/v1
+metadata:
+  name: ibm-licensing-operatorgroup
+  namespace: ibm-licensing
+spec:
+  targetNamespaces:
+  - ibm-licensing
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibmi-cert-manager-operator
+  namespace: ibm-cert-manager
+spec:
+  channel: v4.2
+  installPlanApproval: Automatic
+  name: ibm-cert-manager-operator
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibmi-licensing-operator
+  namespace: ibm-licensing
+spec:
+  channel: v4.2
+  installPlanApproval: Automatic
+  name: ibm-licensing-operator-app
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
+---
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
