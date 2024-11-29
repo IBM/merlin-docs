@@ -202,7 +202,7 @@ cp /opt/registry/certs/domain.crt /etc/docker/certs.d/<the_registry_host_name>:<
 
 #### Configure the registry
 
-After creates the registry, configure the Docker registry:
+After creating the registry, configure the Docker registry:
 
 * Create registry namespaces.
 * Create a separate registry namespace for each public registry source.
