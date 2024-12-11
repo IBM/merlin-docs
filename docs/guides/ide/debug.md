@@ -41,6 +41,7 @@ Supported service entry point debug features:
  - Setting a service entry point on a program, service program, module or procedure
  - Enabling, disabling and removing a service entry point 
  - Setting a condition on a service entry point
+ - Modifying the user profile of a service entry point
  - Logging service entry point activities in an output channel
  - Saving service entry points across multiple IDE sessions
 
@@ -79,6 +80,8 @@ You can use the **Edit Condition…** inline action to set a condition on a SEP.
 
 You can use the **Remove Service Entry Point** inline action to remove the selected SEP, or the **Remove All Service Entry Points** toolbar action to remove all SEPs from the view.
 
+You can use the **Modify User Profile...** context menu action to modify the owner of the job where the service entry point is hit. The default owner user profile is the currently logged on user.
+
 Service Entry Point related messages appear in the **IBM i Service Entry Points** output channel.
 
 Service Entry Points are saved in the debug service job on the host. When a new debug client connects to a running debug service, it will restore the saved service entry points for the current user.
@@ -105,17 +108,15 @@ The debug port and SEP debug port are specified in the DebugService.env file on 
 **Question**: Can I debug with Update Production Files set to true?  
 **Answer**: You can turn on Update Production Files by checking the **Update production files** setting from the Debugger tab of Connection Settings. The Connection Settings page can be opened from **View > Command Palette… > IBM i: Connection Settings**.
 
-<!---
-**Question**: I am not able to set a line breakpoint in a debug editor.  
-**Answer**: Verify whether the following settings is checked in the Settings page:
-		Features > Debug > Allow Breakpoints Everywhere > Allow setting breakpoints in any file
--->
+**Question**: I am not able to set a line breakpoint when debugging a LISTING source.  
+**Answer**: Please check the following settings in the Settings page:
+
+	Features > Debug > Allow Breakpoints Everywhere > Allow setting breakpoints in any file
 
 **Question**: What is the JRE requirement for running the debug service?  
-**Answer**: A Java 11 JRE is required to run IBM i Debug Service v2.0. This requirement is satisfied when one of the followings is true:
+**Answer**: A Java 11 JRE is required to run IBM i Debug Service v2.0. You can set the **JAVA_HOME** environment variable to the root path of a Java 11 JRE. If **JAVA_HOME** is not set, we will use the Java 11 JVM under the following path:
 
- - /bin/java is a link to the java command in a Java 11 installation
- - The environment variable **JAVA_HOME** is set to a Java 11 installation
+    /QOpenSys/QIBM/ProdData/JavaVM/jdk11/64bit
 
 **Question**: How can I stop IBM i Debug Service?  
 **Answer**: You can run the following command to stop IBM i Debug Service:
@@ -188,6 +189,7 @@ You need to restart the debug service and the debug router (QB5ROUTER) after the
 **Question**: What diagnostic information should I collect to report a debug problem?  
 **Answer**: Please collect the following diagnostic information:
 - The content of the DebugService_log.txt file under /QIBM/UserData/IBMIDEBUGSERVICE.
+- The content of the debug service workspace log in /QIBM/UserData/IBMIDEBUGSERVICE/startDebugService_workspace/${User}/.metadata/.log, where ${USER} is the user profile that starts the debug service.
 - Check the **Debug trace** option from the Debugger tab of the Connection Settings page. Save the trace text in the **Debug Console** to a file. Edit the file to remove the user password that appears under the trace statement for the launch request.
 
 For information on using ARCAD tools, see [How to use ARCAD integration with IBM i Modernization Engine for Lifecycle Integration](https://supportcontent.ibm.com/support/pages/how-use-arcad-integration-ibm-i-modernization-engine-lifecycle-integration-merlin)
