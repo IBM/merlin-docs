@@ -6,7 +6,7 @@ IBM i Modernization Engine for Lifecycle Integration (Merlin) is a set of tools 
 
 See the [announcement](https://www.ibm.com/docs/en/announcements/i-modernization-engine-lifecycle-integration-merlin-20) for Version 2.0 details.
 
-**News**: Version 2.0.3 is available!
+**News**: Version 2.0.4 is available!  New PTFs required for debugging: 7.4 PTF SJ03026, 7.5 PTF SJ03030!
 
 #### Getting started videos
 
