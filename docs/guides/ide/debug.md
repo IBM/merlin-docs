@@ -1,6 +1,6 @@
 #  Debugging
 
-The IBM i Debugger for Merlin consists of a host component called **IBM i Debug Service**, and a client **IBM i Debug** extension included in the IDE. IBM i Debug Service is delivered as host [PTFs](../platform/ManageIBMiServer.md#running-actions-on-the-ibm-i-server).  A Java 11 JRE is required to run IBM i Debug Service on the host.
+The IBM i Debugger for Merlin consists of a host component called **IBM i Debug Service**, and a client **IBM i Debug** extension included in the IDE. IBM i Debug Service is delivered as host [PTFs](./guides/platform/ManageIBMiServer.md#running-actions-on-the-ibm-i-server).  A Java 11 JRE is required to run IBM i Debug Service on the host.
 
 - Run **Validate the dependent PTFs** action on a template from **Connections** to verify the required PTFs are applied.
 - Run **Enable IBM i debug service** action on a template from **Connections** to start the debug service on the IBM i.
