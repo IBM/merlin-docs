@@ -31,7 +31,7 @@ before running these actions.
 Merlin provides the following actions.   
 ![IBM i Templates Action](../../images/guides/IAction.png)  
 - For the **Enable Ansible environment** action that will help to initiate the yum, python, and Ansible packages, etc. If the server has not run any task before, this action should run at the first step.  
-- For the **Validate the dependent PTFs** action that will help to validate if the dependent PTFs have been installed in the IBM i server.  See [Supported product versions](./Install_IBM_i_Modernization_Engine_for_Lifecycle_Integration.md).
+- For the **Validate the dependent PTFs** action that will help to validate if the dependent PTFs have been installed in the IBM i server.  See [Supported product versions](./guides/platform/Install_IBM_i_Modernization_Engine_for_Lifecycle_Integration.md).
 - For the **Install the Merlin Certificate on IBM i** action that will help to initialize the trust store configuration and enable the certificate for the https services.  This will configure TLS on the ADMIN5 Liberty server on port 2012.  
 - For the **Enable IBM i developer environment** action that will help to set up the IBM i developer environment on the specific IBM i server.  
 - For the **Enable IBM i debug service** action that will start the debug service on the specific IBM i server.  
