@@ -61,7 +61,7 @@ Click `Add Build Actions>Add Build Server`
 
 <!-- div:left-panel -->
 
-Uncheck `Upload source code`.  Check `Select build server (template)` and choose the existing build server
+Uncheck `Upload source code`.  Check `Select build server (template)` and choose the existing build server.
 
 <!-- div:right-panel -->
 
@@ -91,7 +91,13 @@ Click `Add Build Actions>Run an ARCAD-Builder build`
 
 <!-- div:left-panel -->
 
-Configure the `Run an ARCAD-Builder build` then click `Next`.
+Configure the `Run an ARCAD-Builder build`:
+
+   - Select the `ARCAD builder server`, the `ARCAD server`, the `Application`, and `Build model`.
+
+   - For `Version or branch`, specify the git branch name. e.g. `feature/userXX`  
+
+Then click `Next`.
 
 <!-- div:right-panel -->
 
