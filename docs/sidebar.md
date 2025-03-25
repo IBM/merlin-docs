@@ -64,6 +64,7 @@
       - [Tracking license consumption of Merlin](./guides/platform/Licensing_Service.md) 
       - [Configure CatalogSource to get upgrade source](./guides/platform/Update_catalogsource.md)
          - [Upgrade Merlin operator](./guides/platform/upgrade_merlin_operator.md)
+      - [Merlin as a Service](./guides/platform/merlinasaservice.md)
    - [Merlin Administrator Guide](./guides/platform/Merlin_Admin_Guide.md)
       - [Manage connections](./guides/platform/Manage_connections.md)
          - [Manage Inventory](./guides/platform/ManageInventory.md)
