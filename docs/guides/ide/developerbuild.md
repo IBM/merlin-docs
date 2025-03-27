@@ -32,6 +32,12 @@ To compile a directory or file, this can be achieved from several locations:
 
 - To compile the active text editor in which you are working in, using the **Run Compile** action located at the top right of the editor, in the VS Code command palette, or by simply using the `ctrl+shift+c` shortcut (`cmd+shift+c` on Mac)
 - To compile an entire directory or a specific file, use the right-click **Run Compile** action on any file or directory in the **File Explorer** or under the **Source** heading
+- When compiling with Arcad Builder, special comments at the top of the file can customize the compile with compilation attributes or to execute command.  Default compilation attributes can be set with `AWRKAPP appname + Option 9`.
+   - %ATTR instruction encodes the attributes to pass to the compilation command.  e.g. `* %ATTR DEVTYPE(*SCS)`
+   - %EXEC pre-compilation command
+   - %EXECM pre-compilation command with error message checking
+   - %EXECA post-compilation command
+   - %EXECAM post-compilation command with error message checking
 
 ![Run Compile](../../images/guides/devBuildRunCompile.png ':size=750')
 
