@@ -9,7 +9,7 @@ IBM i Modernization Engine for Lifecycle Integration can be installed from eithe
 
 ## Supported product versions
 
-OpenShift Container Platform: 4.14
+OpenShift Container Platform: 4.14, 4.16
 
 IBM i: 7.4, 7.5
 - Minimum HTTP Group PTFs:
