@@ -7,6 +7,7 @@ IBM i Modernization Engine for Lifecycle Integration (Merlin) is a set of tools 
 See the [announcement](https://www.ibm.com/docs/en/announcements/i-modernization-engine-lifecycle-integration-merlin-20) for Version 2.0 details.
 
 **News**: 
+* Mar. 26, 2025 - [IBM i Guided Tour of Merlin](https://learn.common.org/products/merlin-and-modern-ibm-i-development#tab-product_tab_overview) is available!
 * Mar. 25, 2025 - [Merlin as a Service](./guides/platform/MerlinasaService.md) offered by business partners!
 * Mar. 17, 2025 - Version 2.0.5 is available with fixes and updates!  
 * Dec. 11, 2024 - Version 2.0.4 is available with fixes and updates!  New PTFs required for debugging: 7.4 PTF SJ03026, 7.5 PTF SJ03030!
@@ -18,8 +19,9 @@ See the [announcement](https://www.ibm.com/docs/en/announcements/i-modernization
 
 #### Getting started videos
 
-* **for users**: [YouTube video playlist](https://www.youtube.com/playlist?list=PLPELYviDwCnY6L5r5ZnmCneqhakLcB7ko). Starts with set of videos for configuring the web browser, just watch the video corresponding to your system then continue with the rest.
-* **for administrators**: [YouTube video playlist](https://www.youtube.com/watch?v=6UlN1vhrCPo&list=PLPELYviDwCnajC310KB2K7zfu51FPuYJS).
+* **Overview**: [IBM i Guided Tour of Merlin](https://learn.common.org/products/merlin-and-modern-ibm-i-development#tab-product_tab_overview) with presentation and demo
+* **For users**: [YouTube video playlist](https://www.youtube.com/playlist?list=PLPELYviDwCnY6L5r5ZnmCneqhakLcB7ko). Starts with set of videos for configuring the web browser, just watch the video corresponding to your system then continue with the rest.
+* **For administrators**: [YouTube video playlist](https://www.youtube.com/watch?v=6UlN1vhrCPo&list=PLPELYviDwCnajC310KB2K7zfu51FPuYJS).
 
 #### Getting help
 
