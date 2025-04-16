@@ -24,7 +24,7 @@
 
 #### What's the Merlin IDE based on?
 
-> The IDE is leveraging RedHat Code Ready Workspaces, incorporating  VS-Code compatible Eclipse Theia & Che for the core of the web based IDE.
+> The IDE is leveraging RedHat OpenShift DevSpaces, incorporating  VS-Code compatible web based IDE.
 
 #### What kind of containers are supported?  Multi-architecture? 
 

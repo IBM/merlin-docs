@@ -3,6 +3,8 @@ There are several aspects that need to be considered to ensure operating in a se
 
 This topic provides security recommendations for setting up Data In Motion Encryption (DIME), Data At Rest Encryption (DARE), Network Policies and Certificates. It is intended to help you create a secure implementation of the application.
 
+> Note: Merlin does not support the multi-factor authentication capability introduced with IBM i 7.6.
+
 ## Data at rest
 
 All user sensitive data at rest is stored in Hashicorp Vault. Hashicorp Vault is used to secure, store and tightly control access to tokens, passwords, certificates, encryption keys for protecting secrets and other sensitive data using a UI, CLI, or HTTP API. Merlin leverages HashiCorp Vault as the Active Encryption solution to store sensitive data such as credentials. Users do not need to directly work with HashiCorp Vault. Vault encrypts data in transit (with TLS) and at rest (using AES 256-bit CBC encryption). This protects sensitive data from unauthorized access in two major ways: as it travels across the network as well as in storage in the cloud and data centers. But it is necessary for OpenShift administrator to understand that Vault is used underneath. For more information, please read the content of the following link: https://learn.hashicorp.com/vault. 
