@@ -1,15 +1,28 @@
 #  Debugging
 
-The IBM i Debugger for Merlin consists of a host component called **IBM i Debug Service**, and a client **IBM i Debug** extension included in the IDE. IBM i Debug Service is delivered as host [PTFs](./guides/platform/ManageIBMiServer.md#running-actions-on-the-ibm-i-server).  A Java 11 JRE is required to run IBM i Debug Service on the host.
+The IBM i Debugger for Merlin consists of a host component called **IBM i Debug Service**, and a client **IBM i Debug** extension included in the IDE. IBM i Debug Service is delivered as host [PTFs](./guides/platform/ManageIBMiServer.md#running-actions-on-the-ibm-i-server).  Starting from IBM i Debug Service v3.0.0, a Java 11 JRE is required to run IBM i Debug Service on IBM i 7.3/7.4/7.5. A Java 17 JRE is required to run IBM i Debug Service on IBM i 7.6.
+
+IBM i Debug Service also requires the following host PTFs:
+
+- 5770WDS option 60
+- RDi debug PTFs:
+
+    V7R3 PTF SI82198,
+    V7R4 PTF SI82335,
+    V7R5 PTF SI82343
+
+Tasks:
 
 - Run **Validate the dependent PTFs** action on a template from **Connections** to verify the required PTFs are applied.
 - Run **Enable IBM i debug service** action on a template from **Connections** to start the debug service on the IBM i.
 
-The IBM i user profile needs to have the following authorities:
+An IBM i user profile needs to have the following authorities to use the debugger:
 - `*USE` authority to the Start Debug (`STRDBG`) command.
 - `*USE` authority to the End Debug (`ENDDBG`) command.
 - `*USE` authority to the Start Service Job (`STRSRVJOB`) command.
 - `*USE` authority to the End Service Job (`ENDSRVJOB`) command.
+
+An IBM i user profile needs to have `*ALLOBJ` authority to start the debug service.
 
 For a demonstration, see the Debugging video in the [Merlin Getting Started for Users](https://www.youtube.com/playlist?list=PLPELYviDwCnY6L5r5ZnmCneqhakLcB7ko) playlist.
 
@@ -44,13 +57,17 @@ Supported service entry point debug features:
  - Modifying the user profile of a service entry point
  - Logging service entry point activities in an output channel
  - Saving service entry points across multiple IDE sessions
-
+ - Refreshing service entry points after programs are recompiled
 
 ## Limitations
 
 The following features are not supported in the current release:
 -	Code coverage
 
+
+## Starting IBM i Debug Service
+
+IBM i Debug Service depends on RDi Debug Server (QB5ROUTER). Both should be in running state before you can use the Merlin debugger. You can use the **IBM I DEBUGGER** view to start and stop RDi Debug Server and IBM i Debug Service.
 
 ## Debugging from IBM i Project Explorer
 
@@ -86,6 +103,8 @@ Service Entry Point related messages appear in the **IBM i Service Entry Points*
 
 Service Entry Points are saved in the debug service job on the host. When a new debug client connects to a running debug service, it will restore the saved service entry points for the current user.
 
+If a program or service program is recompiled, you can use the **Refresh** action from the context menu to refresh the selected SEP, or use the **Refresh All Service Entry Points** toolbar action to refresh all SEPs in the **Service Entry Points** view.
+
 ## Settings
 
 The following settings are available from the **Debugger** tab of the **IBM i: Connection Settings** page. The page can be accessed from the Command Palette.
@@ -106,7 +125,7 @@ The debug port and SEP debug port are specified in the DebugService.env file on 
 **Answer**: Use the **Debug As Batch** action, change **Command used to start debugging** to specify program parameters.
 
 **Question**: Can I debug with Update Production Files set to true?  
-**Answer**: You can turn on Update Production Files by checking the **Update production files** setting from the Debugger tab of Connection Settings. The Connection Settings page can be opened from **View > Command Palette… > IBM i: Connection Settings**.
+**Answer**: You can turn on Update Production Files by checking the **Update production files** setting from the Debugger tab of Connection Settings. The Connection Settings page can be opened from **View > Command Palette… > IBM i: Connection Settings**. Please note that this setting applies to all debug sessions for the same connection.
 
 **Question**: I am not able to set a line breakpoint when debugging a LISTING source.  
 **Answer**: Please check the following settings in the Settings page:
@@ -114,17 +133,31 @@ The debug port and SEP debug port are specified in the DebugService.env file on 
 	Features > Debug > Allow Breakpoints Everywhere > Allow setting breakpoints in any file
 
 **Question**: What is the JRE requirement for running the debug service?  
-**Answer**: A Java 11 JRE is required to run IBM i Debug Service v2.0. You can set the **JAVA_HOME** environment variable to the root path of a Java 11 JRE. If **JAVA_HOME** is not set, we will use the Java 11 JVM under the following path:
+**Answer**: A Java 11 JRE is required to run IBM i Debug Service v3.0 on IBM i 7.3/7.4/7.5. A Java 17 JRE is required to run IBM i Debug Service v3.0 on IBM i 7.6. You can use the **JAVA_HOME** environment variable to specify a runtime JRE. If **JAVA_HOME** is not set, the following runtime JREs will be used:
 
-    /QOpenSys/QIBM/ProdData/JavaVM/jdk11/64bit
+    /QOpenSys/QIBM/ProdData/JavaVM/jdk11/64bit (for 7.3/7.4/7.5)
+    /QOpenSys/QIBM/ProdData/JavaVM/jdk17/64bit (for 7.6)
+
+**Question**: How can I start IBM i Debug Service?  
+**Answer**: You can start IBM i Debug Service using one of the following solutions:
+
+    - Using the Navigator
+    - Using the IBM i Debugger view in the client
+    - Running the following command from the host:
+
+      QSH CMD('/QIBM/ProdData/IBMiDebugService/bin/startDebugService.sh')
 
 **Question**: How can I stop IBM i Debug Service?  
-**Answer**: You can run the following command to stop IBM i Debug Service:
+**Answer**: You can stop IBM i Debug Service using one of the following solutions:
+
+    - Using the Navigator
+    - Using the IBM i Debugger view in the client
+    - Running the following command from the host:
 
     QSH CMD('/QIBM/ProdData/IBMiDebugService/bin/stopDebugService.sh')
 
 **Question**: What port numbers are used by the debug service?  
-**Answer**: IBM i Debug Service v2.0 uses three port numbers: the debug daemon port (default is 8001), the secure debug port (default is 8005) and the service entry point daemon port (default is 8008). The secure debug port is used by the secure communication between the debug service and the debug client. The debug daemon port is only used to stop the debug service. The service entry point daemon port is used for service entry point communication.
+**Answer**: IBM i Debug Service v3.0 uses three port numbers: the debug daemon port (default is 8001), the secure debug port (default is 8005) and the service entry point daemon port (default is 8008). The secure debug port is used by the secure communication between the debug service and the debug client. The debug daemon port is only used to stop the debug service. The service entry point daemon port is used for service entry point communication.
 
 **Question**: How can I change the port numbers for the debug service?  
 **Answer**: For the debug daemon port, you can change the following value in file /QIBM/ProdData/IBMiDebugService/bin/DebugService.env to specify a different port number:
@@ -144,7 +177,7 @@ For the service entry point daemon port, you can change the following value in /
 You need to restart the debug service after changing a port number.
 
 **Question**: How can I see the output of the debug service?  
-**Answer**: You can see the output of IBM i Debug Service v2.0 from the log file under the following path on the host machine: 
+**Answer**: You can see the output of IBM i Debug Service v3.0 from the log file under the following path on the host machine: 
 
     /QIBM/UserData/IBMIDEBUGSERVICE/DebugService_log.txt
 
@@ -152,10 +185,7 @@ You need to restart the debug service after changing a port number.
 **Answer**: You can turn on tracing by checking the **Debug trace** setting from the Debugger tab of Connection Settings. The Connection Settings page can be opened from **View > Command Palette… > IBM i: Connection Settings**. Debug trace will appear in the **Debug Console**.
 
 **Question**: I am getting a message “EQAVS1007E myHost on port 8005 could not be connected” when I start a debug session.  
-**Answer**: IBM i Debug Service is not started yet. Please start it from the playbook first.
-
-**Question**: The start of the debug service fails and a log file is generated under the path /QIBM/UserData/IBMIDEBUGSERVICE/QDBGSRV/.eclipse.   
-**Answer**: You can remove the whole Eclipse cache file directory under /QIBM/UserData/IBMIDEBUGSERVICE/QDBGSRV/.eclipse and restart the debug service.
+**Answer**: IBM i Debug Service is not started yet. You need to start debug service before starting a debug session.
 
 **Question**: I am seeing a message “IBM i Debug Server has not been started yet. Please run the STRDBGSVR command from a user profile with enough authority.”.  
 **Answer**: Just as what the message says, you need to run STRDBGSVR from a terminal session to start RDi Debug Server (QB5ROUTER) first. IBM i Debug Service requires a running RDi Debug Server. 
