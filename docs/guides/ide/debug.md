@@ -11,11 +11,6 @@ IBM i Debug Service also requires the following host PTFs:
     V7R4 PTF SI82335,
     V7R5 PTF SI82343
 
-Tasks:
-
-- Run **Validate the dependent PTFs** action on a template from **Connections** to verify the required PTFs are applied.
-- Run **Enable IBM i debug service** action on a template from **Connections** to start the debug service on the IBM i.
-
 An IBM i user profile needs to have the following authorities to use the debugger:
 - `*USE` authority to the Start Debug (`STRDBG`) command.
 - `*USE` authority to the End Debug (`ENDDBG`) command.
