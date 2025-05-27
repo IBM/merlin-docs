@@ -62,7 +62,7 @@ The following features are not supported in the current release:
 
 ## Starting IBM i Debug Service
 
-IBM i Debug Service depends on RDi Debug Server (QB5ROUTER). Both should be in running state before you can use the Merlin debugger. You can use the **IBM I DEBUGGER** view to start and stop RDi Debug Server and IBM i Debug Service.
+IBM i Debug Service depends on RDi Debug Server (QB5ROUTER). Both should be in running state before you can use the Merlin debugger. You can use the **IBM i Debugger** view to start and stop RDi Debug Server and IBM i Debug Service.
 
 ## Debugging from IBM i Project Explorer
 
