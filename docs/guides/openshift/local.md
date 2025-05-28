@@ -33,9 +33,6 @@ Please see the official Red Hat documentation regarding system requirements: [Op
     # Start the cluster:
     $ crc start
     # Ensure that the cluster remains running during this procedure.
-
-    # Install the haproxy package and other utilities:
-    $ sudo dnf install haproxy /usr/sbin/semanage
     
     # Modify the firewall to allow communication with the cluster:
     $ sudo systemctl enable --now firewalld
@@ -44,42 +41,14 @@ Please see the official Red Hat documentation regarding system requirements: [Op
     $ sudo firewall-cmd --add-service=kube-apiserver --permanent
     $ sudo firewall-cmd --reload
     
-    # Allow HAProxy to listen on TCP port 6443 to serve kube-apiserver on that port
-    $ sudo semanage port -a -t http_port_t -p tcp 6443
+    # Expose crc on all interfaces
 
-    # Create a backup of the default haproxy configuration:
-    $ sudo cp /etc/haproxy/haproxy.cfg{,.bak}
+    # First ssh into the crc vm
+    ssh -i ~/.crc/machines/crc/id_ed25519 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -p 2222 core@127.0.0.1
 
-    # Configure haproxy for use with the cluster:
-    $ export CRC_IP=$(crc ip)
-    $ sudo tee /etc/haproxy/haproxy.cfg &>/dev/null <<EOF
-    global
-        log /dev/log local0
-
-    defaults
-        balance roundrobin
-        log global
-        maxconn 100
-        mode tcp
-        timeout connect 5s
-        timeout client 500s
-        timeout server 500s
-
-    listen apps
-        bind 0.0.0.0:80
-        server crcvm $CRC_IP:80 check
-
-    listen apps_ssl
-        bind 0.0.0.0:443
-        server crcvm $CRC_IP:443 check
-
-    listen api
-        bind 0.0.0.0:6443
-        server crcvm $CRC_IP:6443 check
-    EOF
-    
-    # Start the haproxy service:
-    $ sudo systemctl start haproxy
+    # Run these curl commands to forward all traffic from port 6443 to the crc vm
+    curl -X POST -d '{"local":"127.0.0.1:6443"}'  gateway.containers.internal/services/forwarder/unexpose
+    curl -X POST -d '{"local":":6443","remote":"192.168.127.2:6443"}'  gateway.containers.internal/services/forwarder/expose
     ```
 
 ## Configure OpenShift Local for Merlin
