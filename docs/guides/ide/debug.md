@@ -64,6 +64,8 @@ The following features are not supported in the current release:
 
 IBM i Debug Service depends on RDi Debug Server (QB5ROUTER). Both should be in running state before you can use the Merlin debugger. You can use the **IBM i Debugger** view to start and stop RDi Debug Server and IBM i Debug Service.
 
+Please see the [Code for IBM i Debug Guide](https://codefori.github.io/docs/developing/debug) on how to configure and start the Debug Service.
+
 ## Debugging from IBM i Project Explorer
 
 With a project in **IBM i Project Explorer**, connect to the IBM i.  Once you are connected to an IBM i, navigate to the program you would like to debug using the **Library List** or **Object Libraries**. Two debug actions will be available from the Debug popup menu:
