@@ -5,7 +5,7 @@ The IBM i Debugger for Merlin consists of a host component called **IBM i Debug 
 IBM i Debug Service also requires the following host PTFs:
 
 - 5770WDS option 60
-- RDi debug PTFs:
+- Debug Server PTFs:
 
     7.3 PTF SI82198,
     7.4 PTF SI82335,
