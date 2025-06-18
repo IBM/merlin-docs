@@ -1,15 +1,19 @@
 #  Debugging
 
-The IBM i Debugger for Merlin consists of a host component called **IBM i Debug Service**, and a client **IBM i Debug** extension included in the IDE. IBM i Debug Service is delivered as host [PTFs](./guides/platform/ManageIBMiServer.md#running-actions-on-the-ibm-i-server).  Starting from IBM i Debug Service v3.0.0, a Java 11 JRE is required to run IBM i Debug Service on IBM i 7.3/7.4/7.5. A Java 17 JRE is required to run IBM i Debug Service on IBM i 7.6.
+The IBM i Debugger for Merlin consists of a host component called **IBM i Debug Service**, and a client **IBM i Debug** extension included in the IDE. IBM i Debug Service is delivered as host [PTFs](./guides/platform/ManageIBMiServer.md#running-actions-on-the-ibm-i-server).  A Java 11 JRE is required to run IBM i Debug Service on IBM i below 7.6. A Java 17 JRE is required to run IBM i Debug Service on IBM i 7.6.
 
 IBM i Debug Service also requires the following host PTFs:
 
 - 5770WDS option 60
 - RDi debug PTFs:
 
-    V7R3 PTF SI82198,
-    V7R4 PTF SI82335,
-    V7R5 PTF SI82343
+    7.3 PTF SI82198,
+    7.4 PTF SI82335,
+    7.5 PTF SI82343
+
+Tasks:
+
+- Run **Validate the dependent PTFs** action on a template from **Connections** to verify the required PTFs are applied.
 
 An IBM i user profile needs to have the following authorities to use the debugger:
 - `*USE` authority to the Start Debug (`STRDBG`) command.
@@ -130,10 +134,10 @@ The debug port and SEP debug port are specified in the DebugService.env file on 
 	Features > Debug > Allow Breakpoints Everywhere > Allow setting breakpoints in any file
 
 **Question**: What is the JRE requirement for running the debug service?  
-**Answer**: A Java 11 JRE is required to run IBM i Debug Service v3.0 on IBM i 7.3/7.4/7.5. A Java 17 JRE is required to run IBM i Debug Service v3.0 on IBM i 7.6. You can use the **JAVA_HOME** environment variable to specify a runtime JRE. If **JAVA_HOME** is not set, the following runtime JREs will be used:
+**Answer**: A Java 11 JRE is required to run IBM i Debug Service on IBM i below 7.6. A Java 17 JRE is required to run IBM i Debug Service on IBM i 7.6. You can use the **JAVA_HOME** environment variable to specify a runtime JRE. If **JAVA_HOME** is not set, the following runtime JREs will be used:
 
-    /QOpenSys/QIBM/ProdData/JavaVM/jdk11/64bit (for 7.3/7.4/7.5)
-    /QOpenSys/QIBM/ProdData/JavaVM/jdk17/64bit (for 7.6)
+    /QOpenSys/QIBM/ProdData/JavaVM/jdk11/64bit (IBM i below 7.6)
+    /QOpenSys/QIBM/ProdData/JavaVM/jdk17/64bit (IBM i 7.6)
 
 **Question**: How can I start IBM i Debug Service?  
 **Answer**: You can start IBM i Debug Service using one of the following solutions:
@@ -154,7 +158,7 @@ The debug port and SEP debug port are specified in the DebugService.env file on 
     QSH CMD('/QIBM/ProdData/IBMiDebugService/bin/stopDebugService.sh')
 
 **Question**: What port numbers are used by the debug service?  
-**Answer**: IBM i Debug Service v3.0 uses three port numbers: the debug daemon port (default is 8001), the secure debug port (default is 8005) and the service entry point daemon port (default is 8008). The secure debug port is used by the secure communication between the debug service and the debug client. The debug daemon port is only used to stop the debug service. The service entry point daemon port is used for service entry point communication.
+**Answer**: IBM i Debug Service uses three port numbers: the debug daemon port (default is 8001), the secure debug port (default is 8005) and the service entry point daemon port (default is 8008). The secure debug port is used by the secure communication between the debug service and the debug client. The debug daemon port is only used to stop the debug service. The service entry point daemon port is used for service entry point communication.
 
 **Question**: How can I change the port numbers for the debug service?  
 **Answer**: For the debug daemon port, you can change the following value in file /QIBM/ProdData/IBMiDebugService/bin/DebugService.env to specify a different port number:
@@ -174,7 +178,7 @@ For the service entry point daemon port, you can change the following value in /
 You need to restart the debug service after changing a port number.
 
 **Question**: How can I see the output of the debug service?  
-**Answer**: You can see the output of IBM i Debug Service v3.0 from the log file under the following path on the host machine: 
+**Answer**: You can see the output of IBM i Debug Service from the log file under the following path on the host machine: 
 
     /QIBM/UserData/IBMIDEBUGSERVICE/DebugService_log.txt
 
