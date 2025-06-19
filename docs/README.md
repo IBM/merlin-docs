@@ -7,6 +7,7 @@ IBM i Modernization Engine for Lifecycle Integration (Merlin) is a set of tools 
 See the [announcement](https://www.ibm.com/docs/en/announcements/i-modernization-engine-lifecycle-integration-merlin-20) for Version 2.0 details.
 
 **News**: 
+* Jun. 19, 2025 - Version 2.0.6 is available with fixes and updates!  New PTFs are required for debugging and there is a new process for setting up certificates to [start the debug service](./guides/ide/debug.md).   
 * Mar. 26, 2025 - [IBM i Guided Tour of Merlin](https://learn.common.org/products/merlin-and-modern-ibm-i-development#tab-product_tab_overview) is available!
 * Mar. 25, 2025 - [Merlin as a Service](./guides/platform/MerlinasaService.md) offered by business partners!
 * Mar. 17, 2025 - Version 2.0.5 is available with fixes and updates!  

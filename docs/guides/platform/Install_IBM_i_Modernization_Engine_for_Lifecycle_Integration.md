@@ -9,18 +9,20 @@ IBM i Modernization Engine for Lifecycle Integration can be installed from eithe
 
 ## Supported product versions
 
-OpenShift Container Platform: 4.14, 4.16
+OpenShift Container Platform: 4.14, 4.16, 4.18
 
-IBM i: 7.4, 7.5
+IBM i: 7.4, 7.5, 7.6
 - Minimum HTTP Group PTFs:
-    - IBM i 7.5 SF99952: IBM HTTP Server for i Group level 05
-    - IBM i 7.4 SF99662: IBM HTTP Server for i Group level 25
+    - IBM i 7.6 SF99962: IBM HTTP Server for i Group level 01
+    - IBM i 7.5 SF99952: IBM HTTP Server for i Group level 20
+    - IBM i 7.4 SF99662: IBM HTTP Server for i Group level 41
 - 5770WDS:
     - IBM i 7.5 PTFs: SI79659, SI81047, SI81049, SI83058
     - IBM i 7.4 PTFs: SI76101, SI81006, SI81023, SI83048
 - 5770SS1:
-    - IBM i 7.5 PTFs: SI80368, SI81035, SI86076, SI84164, SJ00293, SI86229, SJ03030      
-    - IBM i 7.4 PTFs: SI80364, SI81031, SJ00267, SI86178, SJ03026
+    - IBM i 7.6 PTFs: SJ04601
+    - IBM i 7.5 PTFs: SI80368, SI81035, SI86076, SI84164, SJ00293, SI86229, SJ03030, SJ05012      
+    - IBM i 7.4 PTFs: SI80364, SI81031, SJ00267, SI86178, SJ03026, SJ05013
 
 Note: Japanese CCSIDs 5026 and 290 are not supported
 
