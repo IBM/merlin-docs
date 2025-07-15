@@ -197,6 +197,9 @@ You need to restart the debug service after changing a port number.
 - V7R4 PTF  SI82335 
 - V7R5 PTF  SI82343
 
+**Question**: I do not have the QDBGSRV user profile after installing the debug service on IBM i 7.5.  
+**Answer**: The debug service PTFs on 7.3/7.4/7.5 are update installs. An update install depends on a previous installation of the debug service PTF. The update install does not create the QDBGSRV user profile. If you have not installed debug service before, please install the v1 debug service PTF first, and then update the debug service PTF to the next levels.
+
 **Question**: How can I set a Service Entry Point on a procedure?  
 **Answer**: Select the **Set Service Entry Point** action on the target program or service program. In the service entry point location prompt, change the last part of the entry field value “/*ALL/*ALL” to specify the module name and procedure name.
 
